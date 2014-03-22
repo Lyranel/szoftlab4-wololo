@@ -12,7 +12,9 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	private int health;
 
 	public DamageAble(){
-
+		//meghivjuk az UpdateAble konstrokturat,
+		//hogy berakjuk az updateAbleList-be
+		super();
 	}
 
 	public void finalize() throws Throwable {

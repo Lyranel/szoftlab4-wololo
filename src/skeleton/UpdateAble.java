@@ -11,10 +11,10 @@ public abstract class UpdateAble implements IUpdateAble {
 
 	protected float delta = 0;
 	protected float maxDelta = 1;
-	private static UpdateAbleList updateList;
+	private static UpdateAbleList updateList = new UpdateAbleList();
 
 	public UpdateAble(){
-
+		updateList.add(this);
 	}
 
 	public void finalize() throws Throwable {

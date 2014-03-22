@@ -12,10 +12,11 @@ import java.util.ArrayList;
 public class UpdateAbleList {
 
 	private ArrayList<IUpdateAble> toUpdate;
-	public IUpdateAble m_IUpdateAble;
 
 	public UpdateAbleList(){
-
+		TDUtils.callerLog("UpdateAbleList", "UpdateAbleList", "", " a konstruktor lefutott");
+		
+		toUpdate = new ArrayList<IUpdateAble>();
 	}
 
 	public void finalize() throws Throwable {
@@ -27,7 +28,9 @@ public class UpdateAbleList {
 	 * @param upd
 	 */
 	public void add(IUpdateAble upd){
-
+		TDUtils.callerLog("UpdateAbleList", "add", "IUpdateAble", " elemet adtunk hozza");
+		
+		toUpdate.add(upd);
 	}
 
 	/**
@@ -35,7 +38,9 @@ public class UpdateAbleList {
 	 * @param upd
 	 */
 	public void remove(IUpdateAble upd){
-
+		TDUtils.callerLog("UpdateAbleList", "remove", "IUpdateAble", " elemet tavolitottunk el");
+		
+		toUpdate.remove(upd);
 	}
 
 	/**
@@ -43,7 +48,15 @@ public class UpdateAbleList {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
+		TDUtils.callerLog("UpdateAbleList", "update", Float.toString(time), " a delta ido");
+		
+		for(IUpdateAble e: toUpdate)
+		{
+			e.update(time);
+			
+		}
+		
 	}
 
 }

@@ -100,5 +100,11 @@ public class MiddleEarth {
 /*	public void setMap(List<Cell> testMap) {
 		this.map = testMap;
 	}*/
+	
+	public void initTestUpdate(ArrayList<Cell> map)
+	{
+		
+	}
+	
 
 }
