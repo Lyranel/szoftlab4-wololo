@@ -9,6 +9,10 @@ package skeleton;
  */
 public interface IPlaceAble {
 
-	public abstract void upgrade();
+	/**
+	 * 
+	 * @param Cryst
+	 */
+	public abstract void upgrade(Crystal Cryst);
 
 }

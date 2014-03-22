@@ -7,7 +7,7 @@ package skeleton;
  * @version 1.0
  * @created 08-márc.-2014 18:01:49
  */
-public abstract class Crystal implements IPlaceAble {
+public abstract class Crystal {
 
 	public Crystal(){
 

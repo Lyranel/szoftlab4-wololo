@@ -12,12 +12,9 @@ import java.util.List;
  */
 public class MiddleEarth {
 
-	private List<Cell> map;
+	private ArrayList<Cell> map;
 	private Player saruman;
 	private UpdateAbleList updateList;
-
-	public Cell m_Cell;
-	public UpdateAbleList m_UpdateAbleList;
 
 	public MiddleEarth(){
 

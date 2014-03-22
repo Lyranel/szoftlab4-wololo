@@ -17,8 +17,6 @@ public class Cell {
 	private HashMap<Integer, Cell> neighbours;
 	private Cell nextRoad;
 	private State state;
-	public IPlaceAble m_IPlaceAble;
-	public Enemy m_Enemy;
 
 	public Cell(){
 
@@ -72,7 +70,7 @@ public class Cell {
 	 * 
 	 * @param range
 	 */
-	public void getTargets(int range){
+	public Cell getTargets(int range){
 
 	}
 

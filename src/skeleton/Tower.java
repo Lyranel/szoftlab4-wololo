@@ -19,12 +19,16 @@ public class Tower extends PlayerControlled {
 		super.finalize();
 	}
 
-	public void upgrade(){
-
-	}
-
 	public Cell getMaxTargets(){
 		return null;
+	}
+
+	/**
+	 * 
+	 * @param Cryst
+	 */
+	public void upgrade(Crystal Cryst){
+
 	}
 
 }

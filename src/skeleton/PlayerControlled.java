@@ -40,4 +40,12 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 
 	}
 
+	/**
+	 * 
+	 * @param Cryst
+	 */
+	public void upgrade(Crystal Cryst){
+
+	}
+
 }

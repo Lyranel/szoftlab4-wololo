@@ -7,7 +7,7 @@ package skeleton;
  * @version 1.0
  * @created 08-márc.-2014 18:01:50
  */
-public abstract class DamageAble implements IDamageAble {
+public abstract class DamageAble extends UpdateAble implements IDamageAble {
 
 	private int health;
 
@@ -24,6 +24,22 @@ public abstract class DamageAble implements IDamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
+
+	}
+
+	/**
+	 * 
+	 * @param time
+	 */
+	public void incDelta(float time){
+
+	}
+
+	/**
+	 * 
+	 * @param time
+	 */
+	public void update(float time){
 
 	}
 

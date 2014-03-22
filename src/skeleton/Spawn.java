@@ -55,4 +55,8 @@ public class Spawn extends UpdateAble {
 
 	}
 
+	public void incCount(){
+
+	}
+
 }

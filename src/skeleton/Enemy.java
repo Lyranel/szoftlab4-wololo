@@ -12,7 +12,6 @@ public abstract class Enemy extends DamageAble {
 	private Cell cLocation;
 	private Player saruman;
 	private float speed;
-	public Player m_Player;
 
 	public Enemy(){
 

@@ -19,7 +19,11 @@ public class Trap extends PlayerControlled {
 		super.finalize();
 	}
 
-	public void upgrade(){
+	/**
+	 * 
+	 * @param Cryst
+	 */
+	public void upgrade(Crystal Cryst){
 
 	}
 

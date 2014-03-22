@@ -21,7 +21,7 @@ public class Player {
 	}
 	
 	public Player(){
-		
+
 	}
 
 	public void finalize() throws Throwable {
