@@ -27,4 +27,15 @@ public class Trap extends PlayerControlled {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see skeleton.PlayerControlled#update(float)
+	 */
+	@Override
+	public void update(float time) {
+		TDUtils.callerLog("Trapt", "update", Float.toString(time), " Update ido");
+		
+	}
+	
+	
+
 }

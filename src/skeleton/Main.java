@@ -50,6 +50,8 @@ public class Main {
 
 	private static void testUpdate() {
 		
+		System.out.println("--Init Start--");
+		
 		ArrayList<Cell> testMap = new ArrayList<Cell>();
 		testMap.add(new Cell());
 		testMap.add(new Cell());
@@ -66,7 +68,14 @@ public class Main {
 		
 		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
 		
+		System.out.println("--Init Complete--");
 		
+		System.out.println("--UpdateTeszt Start--");
+		
+		puppetMaster.initTestUpdate();
+		puppetMaster.update(0.2f);
+		
+		System.out.println("--UpdateTeszt Complete--");
 		
 		
 	}

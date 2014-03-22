@@ -14,7 +14,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	public DamageAble(){
 		//meghivjuk az UpdateAble konstrokturat,
 		//hogy berakjuk az updateAbleList-be
-		super();
+		
 	}
 
 	public void finalize() throws Throwable {
@@ -42,7 +42,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
 	}
 
 }

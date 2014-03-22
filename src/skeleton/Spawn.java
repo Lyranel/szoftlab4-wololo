@@ -52,7 +52,7 @@ public class Spawn extends UpdateAble {
 	 * @param time
 	 */
 	public void update(float time){
-
+		TDUtils.callerLog("Spawn", "update", Float.toString(time), " Update ido");
 	}
 
 	public void incCount(){

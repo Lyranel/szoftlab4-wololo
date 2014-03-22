@@ -31,4 +31,14 @@ public class Tower extends PlayerControlled {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see skeleton.PlayerControlled#update(float)
+	 */
+	@Override
+	public void update(float time) {
+		TDUtils.callerLog("Tower", "update", Float.toString(time), " Update ido");
+	}
+	
+	
+
 }

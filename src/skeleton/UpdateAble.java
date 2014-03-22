@@ -13,6 +13,13 @@ public abstract class UpdateAble implements IUpdateAble {
 	protected float maxDelta = 1;
 	private static UpdateAbleList updateList = new UpdateAbleList();
 
+	/**
+	 * @return the updateList
+	 */
+	public static UpdateAbleList getUpdateList() {
+		return updateList;
+	}
+
 	public UpdateAble(){
 		updateList.add(this);
 	}
@@ -36,5 +43,7 @@ public abstract class UpdateAble implements IUpdateAble {
 	public void update(float time){
 
 	}
+	
+	
 
 }

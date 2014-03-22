@@ -48,5 +48,23 @@ public abstract class Enemy extends DamageAble {
 	public void slow(float amount){
 
 	}
+	
+	/* (non-Javadoc)
+	 * @see skeleton.DamageAble#update(float)
+	 */
+	@Override
+	public void update(float time) {
+		
+		TDUtils.callerLog("Enemy", "update", Float.toString(time), " Update ido");
+		
+		super.update(time);
+		
+		if(time >= 0.3)
+		{
+			move();
+		}
+		
+	}
+	
 
 }

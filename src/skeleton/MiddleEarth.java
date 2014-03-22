@@ -17,11 +17,13 @@ public class MiddleEarth {
 	private UpdateAbleList updateList;
 
 	public MiddleEarth(){
-
+		
 	}
 	
 	//teszthez szukseges konstruktor (igy konynen tudjuk inicializalni a teszt palyat)
 	public MiddleEarth(ArrayList<Cell> testMap, ArrayList<Road> testRoad){
+		updateList = UpdateAble.getUpdateList();
+		
 		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
 		
 		//A teszt soran kapja a cella-listat
@@ -85,7 +87,7 @@ public class MiddleEarth {
 	 * @param time
 	 */
 	public void update(float time){
-
+		updateList.update(time);
 	}
 
 	public void win(){
@@ -101,8 +103,22 @@ public class MiddleEarth {
 		this.map = testMap;
 	}*/
 	
-	public void initTestUpdate(ArrayList<Cell> map)
+	public void initTestUpdate()
 	{
+		Dwarf secondDwarfEnemy = new Dwarf();
+		Dwarf thirdDwarfEnemy = new Dwarf();
+		
+		Elf secondElfEnemy = new Elf();
+		Elf thirdElfEnemy = new Elf();
+		
+		Human secondHumanEnemy = new Human();
+		Human thirdHumanEnemy = new Human();
+		
+		Hobbit secondHobbitEnemy = new Hobbit();
+		Hobbit thirdHobbitEnemy = new Hobbit();
+		
+		Tower firstPlaceAble = new Tower();
+		Trap  secondPlaceAble = new Trap();
 		
 	}
 	
