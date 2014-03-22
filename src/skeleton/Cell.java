@@ -89,7 +89,7 @@ public class Cell {
 	 * @param index
 	 */
 	public void setNeighbour(Cell n, int index){
-			System.out.println("called: Cell_setNeighbour: " + index + ". szomszedom beallitva");
+			TDUtils.callerLog("Cell", "setNeighbour", "Cell, int", index + ".-ik szomszed beallitva");
 	}
 
 	/**

@@ -20,7 +20,8 @@ public class Spawn extends UpdateAble {
 	}
 	
 	public Spawn(ArrayList<Cell> firstRoadElementsList){
-			TDUtils.callerLog("Spawn", "Spawn", "ArrayList<Cell>", "");
+			TDUtils.callerLog("Spawn", "Spawn", "ArrayList<Cell>", " Spawn pont lista lett beallitva");
+			spawnPoints = firstRoadElementsList;
 	}
 
 	public int getMaxCount() {
@@ -57,6 +58,11 @@ public class Spawn extends UpdateAble {
 
 	public void incCount(){
 
+	}
+	
+	public void addSpwnPoint(Cell sPoint) {
+		TDUtils.callerLog("Spawn", "addSpwnPoint", "Cell", " Uj Spawn pontot vettunk fel");
+		spawnPoints.add(sPoint);
 	}
 
 }

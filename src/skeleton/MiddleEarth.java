@@ -121,6 +121,15 @@ public class MiddleEarth {
 		Trap  secondPlaceAble = new Trap();
 		
 	}
+
+	
+	public void initTestSpawn(ArrayList<Cell> testMap, ArrayList<Road> testRoad) {
+		
+
+		
+		
+		
+	}
 	
 
 }

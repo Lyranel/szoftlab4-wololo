@@ -37,6 +37,10 @@ public class Main {
 				testUpdate();
 			}
 			
+			if (consoleInput.toLowerCase().equals("testspawn")) {
+				testSpawn();
+			}
+			
 			if (consoleInput.toLowerCase().equals("exit")) {
 				exit = true;
 			}
@@ -48,9 +52,17 @@ public class Main {
 		return;
 	}
 
+	private static void testSpawn() {
+		
+		
+		
+	}
+
 	private static void testUpdate() {
 		
-		System.out.println("--Init Start--");
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
 		
 		ArrayList<Cell> testMap = new ArrayList<Cell>();
 		testMap.add(new Cell());
@@ -68,14 +80,16 @@ public class Main {
 		
 		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
 		
-		System.out.println("--Init Complete--");
+		TDUtils.simpleLog("--Init Complete--");
 		
-		System.out.println("--UpdateTeszt Start--");
+		TDUtils.doLogging = true;
+		
+		TDUtils.simpleLog("--UpdateTeszt Start--");
 		
 		puppetMaster.initTestUpdate();
 		puppetMaster.update(0.2f);
 		
-		System.out.println("--UpdateTeszt Complete--");
+		TDUtils.simpleLog("--UpdateTeszt Complete--");
 		
 		
 	}
