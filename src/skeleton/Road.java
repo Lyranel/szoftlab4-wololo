@@ -13,6 +13,9 @@ public class Road {
 
 	public ArrayList<Cell> roadList;
 
+	public Road(ArrayList<Cell> roadList){
+		this.roadList = roadList;
+	}
 	public Road(){
 
 	}

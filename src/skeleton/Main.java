@@ -35,14 +35,17 @@ public class Main {
 		testMap.add(new Cell());
 		testMap.add(new Cell());
 		testMap.add(new Cell());
-	
+		
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
 		//Betolti a teszt terkepet
 		//es beallitja a cellak szomszedait.
-		MiddleEarth puppetMaster = new MiddleEarth(testMap);
-		
-		
-		
-		
+		//es beallitja az utakat is
+		MiddleEarth puppetMaster = new MiddleEarth(testMap,testRoadList);
 		
 		
 		

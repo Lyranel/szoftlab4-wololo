@@ -18,6 +18,10 @@ public class Spawn extends UpdateAble {
 	public Spawn(){
 
 	}
+	
+	public Spawn(ArrayList<Cell> firstRoadElementsList){
+			TDUtils.callerLog("Spawn", "Spawn", "ArrayList<Cell>", "");
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();
