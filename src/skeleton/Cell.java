@@ -61,7 +61,8 @@ public class Cell {
 	}
 
 	public Cell getNext(){
-		return null;
+		TDUtils.callerLog("Cell", "getNext", "", " lekerjuk a kovetkezo cellat");
+		return nextRoad;
 	}
 
 	public State getState(){
