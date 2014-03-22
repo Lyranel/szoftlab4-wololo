@@ -32,7 +32,7 @@ public class Dwarf extends Enemy {
 	public void damage(int amount){
 
 	}
-	@Override
+	
 	public void move(){
 		TDUtils.callerLog("Dwarf", "update", "", " mozgunk");
 	}

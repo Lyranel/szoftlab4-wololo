@@ -52,7 +52,7 @@ public class Spawn extends UpdateAble {
 		{
 			if(currentCount < maxCount)
 			{
-				
+			//TODO-	Enemy létrehozása
 				
 				
 				incCount();
