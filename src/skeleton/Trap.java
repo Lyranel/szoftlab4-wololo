@@ -32,7 +32,7 @@ public class Trap extends PlayerControlled {
 	 */
 	@Override
 	public void update(float time) {
-		TDUtils.callerLog("Trapt", "update", Float.toString(time), " Update ido");
+		TDUtils.callerLog("Trap", "update", Float.toString(time), " Update ido");
 		
 	}
 	

@@ -34,6 +34,7 @@ public class Hobbit extends Enemy {
 	}
 
 	public void move(){
+		super.move();
 		TDUtils.callerLog("Hobbit", "update", "", " mozgunk");
 	}
 

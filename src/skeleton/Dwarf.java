@@ -12,18 +12,16 @@ public class Dwarf extends Enemy {
 	public Dwarf(){
 
 	}
+	
+	public Dwarf(Cell pos){
+		super(pos);
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
 
-	/**
-	 * 
-	 * @param location
-	 */
-	public void add(Cell location){
-
-	}
+	
 
 	/**
 	 * 
@@ -34,6 +32,7 @@ public class Dwarf extends Enemy {
 	}
 	
 	public void move(){
+		super.move();
 		TDUtils.callerLog("Dwarf", "update", "", " mozgunk");
 	}
 

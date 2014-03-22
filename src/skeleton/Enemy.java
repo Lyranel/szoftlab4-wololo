@@ -20,7 +20,7 @@ public abstract class Enemy extends DamageAble {
 	public Enemy(Cell pos){
 		TDUtils.callerLog("Enemy", "Enemy", "Cell", "Letrejott az enemy es megkapta a kezdocellat");
 		
-		pos.add(this);
+		this.add(pos);
 	}
 	
 	public void finalize() throws Throwable {
@@ -32,7 +32,9 @@ public abstract class Enemy extends DamageAble {
 	 * @param location
 	 */
 	public void add(Cell location){
-
+		TDUtils.callerLog("Enemy", "add", "Cell", "az enemy beallitja a helyet");
+		cLocation = location;
+		location.add(this);
 	}
 
 	/**
@@ -44,7 +46,14 @@ public abstract class Enemy extends DamageAble {
 	}
 
 	public void move(){
-
+		TDUtils.callerLog("Enemy", "move", "", "az enemy mozog");
+		Cell nextCell = cLocation.getNext();
+		
+		cLocation.remove(this);
+		
+		nextCell.add(this);
+		cLocation = nextCell;
+		
 	}
 
 	/**

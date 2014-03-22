@@ -1,6 +1,7 @@
 package skeleton;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -19,7 +20,7 @@ public class Cell {
 	private State state;
 
 	public Cell(){
-
+		enemies = new HashSet<Enemy>();
 	}
 
 	public void finalize() throws Throwable {
@@ -81,7 +82,8 @@ public class Cell {
 	 * @param enemy
 	 */
 	public void remove(Enemy enemy){
-
+			TDUtils.callerLog("Cell", "remove", "Enemy", "ami el lesz tavolitva");
+			enemies.remove(enemy);
 	}
 
 	/**

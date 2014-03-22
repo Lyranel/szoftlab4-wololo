@@ -34,6 +34,7 @@ public class Elf extends Enemy {
 	}
 
 	public void move(){
+		super.move();
 		TDUtils.callerLog("Elf", "update", "", " mozgunk");
 	}
 

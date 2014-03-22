@@ -37,7 +37,8 @@ public class Spawn extends UpdateAble {
 	}
 
 	private Cell getRndSPoint(){
-		return null;
+		TDUtils.callerLog("Spawn", "getRndSPoint", "ArrayList<Cell>", " Spawn pont lista lett beallitva");
+		return spawnPoints.get(0);
 	}
 
 
@@ -54,6 +55,9 @@ public class Spawn extends UpdateAble {
 			{
 			//TODO-	Enemy létrehozása
 				
+				Cell sPoint = getRndSPoint();
+				
+				Enemy toTest = new Dwarf(sPoint);
 				
 				incCount();
 			}
