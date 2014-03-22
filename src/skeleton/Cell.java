@@ -71,6 +71,7 @@ public class Cell {
 	 * @param range
 	 */
 	public Cell getTargets(int range){
+		return null;
 
 	}
 
