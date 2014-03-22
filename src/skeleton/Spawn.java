@@ -23,6 +23,14 @@ public class Spawn extends UpdateAble {
 			TDUtils.callerLog("Spawn", "Spawn", "ArrayList<Cell>", "");
 	}
 
+	public int getMaxCount() {
+		return maxCount;
+	}
+
+	public void setMaxCount(int maxCount) {
+		this.maxCount = maxCount;
+	}
+
 	public void finalize() throws Throwable {
 		super.finalize();
 	}

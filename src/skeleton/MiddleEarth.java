@@ -24,14 +24,13 @@ public class MiddleEarth {
 	}
 	
 	//teszthez szukseges konstruktor (igy konynen tudjuk inicializalni a teszt palyat)
-	public MiddleEarth(List<Cell> testMap, ArrayList<Road> testRoad){
-		System.out.println("called: MddleEarth_MiddleEarth: " + testMap.size() + " cellat kaptam.");
-		
-		this.map = testMap;
+	public MiddleEarth(ArrayList<Cell> testMap, ArrayList<Road> testRoad){
+		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
 		
 		//A teszt soran kapja a cella-listat
 		//a jatek folyaman ezt file-bol fogja olvasni 
-		System.out.println("created: ArrayList<Cell> Named:map_by_MiddleEarth Named: puppetMaster");
+		this.map = testMap;
+		TDUtils.createLog("List<Cell>", "map", "MiddleEarth", "puppetMaster", "");
 		
 		//test palya megteremetese 
 		map.get(0).setNeighbour(map.get(1),1);
@@ -53,7 +52,10 @@ public class MiddleEarth {
 		}
 		
 		Spawn testSpawn = new Spawn(firstRoadElementsList);
-		Player testSaruman = new Player();
+		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		Player testSaruman = new Player(this, testSpawn.getMaxCount());
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		
 	}
 
 	public void finalize() throws Throwable {

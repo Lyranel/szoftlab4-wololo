@@ -12,10 +12,16 @@ public class Player {
 	private int enemyCount;
 	private int mana;
 	private MiddleEarth puppetMaster;
-	public MiddleEarth m_MiddleEarth;
 
+	
+	public Player(MiddleEarth puppetMaster, int enemyCount){
+		this.puppetMaster = puppetMaster;
+		this.enemyCount = enemyCount;
+		TDUtils.callerLog("Player", "Player", "MiddleEarth, int", "Megkapta a puppetmastert, es az enemyCountot");
+	}
+	
 	public Player(){
-
+		
 	}
 
 	public void finalize() throws Throwable {
