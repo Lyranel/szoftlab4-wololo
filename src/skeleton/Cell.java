@@ -31,7 +31,8 @@ public class Cell {
 	 * @param enemy
 	 */
 	public void add(Enemy enemy){
-
+		TDUtils.callerLog("Cell", "add", "Enemy", "a cella kapott egy Enemy-t");
+		enemies.add(enemy);
 	}
 
 	/**

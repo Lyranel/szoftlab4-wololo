@@ -54,6 +54,30 @@ public class Main {
 
 	private static void testSpawn() {
 		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		puppetMaster.initTestSpawn(testMap, testRoadList);
+		
 		
 		
 	}

@@ -34,7 +34,7 @@ public class Human extends Enemy {
 	}
 
 	public void move(){
-
+		TDUtils.callerLog("Elf", "update", "", " mozgunk");
 	}
 
 	/**

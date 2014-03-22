@@ -19,4 +19,9 @@ public class TDUtils {
 		 System.out.println(log);
 	 }
 	 
+	 public static void Logging() {
+		doLogging = !doLogging;
+	}
+	 
+
 }

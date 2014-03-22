@@ -125,8 +125,49 @@ public class MiddleEarth {
 	
 	public void initTestSpawn(ArrayList<Cell> testMap, ArrayList<Road> testRoad) {
 		
-
+		updateList = UpdateAble.getUpdateList();
 		
+		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
+		
+		//A teszt soran kapja a cella-listat
+		//a jatek folyaman ezt file-bol fogja olvasni 
+		this.map = testMap;
+		TDUtils.createLog("List<Cell>", "map", "MiddleEarth", "puppetMaster", "");
+		
+		//test palya megteremetese 
+		map.get(0).setNeighbour(map.get(1),1);
+		map.get(0).setNeighbour(map.get(2),2);
+		map.get(0).setNeighbour(map.get(3),3);
+		map.get(0).setNeighbour(map.get(4),4);	
+		
+		//Vegig megy az uton, es az aktualis cellanak beallitja
+		//az uton a kovetkezot kovetkezonek
+		for(Road r : testRoad){
+		
+			for (int i = 0; i < r.roadList.size()-1; ++i){
+				r.roadList.get(i).setNext(r.roadList.get(i+1));
+			}
+		}
+		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
+		for(Road r : testRoad){
+			firstRoadElementsList.add(r.roadList.get(0));
+		}
+		
+		Spawn testSpawn = new Spawn(firstRoadElementsList);
+		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		Player testSaruman = new Player(this, testSpawn.getMaxCount());
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		
+		TDUtils.doLogging = true;
+		
+		TDUtils.simpleLog("--SpawnTeszt Start--");
+		
+		
+		testSpawn.update(0.6f);
+		testSpawn.update(0.6f);
+		testSpawn.update(0.6f);
+		
+		TDUtils.simpleLog("--SpawnTeszt Complete--");
 		
 		
 	}

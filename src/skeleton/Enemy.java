@@ -17,6 +17,12 @@ public abstract class Enemy extends DamageAble {
 
 	}
 
+	public Enemy(Cell pos){
+		TDUtils.callerLog("Enemy", "Enemy", "Cell", "Letrejott az enemy es megkapta a kezdocellat");
+		
+		pos.add(this);
+	}
+	
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
@@ -59,9 +65,13 @@ public abstract class Enemy extends DamageAble {
 		
 		super.update(time);
 		
-		if(time >= 0.3)
+		if(time >= maxDelta)
 		{
 			move();
+		}
+		else
+		{
+			incDelta(time);
 		}
 		
 	}

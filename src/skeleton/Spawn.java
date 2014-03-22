@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class Spawn extends UpdateAble {
 
-	private int currentCount;
-	private int maxCount;
+	private int currentCount = 0;
+	private int maxCount = 100;
 	private ArrayList<Cell> spawnPoints;
 
 	public Spawn(){
@@ -40,13 +40,6 @@ public class Spawn extends UpdateAble {
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param time
-	 */
-	public void incDelta(float time){
-
-	}
 
 	/**
 	 * 
@@ -54,10 +47,29 @@ public class Spawn extends UpdateAble {
 	 */
 	public void update(float time){
 		TDUtils.callerLog("Spawn", "update", Float.toString(time), " Update ido");
+		
+		if(delta >= maxDelta)
+		{
+			if(currentCount < maxCount)
+			{
+				
+				
+				
+				incCount();
+			}
+			
+			delta = 0;	
+		}
+		else
+		{
+			incDelta(time);
+		}
+		
 	}
 
 	public void incCount(){
-
+		TDUtils.callerLog("Spawn", "incCount", "", " Teremtett Enemy szama");
+		currentCount++;
 	}
 	
 	public void addSpwnPoint(Cell sPoint) {

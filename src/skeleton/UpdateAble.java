@@ -33,7 +33,8 @@ public abstract class UpdateAble implements IUpdateAble {
 	 * @param time
 	 */
 	public void incDelta(float time){
-
+		TDUtils.callerLog("UpdateAble", "incDelta", Float.toString(time), " A deltat noveljuk");
+		delta += time;
 	}
 
 	/**
