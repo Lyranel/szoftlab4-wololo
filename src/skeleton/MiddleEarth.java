@@ -211,27 +211,78 @@ public class MiddleEarth {
 		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
 		
 		
-		//Dwarf testDwarf = new Dwarf(map.get(0), saruman);
+		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
 		
+		map.get(0).setNext(map.get(1));
+
 		TDUtils.doLogging = true;
-		
-		//map.get(0).setNext(map.get(1));
 		
 		TDUtils.simpleLog("--MoveTeszt Start--");
 		
-		/*testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
-		testDwarf.update(0.6f);
-		testDwarf.update(0.6f);*/
 		
-		this.update(0.6f);
-		this.update(0.6f);
-		this.update(0.6f);
-		this.update(0.6f);
-		this.update(0.6f);
-		this.update(0.6f);
+		
+	
+		
+		TDUtils.simpleLog("--MoveTeszt Complete--");
+		
+	}
+
+	public void initTestLose(ArrayList<Cell> testMap, ArrayList<Road> testRoad) {
+		updateList = UpdateAble.getUpdateList();
+		
+		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
+		
+		//A teszt soran kapja a cella-listat
+		//a jatek folyaman ezt file-bol fogja olvasni 
+		this.map = testMap;
+		TDUtils.createLog("List<Cell>", "map", "MiddleEarth", "puppetMaster", "");
+		
+		//test palya megteremetese 
+		map.get(0).setNeighbour(map.get(1),1);
+		map.get(0).setNeighbour(map.get(2),2);
+		map.get(0).setNeighbour(map.get(3),3);
+		map.get(0).setNeighbour(map.get(4),4);	
+		
+		//Vegig megy az uton, es az aktualis cellanak beallitja
+		//az uton a kovetkezot kovetkezonek
+		for(Road r : testRoad){
+		
+			for (int i = 0; i < r.roadList.size()-1; ++i){
+				r.roadList.get(i).setNext(r.roadList.get(i+1));
+			}
+		}
+		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
+		for(Road r : testRoad){
+			firstRoadElementsList.add(r.roadList.get(0));
+		}
+		
+		Player testSaruman = new Player(this, 1);
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		this.saruman = testSaruman;
+		
+		Spawn testSpawn = new Spawn(firstRoadElementsList,saruman);
+		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		
+		
+		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
+		
+		map.get(0).setNext(map.get(1));
+		
+		TDUtils.doLogging = true;
+		
+		TDUtils.simpleLog("--MoveTeszt Start--");
+		
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		
+	
 		
 		TDUtils.simpleLog("--MoveTeszt Complete--");
 		
