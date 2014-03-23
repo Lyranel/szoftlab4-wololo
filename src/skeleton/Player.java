@@ -64,7 +64,8 @@ public class Player {
 	 * @param mana
 	 */
 	public void increaseMana(int mana){
-		TDUtils.callerLog("Player", "increaseMana", "Int", "noveljuk a manank");
+		if (mana > 0) TDUtils.callerLog("Player", "increaseMana", "int", "noveljuk a manank");
+		else TDUtils.callerLog("Player", "decreaseMana", "int", "");
 		this.mana += mana;
 	}
 
@@ -114,7 +115,6 @@ public class Player {
 				if (this.puppetMaster.getCell(0, 2).getState() == State.EMPTY) {
 					TDUtils.createLog("Tower", "testTower", "Player", "saruman", "");
 					Tower testTower = new Tower(this.puppetMaster.getCell(0, 2));
-					TDUtils.callerLog("Player", "decreaseMana", "int", "");
 					this.increaseMana(-1*testTowerCost);
 				}
 				
@@ -133,7 +133,6 @@ public class Player {
 				if (this.puppetMaster.getCell(0, 0).getState() == State.ROAD) {
 					TDUtils.createLog("Trap", "testTrap", "Player", "saruman", "");
 					Trap testTrap = new Trap(this.puppetMaster.getCell(0, 0));
-					TDUtils.callerLog("Player", "decreaseMana", "int", "");
 					this.increaseMana(-1*testTrapCost);			
 				}
 				
@@ -156,7 +155,6 @@ public class Player {
 			if (this.puppetMaster.getCell(0, 2).getState() == State.TOWER) {
 				TDUtils.callerLog("Tower", "upgrade", "Crystal", "");
 				this.puppetMaster.getCell(0, 2).getBuilding().upgrade(new RangeC());
-				TDUtils.callerLog("Player", "decreaseMana", "int", "");
 				this.increaseMana(-1*testUpgradeCost);	
 				
 			}
@@ -164,7 +162,6 @@ public class Player {
 			else if (this.puppetMaster.getCell(0, 0).getState() == State.TRAP) {
 				TDUtils.callerLog("Trap", "upgrade", "Crystal", "");
 				this.puppetMaster.getCell(0, 0).getBuilding().upgrade(new TrapC());
-				TDUtils.callerLog("Player", "decreaseMana", "int", "");
 				this.increaseMana(-1*testUpgradeCost);	
 				
 			}

@@ -56,15 +56,15 @@ public class Main {
 				testLose();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testdeath")) {
+			else if (consoleInput.toLowerCase().equals("testdeath")) {
 				testDeath();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testwin")) {
+			else if (consoleInput.toLowerCase().equals("testwin")) {
 				testWin();
 			}
 			
-			if (consoleInput.toLowerCase().equals("exit")) {
+			else if (consoleInput.toLowerCase().equals("exit")) {
 				exit = true;
 			}
 			
