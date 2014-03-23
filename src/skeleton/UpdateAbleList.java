@@ -66,7 +66,9 @@ public class UpdateAbleList {
 		
 		TDUtils.callerLog("UpdateAbleList", "update", Float.toString(time), " a delta ido");
 		
-		for(IUpdateAble e: toUpdate)
+		ArrayList<IUpdateAble> cpyToUpdate = new ArrayList<IUpdateAble>(toUpdate);
+		
+		for(IUpdateAble e: cpyToUpdate)
 		{
 			if(!gamePaused)
 			{

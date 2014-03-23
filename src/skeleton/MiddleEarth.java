@@ -211,21 +211,27 @@ public class MiddleEarth {
 		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
 		
 		
-		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
+		//Dwarf testDwarf = new Dwarf(map.get(0), saruman);
 		
 		TDUtils.doLogging = true;
 		
-		map.get(0).setNext(map.get(1));
+		//map.get(0).setNext(map.get(1));
 		
 		TDUtils.simpleLog("--MoveTeszt Start--");
 		
+		/*testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
-		testDwarf.update(0.6f);
-		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);*/
 		
+		this.update(0.6f);
+		this.update(0.6f);
+		this.update(0.6f);
+		this.update(0.6f);
+		this.update(0.6f);
+		this.update(0.6f);
 		
 		TDUtils.simpleLog("--MoveTeszt Complete--");
 		
