@@ -119,6 +119,7 @@ public class Cell {
 	public void setNext(Cell cell){
 		TDUtils.callerLog("Cell", "SetNext", "Cell", "bealitom az utat");
 		this.nextRoad = cell;
+		this.state = State.ROAD;
 		
 	}
 

@@ -43,8 +43,8 @@ public class MiddleEarth {
 		
 			for (int i = 0; i < r.roadList.size()-1; ++i){
 				r.roadList.get(i).setNext(r.roadList.get(i+1));
-				r.roadList.get(i).setState(State.ROAD);
 			}
+			r.roadList.get(r.roadList.size()-1).setNext(null);
 		}
 		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
 		for(Road r : testRoad){
