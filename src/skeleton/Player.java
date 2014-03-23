@@ -61,6 +61,15 @@ public class Player {
 	}
 
 	/**
+	 * Because the enemy only knows the player
+	 */
+	public void lose()
+	{
+		TDUtils.callerLog("Player", "lose", "", "lose uzenet");
+		puppetMaster.lose();
+	}
+	
+	/**
 	 * 
 	 * @param num
 	 */

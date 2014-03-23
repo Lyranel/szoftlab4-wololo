@@ -17,10 +17,11 @@ public abstract class Enemy extends DamageAble {
 
 	}
 
-	public Enemy(Cell pos){
+	public Enemy(Cell pos, Player saruman){
 		TDUtils.callerLog("Enemy", "Enemy", "Cell", "Letrejott az enemy es megkapta a kezdocellat");
 		
 		this.add(pos);
+		this.saruman = saruman;
 	}
 	
 	public void finalize() throws Throwable {
@@ -49,10 +50,18 @@ public abstract class Enemy extends DamageAble {
 		TDUtils.callerLog("Enemy", "move", "", "az enemy mozog");
 		Cell nextCell = cLocation.getNext();
 		
+		if(nextCell != null)
+		{
 		cLocation.remove(this);
 		
 		nextCell.add(this);
 		cLocation = nextCell;
+		}
+		else
+		{
+			saruman.lose();
+		}
+		
 		
 	}
 
@@ -74,9 +83,10 @@ public abstract class Enemy extends DamageAble {
 		
 		super.update(time);
 		
-		if(time >= maxDelta)
+		if(delta >= maxDelta)
 		{
 			move();
+			delta = 0;	
 		}
 		else
 		{

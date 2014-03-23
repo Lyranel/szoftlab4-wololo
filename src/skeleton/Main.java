@@ -41,6 +41,10 @@ public class Main {
 				testSpawn();
 			}
 			
+			if (consoleInput.toLowerCase().equals("testmove")) {
+				testMove();
+			}
+			
 			if (consoleInput.toLowerCase().equals("exit")) {
 				exit = true;
 			}
@@ -50,6 +54,34 @@ public class Main {
 		}
 		System.out.println("Veget vetett a teszteknek.");
 		return;
+	}
+
+	private static void testMove() {
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		puppetMaster.initTestMove(testMap, testRoadList);
+		
 	}
 
 	private static void testSpawn() {

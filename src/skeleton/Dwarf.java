@@ -13,8 +13,8 @@ public class Dwarf extends Enemy {
 
 	}
 	
-	public Dwarf(Cell pos){
-		super(pos);
+	public Dwarf(Cell pos, Player saruman){
+		super(pos,saruman);
 	}
 
 	public void finalize() throws Throwable {

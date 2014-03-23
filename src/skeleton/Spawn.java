@@ -14,14 +14,16 @@ public class Spawn extends UpdateAble {
 	private int currentCount = 0;
 	private int maxCount = 100;
 	private ArrayList<Cell> spawnPoints;
+	private Player saruman;
 
 	public Spawn(){
 
 	}
 	
-	public Spawn(ArrayList<Cell> firstRoadElementsList){
+	public Spawn(ArrayList<Cell> firstRoadElementsList, Player saruman){
 			TDUtils.callerLog("Spawn", "Spawn", "ArrayList<Cell>", " Spawn pont lista lett beallitva");
 			spawnPoints = firstRoadElementsList;
+			this.saruman = saruman;
 	}
 
 	public int getMaxCount() {
@@ -57,7 +59,7 @@ public class Spawn extends UpdateAble {
 				
 				Cell sPoint = getRndSPoint();
 				
-				Enemy toTest = new Dwarf(sPoint);
+				Enemy toTest = new Dwarf(sPoint, saruman);
 				
 				incCount();
 			}
