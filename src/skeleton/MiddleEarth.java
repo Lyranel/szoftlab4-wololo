@@ -96,7 +96,8 @@ public class MiddleEarth {
 	}
 
 	public void win(){
-		TDUtils.callerLog("MiddleEarth", "win", "", "az ellenseg elfogyott Szaruman epp sikert arat!");
+		TDUtils.callerLog("MiddleEarth", "win", "", "az ellenseg elfogyott Szaruman epp fenyes gyozelmet arat!");
+		TDUtils.Logging();
 		updateList.setGamePaused(true);
 	}
 	
