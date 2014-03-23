@@ -14,6 +14,14 @@ public class Trap extends PlayerControlled {
 	public Trap(){
 
 	}
+	
+	public Trap(Cell home) {
+		this.home = home;
+		TDUtils.callerLog("Cell", "build", "IPlaceAble", "");
+		this.home.build(this);
+		this.slowAmount = 1;
+		
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();
@@ -24,7 +32,7 @@ public class Trap extends PlayerControlled {
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){
-
+		this.slowAmount++;
 	}
 
 	/* (non-Javadoc)

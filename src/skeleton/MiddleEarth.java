@@ -43,6 +43,7 @@ public class MiddleEarth {
 		
 			for (int i = 0; i < r.roadList.size()-1; ++i){
 				r.roadList.get(i).setNext(r.roadList.get(i+1));
+				r.roadList.get(i).setState(State.ROAD);
 			}
 		}
 		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
@@ -53,6 +54,7 @@ public class MiddleEarth {
 		Spawn testSpawn = new Spawn(firstRoadElementsList,saruman);
 		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
 		Player testSaruman = new Player(this, testSpawn.getMaxCount());
+		this.saruman = testSaruman;
 		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
 		
 	}
@@ -70,7 +72,8 @@ public class MiddleEarth {
 	 * @param y
 	 * @param x
 	 */
-	public void getCell(int y, int x){
+	public Cell getCell(int y, int x){	
+		return map.get(x);
 
 	}
 
@@ -394,6 +397,18 @@ public class MiddleEarth {
 		testDwarf.damage(10);
 		
 		TDUtils.simpleLog("--WinTeszt Complete--");
+		
+	}
+	
+	public void initTestBuild(String type) {
+		
+		this.saruman.testBuild(type);
+		
+	}
+	
+	public void initTestUpgrade(String type) {
+		
+		this.saruman.testUpgrade(type);
 		
 	}
 	

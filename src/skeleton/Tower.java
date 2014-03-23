@@ -1,6 +1,6 @@
 package skeleton;
 
-
+import java.util.Set;
 
 /**
  * @author HonorDragon
@@ -10,9 +10,24 @@ package skeleton;
 public class Tower extends PlayerControlled {
 
 	private int damage;
+	private int range;
+	private int speed;
+	private Set<Cell> targetList;
 
 	public Tower(){
 
+	}
+	
+	public Tower(Cell home) {
+		this.home = home;
+		TDUtils.callerLog("Cell", "build", "IPlaceAble", "");
+		this.home.build(this);
+		this.damage = 10;
+		this.range = 2;
+		this.speed = 1;
+		TDUtils.callerLog("Cell", "getTargets", "int", "");
+		this.targetList = this.home.getTargets(this.range);
+		
 	}
 
 	public void finalize() throws Throwable {
@@ -28,7 +43,10 @@ public class Tower extends PlayerControlled {
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){
-
+		this.range++;
+		TDUtils.callerLog("Cell", "getTargets", "int", "");
+		this.targetList = this.home.getTargets(this.range);
+		
 	}
 
 	/* (non-Javadoc)

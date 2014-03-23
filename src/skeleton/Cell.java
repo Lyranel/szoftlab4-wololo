@@ -21,6 +21,7 @@ public class Cell {
 
 	public Cell(){
 		enemies = new HashSet<Enemy>();
+		state = State.EMPTY;
 	}
 
 	public void finalize() throws Throwable {
@@ -41,6 +42,16 @@ public class Cell {
 	 * @param building
 	 */
 	public void build(IPlaceAble building){
+		this.building = building;
+		if (this.state == State.EMPTY) {
+			this.state = State.TOWER;
+			
+		}
+		
+		else if (this.state == State.ROAD) {
+			this.state = State.TRAP;
+			
+		}
 
 	}
 
@@ -66,16 +77,21 @@ public class Cell {
 	}
 
 	public State getState(){
-		return null;
+		return this.state;
 	}
 
 	/**
 	 * 
 	 * @param range
 	 */
-	public Cell getTargets(int range){
+	public Set<Cell> getTargets(int range){
 		return null;
 
+	}
+	
+	public IPlaceAble getBuilding() {
+		return this.building;
+		
 	}
 
 	/**

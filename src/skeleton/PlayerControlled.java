@@ -9,18 +9,13 @@ package skeleton;
  */
 public abstract class PlayerControlled extends UpdateAble implements IPlaceAble {
 
-	private Cell home;
-	private int manaCost;
+	protected Cell home;
 
 	public PlayerControlled(){
 
 	}
 
 	public void finalize() throws Throwable {
-
-	}
-
-	public void upgrade(){
 
 	}
 

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -25,27 +24,35 @@ public class Main {
 				testBuildTower();
 			}
 
-			if (consoleInput.toLowerCase().equals("testbuildtrap")) {
+			else if (consoleInput.toLowerCase().equals("testbuildtrap")) {
 				testBuildTrap();
 			}
+			
+			else if (consoleInput.toLowerCase().equals("testupgradetower")) {
+				testUpgradeTower();
+			}
+			
+			else if (consoleInput.toLowerCase().equals("testupgradetrap")) {
+				testUpgradeTrap();
+			}
 
-			if (consoleInput.toLowerCase().equals("testinitialize")) {
+			else if (consoleInput.toLowerCase().equals("testinitialize")) {
 				testInitialize();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testupdate")) {
+			else if (consoleInput.toLowerCase().equals("testupdate")) {
 				testUpdate();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testspawn")) {
+			else if (consoleInput.toLowerCase().equals("testspawn")) {
 				testSpawn();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testmove")) {
+			else if (consoleInput.toLowerCase().equals("testmove")) {
 				testMove();
 			}
 			
-			if (consoleInput.toLowerCase().equals("testlose")) {
+			else if (consoleInput.toLowerCase().equals("testlose")) {
 				testLose();
 			}
 			
@@ -60,10 +67,14 @@ public class Main {
 			if (consoleInput.toLowerCase().equals("exit")) {
 				exit = true;
 			}
-			if (consoleInput.toLowerCase().equals("quit")) {
+			
+			else if (consoleInput.toLowerCase().equals("quit")) {
 				exit = true;
 			}
+			
+			else System.out.println("Az utasitas nem ertelmezheto.");
 		}
+		
 		System.out.println("Veget vetett a teszteknek.");
 		return;
 	}
@@ -137,7 +148,7 @@ public class Main {
 		testMap.add(new Cell());
 
 		ArrayList<Road> testRoadList = new ArrayList<Road>();
-		ArrayList testRoad = new ArrayList<Cell>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
@@ -165,7 +176,7 @@ public class Main {
 		testMap.add(new Cell());
 
 		ArrayList<Road> testRoadList = new ArrayList<Road>();
-		ArrayList testRoad = new ArrayList<Cell>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
@@ -193,7 +204,7 @@ public class Main {
 		testMap.add(new Cell());
 
 		ArrayList<Road> testRoadList = new ArrayList<Road>();
-		ArrayList testRoad = new ArrayList<Cell>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
@@ -223,7 +234,7 @@ public class Main {
 		testMap.add(new Cell());
 
 		ArrayList<Road> testRoadList = new ArrayList<Road>();
-		ArrayList testRoad = new ArrayList<Cell>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
@@ -256,7 +267,7 @@ public class Main {
 		testMap.add(new Cell());
 
 		ArrayList<Road> testRoadList = new ArrayList<Road>();
-		ArrayList testRoad = new ArrayList<Cell>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
@@ -268,11 +279,123 @@ public class Main {
 
 	}
 
-	private static void testBuildTrap() {
-		MiddleEarth puppetMaster = new MiddleEarth();
-	}
 	private static void testBuildTower() {
-		MiddleEarth puppetMaster = new MiddleEarth();
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestBuild("tower");
+		
+	}
+	
+	private static void testBuildTrap() {
+
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestBuild("trap");
+
+	}
+	
+	private static void testUpgradeTower() {
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		puppetMaster.initTestBuild("tower");
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestUpgrade("tower");
+
+	}
+	
+	private static void testUpgradeTrap() {
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		puppetMaster.initTestBuild("trap");
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestUpgrade("trap");
 
 	}
 
