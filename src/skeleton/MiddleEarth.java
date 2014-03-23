@@ -277,7 +277,7 @@ public class MiddleEarth {
 		
 		TDUtils.doLogging = true;
 		
-		TDUtils.simpleLog("--MoveTeszt Start--");
+		TDUtils.simpleLog("--DeathTeszt Start--");
 		
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
@@ -288,7 +288,7 @@ public class MiddleEarth {
 		
 	
 		
-		TDUtils.simpleLog("--MoveTeszt Complete--");
+		TDUtils.simpleLog("--DeathTeszt Complete--");
 		
 	}
 
