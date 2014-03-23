@@ -9,7 +9,14 @@ package skeleton;
  */
 public abstract class DamageAble extends UpdateAble implements IDamageAble {
 
-	private int health;
+	private int health = 5;
+
+	/**
+	 * @return the health
+	 */
+	public int getHealth() {
+		return health;
+	}
 
 	public DamageAble(){
 		//meghivjuk az UpdateAble konstrokturat,
@@ -26,7 +33,8 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
-
+		TDUtils.callerLog("Enemy", "damage", Integer.toString(amount), " eletponttal csokkent az elete");
+		health -= amount;
 	}
 
 	/**

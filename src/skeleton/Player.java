@@ -45,7 +45,13 @@ public class Player {
 	}
 
 	public void decreaseEnemyCount(){
-
+		TDUtils.callerLog("Player", "decreaceEnemyCount", "", "Egy ellenseggel kevesebb");
+		enemyCount--;
+		if(this.enemyCount <= 0)
+		{
+			puppetMaster.win();
+		}
+		
 	}
 
 	public int getEnemyCount(){
@@ -57,7 +63,8 @@ public class Player {
 	 * @param mana
 	 */
 	public void increaseMana(int mana){
-
+		TDUtils.callerLog("Player", "increaseMana", "Int", "noveljuk a manank");
+		this.mana += mana;
 	}
 
 	/**
@@ -74,7 +81,7 @@ public class Player {
 	 * @param num
 	 */
 	public void setEnemyCount(int num){
-
+		enemyCount = num;
 	}
 
 	/**

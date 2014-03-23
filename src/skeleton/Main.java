@@ -49,6 +49,14 @@ public class Main {
 				testLose();
 			}
 			
+			if (consoleInput.toLowerCase().equals("testdeath")) {
+				testDeath();
+			}
+			
+			if (consoleInput.toLowerCase().equals("testwin")) {
+				testWin();
+			}
+			
 			if (consoleInput.toLowerCase().equals("exit")) {
 				exit = true;
 			}
@@ -58,6 +66,62 @@ public class Main {
 		}
 		System.out.println("Veget vetett a teszteknek.");
 		return;
+	}
+
+	private static void testWin() {
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		
+		MiddleEarth puppetMaster = new MiddleEarth();
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		puppetMaster.initTestWin(testMap, testRoadList);
+		
+	}
+
+	private static void testDeath() {
+		
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+		
+		
+		MiddleEarth puppetMaster = new MiddleEarth();
+		
+		TDUtils.simpleLog("--Init Complete--");
+		
+		puppetMaster.initTestDeath(testMap, testRoadList);
+		
 	}
 
 	private static void testLose() {

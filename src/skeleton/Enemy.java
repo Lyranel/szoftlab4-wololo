@@ -43,7 +43,24 @@ public abstract class Enemy extends DamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
+		super.damage(amount);
+		
+		if(this.getHealth() <= 0)
+		{
+			this.death();
+		}
+		
+	}
 
+	private void death() {
+		TDUtils.callerLog("Enemy", "death", "", "Az ellenseg halott");
+		cLocation.remove(this);
+		
+		saruman.decreaseEnemyCount();
+		saruman.increaseMana(10);
+		
+		this.remove();
+		
 	}
 
 	public void move(){

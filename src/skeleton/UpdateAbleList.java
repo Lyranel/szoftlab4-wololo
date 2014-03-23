@@ -78,6 +78,12 @@ public class UpdateAbleList {
 		
 		
 	}
+	
+	public void reset()
+	{
+		toUpdate = new ArrayList<IUpdateAble>();
+	
+	}
 
 
 }

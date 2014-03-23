@@ -45,6 +45,15 @@ public abstract class UpdateAble implements IUpdateAble {
 
 	}
 	
+	/**
+	 * 
+	 * @param upd
+	 */
+	public void remove(){
+		TDUtils.callerLog("UpdateAble", "remove", "", " kivesszuk magunkat az update listabol");
+		
+		updateList.remove(this);
+	}
 	
 
 }
