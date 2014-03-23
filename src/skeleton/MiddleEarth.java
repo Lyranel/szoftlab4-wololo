@@ -15,7 +15,7 @@ public class MiddleEarth {
 	private ArrayList<Cell> map;
 	private Player saruman;
 	private UpdateAbleList updateList;
-
+	
 	public MiddleEarth(){
 		
 	}
@@ -80,6 +80,7 @@ public class MiddleEarth {
 
 	public void lose(){
 		TDUtils.callerLog("MiddelEarth", "lose", "", "Saruman elbukott");
+		updateList.setGamePaused(true);
 	}
 
 	/**
@@ -202,26 +203,29 @@ public class MiddleEarth {
 			firstRoadElementsList.add(r.roadList.get(0));
 		}
 		
+		Player testSaruman = new Player(this, 1);
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		this.saruman = testSaruman;
+		
 		Spawn testSpawn = new Spawn(firstRoadElementsList,saruman);
 		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
-		Player testSaruman = new Player(this, testSpawn.getMaxCount());
-		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
 		
 		
-		
-		
-		
-		
-		testSpawn.update(0.6f);
-		testSpawn.update(0.6f);
-		testSpawn.update(0.6f);
+		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
 		
 		TDUtils.doLogging = true;
 		
+		map.get(0).setNext(map.get(1));
+		
 		TDUtils.simpleLog("--MoveTeszt Start--");
 		
-		this.update(0.6f);
-		this.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		testDwarf.update(0.6f);
+		
 		
 		TDUtils.simpleLog("--MoveTeszt Complete--");
 		

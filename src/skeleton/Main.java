@@ -76,7 +76,7 @@ public class Main {
 		testRoadList.add(new Road(testRoad));
 		
 		
-		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		MiddleEarth puppetMaster = new MiddleEarth();
 		
 		TDUtils.simpleLog("--Init Complete--");
 		

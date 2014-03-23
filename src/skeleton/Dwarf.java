@@ -32,8 +32,9 @@ public class Dwarf extends Enemy {
 	}
 	
 	public void move(){
-		super.move();
 		TDUtils.callerLog("Dwarf", "update", "", " mozgunk");
+		super.move();
+		
 	}
 
 	/**

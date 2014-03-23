@@ -12,6 +12,21 @@ import java.util.ArrayList;
 public class UpdateAbleList {
 
 	private ArrayList<IUpdateAble> toUpdate;
+	private boolean gamePaused = false;
+
+	/**
+	 * @return the gamePaused
+	 */
+	public boolean isGamePaused() {
+		return gamePaused;
+	}
+
+	/**
+	 * @param gamePaused the gamePaused to set
+	 */
+	public void setGamePaused(boolean gamePaused) {
+		this.gamePaused = gamePaused;
+	}
 
 	public UpdateAbleList(){
 		TDUtils.callerLog("UpdateAbleList", "UpdateAbleList", "", " a konstruktor lefutott");
@@ -53,10 +68,14 @@ public class UpdateAbleList {
 		
 		for(IUpdateAble e: toUpdate)
 		{
-			e.update(time);
-			
+			if(!gamePaused)
+			{
+				e.update(time);
+			}
 		}
 		
+		
 	}
+
 
 }

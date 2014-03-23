@@ -34,7 +34,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	 * @param time
 	 */
 	public void incDelta(float time){
-
+		super.incDelta(time);
 	}
 
 	/**

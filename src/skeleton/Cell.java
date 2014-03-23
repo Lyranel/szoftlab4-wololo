@@ -101,7 +101,9 @@ public class Cell {
 	 * @param cell
 	 */
 	public void setNext(Cell cell){
-
+		TDUtils.callerLog("Cell", "SetNext", "Cell", "bealitom az utat");
+		this.nextRoad = cell;
+		
 	}
 
 }
