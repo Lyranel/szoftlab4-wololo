@@ -105,6 +105,8 @@ public class Main {
 		
 		puppetMaster.initTestWin(testMap, testRoadList);
 		
+		
+		
 	}
 
 	private static void testDeath() {

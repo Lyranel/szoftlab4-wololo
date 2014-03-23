@@ -83,7 +83,8 @@ public class MiddleEarth {
 
 	public void lose(){
 		TDUtils.callerLog("MiddelEarth", "lose", "", "Saruman elbukott");
-		updateList.setGamePaused(true);
+		TDUtils.doLogging = false;
+		//updateList.setGamePaused(true);
 	}
 
 	/**
@@ -98,7 +99,7 @@ public class MiddleEarth {
 	public void win(){
 		TDUtils.callerLog("MiddleEarth", "win", "", "az ellenseg elfogyott Szaruman epp fenyes gyozelmet arat!");
 		TDUtils.Logging();
-		updateList.setGamePaused(true);
+		//updateList.setGamePaused(true);
 	}
 	
 	////Teszteleshez kello fuggvenyek:
@@ -290,7 +291,7 @@ public class MiddleEarth {
 		testDwarf.update(0.6f);
 		testDwarf.update(0.6f);
 		
-	
+		TDUtils.doLogging = true;
 		
 		TDUtils.simpleLog("--DeathTeszt Complete--");
 		
@@ -397,6 +398,7 @@ public class MiddleEarth {
 		
 		testDwarf.damage(10);
 		
+		TDUtils.doLogging = true;
 		TDUtils.simpleLog("--WinTeszt Complete--");
 		
 	}
