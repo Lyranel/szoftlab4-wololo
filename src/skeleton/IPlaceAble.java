@@ -10,7 +10,7 @@ package skeleton;
 public interface IPlaceAble {
 
 	/**
-	 * 
+	 * upgrade metodua
 	 * @param Cryst
 	 */
 	public abstract void upgrade(Crystal Cryst);

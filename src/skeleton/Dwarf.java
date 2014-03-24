@@ -24,14 +24,16 @@ public class Dwarf extends Enemy {
 	
 
 	/**
-	 * 
-	 * @param amount
+	 * a serules metodusa
+	 * @param amount ennyit serul
 	 */
 	public void damage(int amount){
 		TDUtils.callerLog("Dwarf", "damage", "int", "Az ellenseg sebzodik");
 		super.damage(amount);
 	}
-	
+	/**
+	 * mozgas metodusa
+	 */
 	public void move(){
 		TDUtils.callerLog("Dwarf", "update", "", " mozgunk");
 		super.move();
@@ -39,7 +41,7 @@ public class Dwarf extends Enemy {
 	}
 
 	/**
-	 * 
+	 * a lassulast intezi el
 	 * @param amount
 	 */
 	public void slow(float amount){

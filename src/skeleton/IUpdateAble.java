@@ -10,13 +10,13 @@ package skeleton;
 public interface IUpdateAble {
 
 	/**
-	 * 
+	 * noveli a delta idot
 	 * @param time
 	 */
 	public void incDelta(float time);
 
 	/**
-	 * 
+	 * update metodus
 	 * @param time
 	 */
 	public void update(float time);

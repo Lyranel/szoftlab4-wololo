@@ -10,7 +10,7 @@ package skeleton;
 public interface IDamageAble {
 
 	/**
-	 * 
+	 * a serules metodusa
 	 * @param amount
 	 */
 	public void damage(int amount);

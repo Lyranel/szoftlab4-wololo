@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Road {
 
-	public ArrayList<Cell> roadList;
+	public ArrayList<Cell> roadList;	//cella list az egyma utani cellakot tartalmazza
 
 	public Road(ArrayList<Cell> roadList){
 		this.roadList = roadList;

@@ -27,7 +27,9 @@ public class UpdateAbleList {
 	public void setGamePaused(boolean gamePaused) {
 		this.gamePaused = gamePaused;
 	}
-
+	/**
+	 * letrehozom az uj updatelistat
+	 */
 	public UpdateAbleList(){
 		TDUtils.callerLog("UpdateAbleList", "UpdateAbleList", "", " a konstruktor lefutott");
 		
@@ -39,7 +41,7 @@ public class UpdateAbleList {
 	}
 
 	/**
-	 * 
+	 * uj elemet adunk a listahoz
 	 * @param upd
 	 */
 	public void add(IUpdateAble upd){
@@ -49,7 +51,7 @@ public class UpdateAbleList {
 	}
 
 	/**
-	 * 
+	 * elemet veszunk ki a listabol
 	 * @param upd
 	 */
 	public void remove(IUpdateAble upd){
@@ -59,13 +61,13 @@ public class UpdateAbleList {
 	}
 
 	/**
-	 * 
+	 * update-et meghivjuk az osszes elemen konkurrencia miatt egy masolat listan dolgozik
 	 * @param time
 	 */
 	public void update(float time){
 		
 		TDUtils.callerLog("UpdateAbleList", "update", Float.toString(time), " a delta ido");
-		
+		//csinalunk egy masolat mert ha a lista valtozna menet kozben akkor az exception-t eredmenyezne
 		ArrayList<IUpdateAble> cpyToUpdate = new ArrayList<IUpdateAble>(toUpdate);
 		
 		for(IUpdateAble e: cpyToUpdate)
@@ -78,7 +80,9 @@ public class UpdateAbleList {
 		
 		
 	}
-	
+	/**
+	 * resetelem a listat mivel uj futtatas eseten ki kell uriteni
+	 */
 	public void reset()
 	{
 		toUpdate = new ArrayList<IUpdateAble>();

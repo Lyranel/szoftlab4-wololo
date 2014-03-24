@@ -9,7 +9,7 @@ package skeleton;
  */
 public abstract class DamageAble extends UpdateAble implements IDamageAble {
 
-	private int health = 5;
+	private int health = 5; //az eletero
 
 	/**
 	 * @return the health
@@ -29,7 +29,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	}
 
 	/**
-	 * 
+	 * levonjuk a serulest az eletbol
 	 * @param amount
 	 */
 	public void damage(int amount){
@@ -38,7 +38,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	}
 
 	/**
-	 * 
+	 * a delta idot noveljuk
 	 * @param time
 	 */
 	public void incDelta(float time){
@@ -46,7 +46,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	}
 
 	/**
-	 * 
+	 * update a child felulirja majd
 	 * @param time
 	 */
 	public void update(float time){

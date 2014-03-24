@@ -9,7 +9,7 @@ package skeleton;
  */
 public abstract class PlayerControlled extends UpdateAble implements IPlaceAble {
 
-	protected Cell home;
+	protected Cell home;	//a cella amiben van
 
 	public PlayerControlled(){
 
@@ -20,7 +20,7 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 	}
 
 	/**
-	 * 
+	 * noveljuk a delta idot
 	 * @param time
 	 */
 	public void incDelta(float time){
@@ -28,7 +28,7 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 	}
 
 	/**
-	 * 
+	 * update metodusa
 	 * @param time
 	 */
 	public void update(float time){
@@ -36,7 +36,7 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 	}
 
 	/**
-	 * 
+	 * update metodus
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){

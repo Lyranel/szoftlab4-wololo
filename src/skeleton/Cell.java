@@ -20,6 +20,9 @@ public class Cell {
 	private Cell nextRoad;
 	private State state;
 
+	/**
+	 * a cell konstruktora
+	 */
 	public Cell(){
 		enemies = new ArrayList<Enemy>();
 		state = State.EMPTY;
@@ -30,7 +33,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * enemyt adunk hozza a listahoz
 	 * @param enemy
 	 */
 	public void add(Enemy enemy){
@@ -39,7 +42,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * brakunk egy buildinget
 	 * @param building
 	 */
 	public void build(IPlaceAble building){
@@ -57,7 +60,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 *a cellaban levo ellensegeket megsebbezuk
 	 * @param amount
 	 */
 	public void damage(int amount){
@@ -68,28 +71,40 @@ public class Cell {
 		testEnemy.damage(amount);
 		
 	}
-
+	/**
+	 * az enemy szamot adjuk vissza
+	 * @return
+	 */
 	public int getEnemyCount(){
 		TDUtils.callerLog("Cell", "getEnemyCount", "", " Visszaadja, hogy hany ellenseg van rajta");
 		return 1;
 	}
-
+	/**
+	 * a cellaban levo ellensegeket adjuk vissza
+	 * @return
+	 */
 	public ArrayList<Enemy> getEnemyList(){
 		TDUtils.callerLog("Cell", "getEnemyList", "", " lekerjuk a a cellan talalhato ellensegeket");
 		return this.enemies;
 	}
-
+	/**
+	 * a kovi utat adjuk vissza
+	 * @return
+	 */
 	public Cell getNext(){
 		TDUtils.callerLog("Cell", "getNext", "", " lekerjuk a kovetkezo cellat");
 		return nextRoad;
 	}
-
+	/**
+	 * a cella state-et adjuk vissza
+	 * @return
+	 */
 	public State getState(){
 		return this.state;
 	}
 
 	/**
-	 * 
+	 * lekerjuk majd a celozhato targeteket
 	 * @param range
 	 */
 	public ArrayList<Cell> getTargets(int range){
@@ -97,14 +112,17 @@ public class Cell {
 		return null;
 
 	}
-	
+	/**
+	 * vissza adjuk a cellaban levo buildinget
+	 * @return
+	 */
 	public IPlaceAble getBuilding() {
 		return this.building;
 		
 	}
 
 	/**
-	 * 
+	 * eltavolitjuk ez enemy-t a cellabol
 	 * @param enemy
 	 */
 	public void remove(Enemy enemy){
@@ -113,16 +131,16 @@ public class Cell {
 	}
 
 	/**
-	 * 
-	 * @param n
-	 * @param index
+	 * beallitjuk a cella szomszedait
+	 * @param n a cella
+	 * @param index a szomszedsagi azonosito
 	 */
 	public void setNeighbour(Cell n, int index){
 			TDUtils.callerLog("Cell", "setNeighbour", "Cell, int", index + ".-ik szomszed beallitva");
 	}
 
 	/**
-	 * 
+	 * beallitju a kovi cell-t a roadnal
 	 * @param cell
 	 */
 	public void setNext(Cell cell){
@@ -131,7 +149,10 @@ public class Cell {
 		this.state = State.ROAD;
 		
 	}
-
+	/**
+	 * setter ami hozza ad egy enemy-t a cellhoz a teszteleshez kell.
+	 * @param e
+	 */
 	public void setEnemy(Enemy e) {
 		this.enemies = new ArrayList<Enemy>();
 		enemies.add(e);
