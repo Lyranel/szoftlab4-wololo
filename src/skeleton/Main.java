@@ -19,11 +19,21 @@ public class Main {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+
 
 			if (consoleInput.toLowerCase().equals("testbuildtower")) {
 				testBuildTower();
 			}
-
+			if (consoleInput.toLowerCase().equals("testbuildtower")) {
+				testBuildTower();
+			}
+			if (consoleInput.toLowerCase().equals("testtowershoot")) {
+				testTowerShoot();
+			}
+			if (consoleInput.toLowerCase().equals("testtrapslow")) {
+				testTrapSlow();
+			}
 			else if (consoleInput.toLowerCase().equals("testbuildtrap")) {
 				testBuildTrap();
 			}
@@ -77,6 +87,81 @@ public class Main {
 		
 		System.out.println("Veget vetett a teszteknek.");
 		return;
+	}
+
+
+	private static void testTowerShoot() {
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		// Negyzetracsos teszt palyank lesz
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+
+
+		// Betolti a teszt terkepet
+		// es beallitja a cellak szomszedait.
+		// es beallitja az utakat is
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init End--");
+		
+		TDUtils.simpleLog("--TowerShootTeszt Start--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestTowerShoot(testMap,testRoadList);
+
+		TDUtils.simpleLog("--TowerShootTeszt Complete--");
+		
+	}
+	
+	private static void testTrapSlow() {
+		TDUtils.doLogging = false;
+		
+		TDUtils.simpleLog("--Init Start--");
+		
+		// Negyzetracsos teszt palyank lesz
+		ArrayList<Cell> testMap = new ArrayList<Cell>();
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+		testMap.add(new Cell());
+
+		ArrayList<Road> testRoadList = new ArrayList<Road>();
+		ArrayList<Cell> testRoad = new ArrayList<Cell>();
+		testRoad.add(testMap.get(0));
+		testRoad.add(testMap.get(1));
+		testRoadList.add(new Road(testRoad));
+
+
+		// Betolti a teszt terkepet
+		// es beallitja a cellak szomszedait.
+		// es beallitja az utakat is
+		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
+		
+		TDUtils.simpleLog("--Init End--");
+		
+		TDUtils.simpleLog("--TrapSlowTeszt Start--");
+		
+		TDUtils.doLogging = true;
+		
+		puppetMaster.initTestTrapSlow(testMap,testRoadList);
+
+		TDUtils.simpleLog("--TrapSlowTeszt Complete--");
+		
 	}
 
 	private static void testWin() {
@@ -260,7 +345,7 @@ public class Main {
 
 	private static void testInitialize() {
 
-		// Negyzetracsos 3*3 teszt palyank lesz
+		// Negyzetracsos teszt palyank lesz
 		ArrayList<Cell> testMap = new ArrayList<Cell>();
 		testMap.add(new Cell());
 		testMap.add(new Cell());

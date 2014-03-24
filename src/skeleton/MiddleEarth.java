@@ -127,8 +127,8 @@ public class MiddleEarth {
 		Hobbit secondHobbitEnemy = new Hobbit();
 		Hobbit thirdHobbitEnemy = new Hobbit();
 		
-		Tower firstPlaceAble = new Tower();
-		Trap  secondPlaceAble = new Trap();
+		Tower firstPlaceAble = new Tower(map.get(2), map.get(0));
+		Trap  secondPlaceAble = new Trap(map.get(1),thirdHobbitEnemy);
 		
 	}
 
@@ -413,6 +413,106 @@ public class MiddleEarth {
 		
 		this.saruman.testUpgrade(type);
 		
+	}
+
+	public void initTestTowerShoot(ArrayList<Cell> testMap, ArrayList<Road> testRoadList) {
+		TDUtils.doLogging = false;
+		
+		updateList = UpdateAble.getUpdateList();
+		
+		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
+		
+		//A teszt soran kapja a cella-listat
+		//a jatek folyaman ezt file-bol fogja olvasni 
+		this.map = testMap;
+		TDUtils.createLog("List<Cell>", "map", "MiddleEarth", "puppetMaster", "");
+		
+		//test palya megteremetese 
+		map.get(0).setNeighbour(map.get(1),1);
+		map.get(0).setNeighbour(map.get(2),2);
+		map.get(0).setNeighbour(map.get(3),3);
+		map.get(0).setNeighbour(map.get(4),4);	
+		
+		
+		//Vegig megy az uton, es az aktualis cellanak beallitja
+		//az uton a kovetkezot kovetkezonek
+		for(Road r : testRoadList){
+		
+			for (int i = 0; i < r.roadList.size()-1; ++i){
+				r.roadList.get(i).setNext(r.roadList.get(i+1));
+			}
+		}
+		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
+		for(Road r : testRoadList){
+			firstRoadElementsList.add(r.roadList.get(0));
+		}
+		
+		Player testSaruman = new Player(this, 1);
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		this.saruman = testSaruman;
+		
+		Spawn testSpawn = new Spawn(firstRoadElementsList,saruman);
+		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		
+		
+		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
+		Tower testTower = new Tower(map.get(2),map.get(0));
+		ArrayList testTargetList = new ArrayList<Cell>();
+		testTargetList.add(map.get(0));
+		testTower.setTargetList(testTargetList);
+		
+		TDUtils.doLogging = true;
+		testTower.update(0.6f);
+	
+
+		
+	}
+
+	public void initTestTrapSlow(ArrayList<Cell> testMap, ArrayList<Road> testRoadList) {
+		TDUtils.doLogging = false;
+		updateList = UpdateAble.getUpdateList();
+		
+		TDUtils.callerLog("MiddleEarth", "MiddleEarth", "ArrayList<Cell>, ArrayList<Road>", "");
+		
+		//A teszt soran kapja a cella-listat
+		//a jatek folyaman ezt file-bol fogja olvasni 
+		this.map = testMap;
+		TDUtils.createLog("List<Cell>", "map", "MiddleEarth", "puppetMaster", "");
+		
+		//test palya megteremetese 
+		map.get(0).setNeighbour(map.get(1),1);
+		map.get(0).setNeighbour(map.get(2),2);
+		map.get(0).setNeighbour(map.get(3),3);
+		map.get(0).setNeighbour(map.get(4),4);	
+		
+		
+		//Vegig megy az uton, es az aktualis cellanak beallitja
+		//az uton a kovetkezot kovetkezonek
+		for(Road r : testRoadList){
+		
+			for (int i = 0; i < r.roadList.size()-1; ++i){
+				r.roadList.get(i).setNext(r.roadList.get(i+1));
+			}
+		}
+		ArrayList<Cell> firstRoadElementsList = new ArrayList<Cell>();
+		for(Road r : testRoadList){
+			firstRoadElementsList.add(r.roadList.get(0));
+		}
+		
+		Player testSaruman = new Player(this, 1);
+		TDUtils.createLog("Player", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		this.saruman = testSaruman;
+		
+		Spawn testSpawn = new Spawn(firstRoadElementsList,saruman);
+		TDUtils.createLog("Spawn", "testSpawn", "MiddleEarth", "puppetMaster", "");
+		
+		
+		Dwarf testDwarf = new Dwarf(map.get(0), saruman);
+		Trap testTrap = new Trap(map.get(2),testDwarf);
+
+		TDUtils.doLogging = true;
+		testTrap.update(0.6f);
+
 	}
 	
 

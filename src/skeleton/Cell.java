@@ -1,5 +1,6 @@
 package skeleton;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,13 +15,13 @@ import java.util.Set;
 public class Cell {
 
 	private IPlaceAble building;
-	private Set<Enemy> enemies;
+	private ArrayList<Enemy> enemies;
 	private HashMap<Integer, Cell> neighbours;
 	private Cell nextRoad;
 	private State state;
 
 	public Cell(){
-		enemies = new HashSet<Enemy>();
+		enemies = new ArrayList<Enemy>();
 		state = State.EMPTY;
 	}
 
@@ -60,15 +61,22 @@ public class Cell {
 	 * @param amount
 	 */
 	public void damage(int amount){
-
+		TDUtils.callerLog("Cell", "damage", "", " Meghivja a rajta levo egyik ellensegen a sebzest.");
+		TDUtils.doLogging = false;
+		Enemy testEnemy = new Hobbit();
+		TDUtils.doLogging = true;
+		testEnemy.damage(amount);
+		
 	}
 
 	public int getEnemyCount(){
-		return 0;
+		TDUtils.callerLog("Cell", "getEnemyCount", "", " Visszaadja, hogy hany ellenseg van rajta");
+		return 1;
 	}
 
-	public Set<Enemy> getEnemyList(){
-		return null;
+	public ArrayList<Enemy> getEnemyList(){
+		TDUtils.callerLog("Cell", "getEnemyList", "", " lekerjuk a a cellan talalhato ellensegeket");
+		return this.enemies;
 	}
 
 	public Cell getNext(){
@@ -84,7 +92,8 @@ public class Cell {
 	 * 
 	 * @param range
 	 */
-	public Set<Cell> getTargets(int range){
+	public ArrayList<Cell> getTargets(int range){
+		TDUtils.callerLog("Cell", "getTargets", "int", " lekerjuk a kovetkezo cellat");
 		return null;
 
 	}
@@ -120,6 +129,13 @@ public class Cell {
 		TDUtils.callerLog("Cell", "SetNext", "Cell", "bealitom az utat");
 		this.nextRoad = cell;
 		this.state = State.ROAD;
+		
+	}
+
+	public void setEnemy(Enemy e) {
+		this.enemies = new ArrayList<Enemy>();
+		enemies.add(e);
+		
 		
 	}
 

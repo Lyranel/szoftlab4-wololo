@@ -28,6 +28,7 @@ public class Dwarf extends Enemy {
 	 * @param amount
 	 */
 	public void damage(int amount){
+		TDUtils.callerLog("Dwarf", "damage", "int", "Az ellenseg sebzodik");
 		super.damage(amount);
 	}
 	
@@ -42,7 +43,7 @@ public class Dwarf extends Enemy {
 	 * @param amount
 	 */
 	public void slow(float amount){
-
+		TDUtils.callerLog("Dwarf", "slow", "float", " Az ellenség lassul.");
 	}
 
 	

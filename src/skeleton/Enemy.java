@@ -43,8 +43,8 @@ public abstract class Enemy extends DamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
+		TDUtils.callerLog("Enemy", "damage", "int", "Az ellenseg sebzodik");
 		super.damage(amount);
-		
 		if(this.getHealth() <= 0)
 		{
 			this.death();
@@ -87,7 +87,7 @@ public abstract class Enemy extends DamageAble {
 	 * @param amount
 	 */
 	public void slow(float amount){
-
+		TDUtils.callerLog("Enemy", "slow", "float", " Az ellenség lassul.");
 	}
 	
 	/* (non-Javadoc)

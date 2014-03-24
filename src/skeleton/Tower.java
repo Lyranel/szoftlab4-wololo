@@ -1,5 +1,6 @@
 package skeleton;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -12,21 +13,23 @@ public class Tower extends PlayerControlled {
 	private int damage;
 	private int range;
 	private int speed;
-	private Set<Cell> targetList;
+	private ArrayList<Cell> targetList = new ArrayList<Cell>();
 
-	public Tower(){
-
-	}
+//	public Tower(){
+//
+//	}
 	
-	public Tower(Cell home) {
+	public Tower(Cell home, Cell target) {
 		this.home = home;
+		this.targetList.add(target);
 		TDUtils.callerLog("Cell", "build", "IPlaceAble", "");
 		this.home.build(this);
 		this.damage = 10;
 		this.range = 2;
 		this.speed = 1;
 		TDUtils.callerLog("Cell", "getTargets", "int", "");
-		this.targetList = this.home.getTargets(this.range);
+		//this.targetList = this.home.getTargets(this.range);
+
 		
 	}
 
@@ -35,7 +38,12 @@ public class Tower extends PlayerControlled {
 	}
 
 	public Cell getMaxTargets(){
-		return null;
+		TDUtils.callerLog("Tower", "getTargets", "", "-- Lekerdezi, hogy a torony szomszedjai kozul emlyiken van a legtobb ellenseg");
+		
+		for(Cell target : targetList){
+			target.getEnemyCount();
+		}
+		 return targetList.get(0);
 	}
 
 	/**
@@ -44,7 +52,7 @@ public class Tower extends PlayerControlled {
 	 */
 	public void upgrade(Crystal Cryst){
 		this.range++;
-		TDUtils.callerLog("Cell", "getTargets", "int", "");
+		TDUtils.callerLog ("Cell", "getTargets", "int", "");
 		this.targetList = this.home.getTargets(this.range);
 		
 	}
@@ -55,6 +63,19 @@ public class Tower extends PlayerControlled {
 	@Override
 	public void update(float time) {
 		TDUtils.callerLog("Tower", "update", Float.toString(time), " Update ido");
+		//A Tower kideriti, hogy a szomszedos cellai
+		//kozul melyiken van a legtobb ellenseg
+		Cell target = getMaxTargets();
+		target.damage(1);
+		
+	}
+
+	public ArrayList<Cell> getTargetList() {
+		return targetList;
+	}
+
+	public void setTargetList(ArrayList<Cell> targetList) {
+		this.targetList = targetList;
 	}
 	
 	

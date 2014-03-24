@@ -1,5 +1,7 @@
 package skeleton;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -11,12 +13,13 @@ public class Trap extends PlayerControlled {
 
 	private float slowAmount;
 
-	public Trap(){
-
-	}
+//	public Trap(){
+//
+//	}
 	
-	public Trap(Cell home) {
+	public Trap(Cell home, Enemy e) {
 		this.home = home;
+		this.home.setEnemy(e);
 		TDUtils.callerLog("Cell", "build", "IPlaceAble", "");
 		this.home.build(this);
 		this.slowAmount = 1;
@@ -41,7 +44,11 @@ public class Trap extends PlayerControlled {
 	@Override
 	public void update(float time) {
 		TDUtils.callerLog("Trap", "update", Float.toString(time), " Update ido");
-		
+		ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
+		enemyList = this.home.getEnemyList();
+		for(Enemy e : enemyList){
+			e.slow(1);
+		}
 	}
 	
 	

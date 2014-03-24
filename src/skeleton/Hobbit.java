@@ -30,7 +30,7 @@ public class Hobbit extends Enemy {
 	 * @param amount
 	 */
 	public void damage(int amount){
-
+		TDUtils.callerLog("Hobbit", "damage", "int", "Az ellenseg sebzodik");
 	}
 
 	public void move(){
@@ -43,7 +43,7 @@ public class Hobbit extends Enemy {
 	 * @param amount
 	 */
 	public void slow(float amount){
-
+		TDUtils.callerLog("Elf", "slow", "float", " Az ellenség lassul.");
 	}
 
 }

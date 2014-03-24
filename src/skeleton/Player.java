@@ -1,5 +1,7 @@
 package skeleton;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -114,7 +116,7 @@ public class Player {
 				TDUtils.callerLog("Cell", "getState", "", "");
 				if (this.puppetMaster.getCell(0, 2).getState() == State.EMPTY) {
 					TDUtils.createLog("Tower", "testTower", "Player", "saruman", "");
-					Tower testTower = new Tower(this.puppetMaster.getCell(0, 2));
+					Tower testTower = new Tower(this.puppetMaster.getCell(0, 2),this.puppetMaster.getCell(0, 1));
 					this.increaseMana(-1*testTowerCost);
 				}
 				
@@ -132,7 +134,7 @@ public class Player {
 				TDUtils.callerLog("Cell", "getState", "", "");
 				if (this.puppetMaster.getCell(0, 0).getState() == State.ROAD) {
 					TDUtils.createLog("Trap", "testTrap", "Player", "saruman", "");
-					Trap testTrap = new Trap(this.puppetMaster.getCell(0, 0));
+					Trap testTrap = new Trap(this.puppetMaster.getCell(0, 0), new Hobbit());
 					this.increaseMana(-1*testTrapCost);			
 				}
 				
