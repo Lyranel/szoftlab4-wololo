@@ -37,6 +37,10 @@ public class Tower extends PlayerControlled {
 		super.finalize();
 	}
 
+	/**
+	 * vissza adjuk azt a cellat amiben a legtobb az ellenseg
+	 * @return
+	 */
 	public Cell getMaxTargets(){
 		TDUtils.callerLog("Tower", "getTargets", "", "-- Lekerdezi, hogy a torony szomszedjai kozul emlyiken van a legtobb ellenseg");
 		
@@ -47,7 +51,7 @@ public class Tower extends PlayerControlled {
 	}
 
 	/**
-	 * 
+	 * upgrade metodus
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){
@@ -69,11 +73,17 @@ public class Tower extends PlayerControlled {
 		target.damage(1);
 		
 	}
-
+	/**
+	 * vissza adjuk a targeteket
+	 * @return
+	 */
 	public ArrayList<Cell> getTargetList() {
 		return targetList;
 	}
-
+	/**
+	 * beallitunk egy targetlist-et
+	 * @param targetList
+	 */
 	public void setTargetList(ArrayList<Cell> targetList) {
 		this.targetList = targetList;
 	}

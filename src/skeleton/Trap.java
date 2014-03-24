@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Trap extends PlayerControlled {
 
-	private float slowAmount;
+	private float slowAmount;	// a lassitas merteke
 
 //	public Trap(){
 //
@@ -31,7 +31,7 @@ public class Trap extends PlayerControlled {
 	}
 
 	/**
-	 * 
+	 * upgrade metodus
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){

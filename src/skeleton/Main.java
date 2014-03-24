@@ -90,22 +90,25 @@ public class Main {
 	}
 
 	private static MiddleEarth testInit(ArrayList<Cell> testMap, ArrayList<Road> testRoadList, boolean log) {
-		
+		//elinditjuk a logolast
 		TDUtils.doLogging = log;
 		
 		TDUtils.simpleLog("--Init Start--");
 		
+		//hozza adjuk a cellakat
 		testMap.add(new Cell());
 		testMap.add(new Cell());
 		testMap.add(new Cell());
 		testMap.add(new Cell());
 		testMap.add(new Cell());
-
+		
+		//csinalunk egy utat
 		ArrayList<Cell> testRoad = new ArrayList<Cell>();
 		testRoad.add(testMap.get(0));
 		testRoad.add(testMap.get(1));
 		testRoadList.add(new Road(testRoad));
-
+		
+		//peldanyositjuk a middleEarth-t
 		MiddleEarth puppetMaster = new MiddleEarth(testMap, testRoadList);
 		
 		TDUtils.simpleLog("--Init End--");
