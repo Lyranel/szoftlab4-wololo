@@ -68,7 +68,7 @@ public class MiddleEarth {
 	}
 
 	/**
-	 * 
+	 * vissza ad egy cellat a map-bol
 	 * @param y
 	 * @param x
 	 */
@@ -76,11 +76,16 @@ public class MiddleEarth {
 		return map.get(x);
 
 	}
-
+	/**
+	 * vissza adjuk a playert
+	 * @return
+	 */
 	public Player getPlayer(){
-		return null;
+		return saruman;
 	}
-
+	/**
+	 * a vereseg ha ide eljutottunk akkor a jatekot elvesztettuk
+	 */
 	public void lose(){
 		TDUtils.callerLog("MiddelEarth", "lose", "", "Saruman elbukott");
 		TDUtils.doLogging = false;
@@ -88,7 +93,7 @@ public class MiddleEarth {
 	}
 
 	/**
-	 * 
+	 * a fo update ez felelos azert, hogy meghivja az updateList update-et
 	 * @param time
 	 */
 	public void update(float time){
