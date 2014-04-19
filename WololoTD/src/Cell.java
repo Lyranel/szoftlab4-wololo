@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 
 /**
@@ -9,11 +12,9 @@ public class Cell {
 
 	private IPlaceAble building;
 	private Set<Enemy> enemies;
-	private HashMap<int, Cell> neighbours;
-	private Arraylist<Cell> nextRoad;
+	private HashMap<Integer, Cell> neighbours;
+	private ArrayList<Cell> nextRoad;
 	private State state;
-	public IPlaceAble m_IPlaceAble;
-	public Enemy m_Enemy;
 
 	public Cell(){
 

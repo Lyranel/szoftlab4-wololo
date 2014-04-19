@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 
 /**
@@ -10,8 +11,6 @@ public class MiddleEarth {
 	private ArrayList<Cell> map;
 	private Player saruman;
 	private UpdateAbleList updateList;
-	public Cell m_Cell;
-	public UpdateAbleList m_UpdateAbleList;
 
 	public MiddleEarth(){
 

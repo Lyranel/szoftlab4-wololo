@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 
 /**
@@ -8,7 +9,6 @@
 public class UpdateAbleList {
 
 	private ArrayList<IUpdateAble> toUpdate;
-	public IUpdateAble m_IUpdateAble;
 
 	public UpdateAbleList(){
 

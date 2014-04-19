@@ -10,7 +10,6 @@ public abstract class Enemy extends DamageAble {
 	private Cell cLocation;
 	private Player saruman;
 	private float speed;
-	public Player m_Player;
 
 	public Enemy(){
 
@@ -46,23 +45,6 @@ public abstract class Enemy extends DamageAble {
 	 */
 	public void slow(float amount){
 
-	}
-
-}
-
-/**
- * @author HonorDragon
- * @version 1.0
- * @created 19-ápr.-2014 16:46:26
- */
-public class Enemy extends Enemy {
-
-	public Enemy(){
-
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
 	}
 
 }

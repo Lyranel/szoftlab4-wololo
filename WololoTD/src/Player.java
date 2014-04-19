@@ -10,7 +10,6 @@ public class Player {
 	private int enemyCount;
 	private int mana;
 	private MiddleEarth puppetMaster;
-	public MiddleEarth m_MiddleEarth;
 
 	public Player(){
 
