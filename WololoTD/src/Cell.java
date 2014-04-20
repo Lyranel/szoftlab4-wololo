@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
-
+import java.util.TreeSet;
 
 /**
  * @author HonorDragon
@@ -17,7 +17,9 @@ public class Cell {
 	private State state;
 
 	public Cell(){
-
+		enemies = new TreeSet<Enemy>();
+		nextRoad = new ArrayList<Cell>();
+		state = State.EMPTY;
 	}
 
 	public void finalize() throws Throwable {
@@ -29,7 +31,7 @@ public class Cell {
 	 * @param enemy
 	 */
 	public void add(Enemy enemy){
-
+		enemies.add(enemy);
 	}
 
 	/**
@@ -37,7 +39,7 @@ public class Cell {
 	 * @param cell
 	 */
 	public void addNext(Cell cell){
-
+		nextRoad.add(cell);
 	}
 
 	/**
@@ -45,7 +47,20 @@ public class Cell {
 	 * @param building
 	 */
 	public void build(IPlaceAble building){
-
+		
+		if(building == null)
+		{
+			this.building = building;
+			
+			if(this.state == State.EMPTY)
+			{
+				this.state = State.TOWER;
+			}
+			else if (this.state == State.ROAD)
+			{
+				this.state = State.TRAP;
+			}
+		}
 	}
 
 	/**
@@ -54,22 +69,35 @@ public class Cell {
 	 */
 	public void damage(int amount){
 
+		for (IDamageAble e: enemies)
+		{
+			try
+			{
+				e.damage(amount);
+			}
+			catch(Exception a)
+			{
+				
+			}
+			
+		}
 	}
 
 	public int getEnemyCount(){
-		return 0;
+		return enemies.size();
 	}
 
 	public Set<Enemy> getEnemyList(){
-		return null;
+		return enemies;
 	}
 
 	public Cell getNext(){
 		return null;
 	}
+	
 
 	public State getState(){
-		return null;
+		return state;
 	}
 
 	/**
@@ -85,7 +113,7 @@ public class Cell {
 	 * @param enemy
 	 */
 	public void remove(Enemy enemy){
-
+		enemies.remove(enemy);
 	}
 
 	/**
@@ -94,6 +122,11 @@ public class Cell {
 	 * @param index
 	 */
 	public void setNeighbour(Cell n, int index){
+
+	}
+	
+	public IPlaceAble getBuilding() {
+		return this.building;
 
 	}
 

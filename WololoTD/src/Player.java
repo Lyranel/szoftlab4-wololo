@@ -14,6 +14,12 @@ public class Player {
 	public Player(){
 
 	}
+	
+	public Player(MiddleEarth puppeteer, int enemyCount) {
+		this.puppetMaster = puppeteer;
+		this.enemyCount = enemyCount;
+		this.mana = 100;
+	}
 
 	public void finalize() throws Throwable {
 

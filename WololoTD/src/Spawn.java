@@ -9,12 +9,12 @@ import java.util.Random;
 public class Spawn extends UpdateAble {
 
 	private int currentCount;
-	private float difficulty;
+	private float difficulty = 0;
 	private int maxCount;
 	private Player saruman;
 
 	public Spawn(){
-
+		
 	}
 
 	public void finalize() throws Throwable {
@@ -23,6 +23,14 @@ public class Spawn extends UpdateAble {
 
 	private Cell getSpawnPoint(){
 		return null;
+	}
+
+	public int getMaxCount() {
+		return maxCount;
+	}
+
+	public void setMaxCount(int maxCount) {
+		this.maxCount = maxCount;
 	}
 
 	public void incCount(){
