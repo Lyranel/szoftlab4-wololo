@@ -143,7 +143,7 @@ public class TDUtils {
 				
 				
 				//map feltoltese annyi default cellaval, amekkora a palya
-				for (int i = 0; i < mapSizeX*mapSizeY-1; i++){
+				for (int i = 0; i < mapSizeX*mapSizeY; i++){
 					Cell c = new Cell();
 					map.add(c);
 				}
@@ -169,7 +169,23 @@ public class TDUtils {
 //						System.out.println("En vagyok a " + (posX + posY*mapSizeY) +".ik cella");
 						
 						//A Cella szomszedainak beallitas:
-						//map.get(posX + posY*mapSizeY)
+						if(posX != 0 ){
+							map.get(posX+ posY*mapSizeY).setNeighbour(map.get((posX + posY*mapSizeY)-1));
+//							System.out.println("Szomszedom: " + ((posX + posY*mapSizeY)-1) +".ik cella");
+						}
+						if(posX != (mapSizeX-1) ){
+							map.get(posX + posY*mapSizeY).setNeighbour(map.get((posX + posY*mapSizeY)+1));
+//							System.out.println("Szomszedom: " + ((posX + posY*mapSizeY)+1) +".ik cella");
+						}
+						if(posY != 0 ){
+							map.get(posX + posY*mapSizeY).setNeighbour(map.get((posX + posY*mapSizeY)-mapSizeX));
+//							System.out.println("Szomszedom: " + ((posX + posY*mapSizeY)-mapSizeX) +".ik cella");
+						}
+						if(posY != (mapSizeY-1)){
+							map.get(posX + posY*mapSizeY).setNeighbour(map.get((posX + posY*mapSizeY)+mapSizeX));
+//							System.out.println("Szomszedom: " + ((posX + posY*mapSizeY)+mapSizeX) +".ik cella");
+						}
+//						System.out.println("--------------------------------------------------------");
 						
 						if(eElement.getElementsByTagName("Next_road").getLength() != 0){
 							for(int i = 0; i < eElement.getElementsByTagName("Next_road").getLength(); i++){
@@ -188,6 +204,7 @@ public class TDUtils {
 						}
 						if(eElement.getElementsByTagName("Spawn_point").getLength() != 0){
 //							System.out.println("Spawn_point vagyok!");
+							Road.roadList.add(map.get(posX+ posY*mapSizeY));
 						}
 						if(eElement.getElementsByTagName("Mount_doom").getLength() != 0){
 //							System.out.println("Mount_doom vagyok!");
