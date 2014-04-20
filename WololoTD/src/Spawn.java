@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Random;
 
 /**
  * @author HonorDragon
@@ -11,6 +11,7 @@ public class Spawn extends UpdateAble {
 	private int currentCount;
 	private float difficulty;
 	private int maxCount;
+	private Player saruman;
 
 	public Spawn(){
 
@@ -41,7 +42,49 @@ public class Spawn extends UpdateAble {
 	 * @param time
 	 */
 	public void update(float time){
-
+			
+		if(delta >= maxDelta)
+		{
+			if(currentCount < maxCount)
+			{
+				Cell sPoint = getSpawnPoint();
+				
+				Enemy myEvilChild;
+				
+				incCount();
+			}
+			
+		}
+		else
+		{
+				incDelta(time);
+		}
+		
+	}
+	
+	private Enemy getEnemy(Cell sPoint)
+	{
+		 Random gen = new Random();
+		 int i = gen.nextInt(100)+1;
+		 
+		 if(i > 0 && i <= 25)
+		 {
+			 return new Hobbit(sPoint, saruman);
+		 }
+		 else if(i > 25 && i <= 50)
+		 {
+			 return new Human(sPoint, saruman);
+		 }
+		 else if(i > 50 && i <= 75)
+		 {
+			 return new Dwarf(sPoint, saruman);
+		 }
+		 else if(i > 75 && i <= 100)
+		 {
+			 return new Elf(sPoint, saruman);
+		 }
+		
+		return null;
 	}
 
 	
