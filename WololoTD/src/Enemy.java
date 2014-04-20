@@ -83,4 +83,22 @@ public abstract class Enemy extends DamageAble {
 
 	}
 
+	@Override
+	public void update(float time) {
+		super.update(time);
+		
+		if(delta >= maxDelta)
+		{
+			move();
+			delta = 0;
+		}
+		else
+		{
+			incDelta(time);
+		}
+	}
+	
+	
+	
+
 }
