@@ -13,7 +13,7 @@ public class Elf extends Enemy {
 
 	public Elf(Cell sPoint, Player saruman) {
 		super(sPoint,saruman);
-		this.manaCost = 7;
+		this.manaCost = 12;
 	}
 
 	public void finalize() throws Throwable {

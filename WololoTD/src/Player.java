@@ -94,7 +94,7 @@ public class Player {
 	}
 
 	public void increaseEnemy(){
-
+		enemyCount++;
 	}
 
 	/**
