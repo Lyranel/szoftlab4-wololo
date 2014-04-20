@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Road {
 
-	public ArrayList<Cell> roadList;
+	public static ArrayList<Cell> roadList;
 
 	public Road(){
 
