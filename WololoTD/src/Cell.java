@@ -129,5 +129,9 @@ public class Cell {
 		return this.building;
 
 	}
+	
+	public void mountDoomSetter(){
+		this.state = State.MOUNTDOOM;
+	}
 
 }
