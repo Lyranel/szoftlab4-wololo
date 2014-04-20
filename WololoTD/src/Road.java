@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class Road {
 
-	public static ArrayList<Cell> roadList;
+	public static ArrayList<Cell> roadList = new ArrayList<Cell>();
 
 	public Road(){
-
+		
 	}
 
 	public void finalize() throws Throwable {
