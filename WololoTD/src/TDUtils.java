@@ -9,10 +9,9 @@ public class TDUtils {
 		public static boolean debug = false;
 		
 		/**
-		 *  param of --log switch
-		 *  if null, log only to console
+		 *  param of --map switch
 		 */
-		public static PrintWriter logfile;
+		public static String map = "DefaultMap.xml";
 		
 		/**
 		 *  param of --branch switch
@@ -56,6 +55,12 @@ public class TDUtils {
 		 *  2 : off
 		 */
 		public static int split = 0;
+		
+		/**
+		 *  param of --log switch
+		 *  if null, log only to console
+		 */
+		public static PrintWriter logfile;
 
 		 /**
 		  * Syslogging 
