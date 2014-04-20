@@ -17,6 +17,14 @@ public class Tower extends PlayerControlled {
 	public Tower(){
 
 	}
+	
+	/**
+	 * 
+	 * @param home
+	 */
+	public Tower(Cell home) {
+		
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();

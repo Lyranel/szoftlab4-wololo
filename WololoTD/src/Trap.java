@@ -12,6 +12,14 @@ public class Trap extends PlayerControlled {
 	public Trap(){
 
 	}
+	
+	/**
+	 * 
+	 * @param home
+	 */
+	public Trap(Cell home) {
+		
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();
