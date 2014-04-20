@@ -7,8 +7,7 @@
  */
 public abstract class PlayerControlled extends UpdateAble implements IPlaceAble {
 
-	private Cell home;
-	private int manaCost;
+	protected Cell home;
 	protected int upgradeCount = 0;
 
 	public PlayerControlled(){

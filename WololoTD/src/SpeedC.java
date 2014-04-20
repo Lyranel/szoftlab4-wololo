@@ -8,7 +8,7 @@
 public class SpeedC extends Crystal {
 
 	public SpeedC(){
-
+		super.whatAmI = "speed";
 	}
 
 	public void finalize() throws Throwable {

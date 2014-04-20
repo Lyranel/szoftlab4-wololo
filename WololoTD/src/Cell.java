@@ -49,18 +49,14 @@ public class Cell {
 	 */
 	public void build(IPlaceAble building){
 		
-		if(building == null)
-		{
-			this.building = building;
+		this.building = building;
 			
-			if(this.state == State.EMPTY)
-			{
-				this.state = State.TOWER;
-			}
-			else if (this.state == State.ROAD)
-			{
-				this.state = State.TRAP;
-			}
+		if(this.state == State.EMPTY) {
+			this.state = State.TOWER;
+		}
+		
+		else if (this.state == State.ROAD) {
+			this.state = State.TRAP;
 		}
 	}
 

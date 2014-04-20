@@ -24,6 +24,11 @@ public class Tower extends PlayerControlled {
 	 */
 	public Tower(Cell home) {
 		
+		super.home = home;
+		this.damage = 15;
+		this.range = 1;
+		this.speed = 0.5f;
+		
 	}
 
 	public void finalize() throws Throwable {
@@ -47,7 +52,34 @@ public class Tower extends PlayerControlled {
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){
-
+		
+		try {
+		
+			if (upgradeCount < 3) {
+			
+				if (Cryst.whatAmI.equals("damage")) {
+					damage += 5;
+					upgradeCount++;
+				}
+				
+				else if (Cryst.whatAmI.equals("range")) {
+					range++;
+					upgradeCount++;
+				}
+				
+				else if (Cryst.whatAmI.equals("speed")) {
+					speed -= 0.1f;
+					upgradeCount++;
+				}
+				
+				else throw new Exception("This building cannot be upgraded with this type of crystal.");
+			}
+			
+			else throw new Exception("This building cannot be upgraded anymore.");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

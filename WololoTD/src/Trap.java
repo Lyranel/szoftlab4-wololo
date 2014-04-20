@@ -19,6 +19,9 @@ public class Trap extends PlayerControlled {
 	 */
 	public Trap(Cell home) {
 		
+		super.home = home;
+		this.slowAmount = 0.1f;
+		
 	}
 
 	public void finalize() throws Throwable {
@@ -38,7 +41,24 @@ public class Trap extends PlayerControlled {
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){
-
+		
+		try {
+			
+			if (upgradeCount < 3) {
+			
+				if (Cryst.whatAmI.equals("trap")) {
+					slowAmount += 0.1f;
+					upgradeCount++;
+				}
+				
+				else throw new Exception("This building cannot be upgraded with this type of crystal.");
+			}
+			
+			else throw new Exception("This building cannot be upgraded anymore.");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

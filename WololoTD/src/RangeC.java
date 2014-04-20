@@ -8,7 +8,7 @@
 public class RangeC extends Crystal {
 
 	public RangeC(){
-
+		super.whatAmI = "range";
 	}
 
 	public void finalize() throws Throwable {

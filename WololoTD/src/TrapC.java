@@ -8,7 +8,7 @@
 public class TrapC extends Crystal {
 
 	public TrapC(){
-
+		super.whatAmI = "trap";
 	}
 
 	public void finalize() throws Throwable {

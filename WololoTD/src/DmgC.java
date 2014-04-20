@@ -8,7 +8,7 @@
 public class DmgC extends Crystal {
 
 	public DmgC(){
-
+		super.whatAmI = "damage";
 	}
 
 	public void finalize() throws Throwable {

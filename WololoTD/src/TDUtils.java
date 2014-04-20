@@ -25,6 +25,12 @@ public class TDUtils {
 		public static String map = "DefaultMap.xml";
 		public static int mapSizeX;
 		public static int mapSizeY;
+		
+		public static int towerCost = 50;
+		public static int trapCost = 35;
+		public static int towerCrystalCost = 25;
+		public static int trapCrystalCost = 20;
+		
 		/**
 		 *  param of --branch switch
 		 *  0 : random

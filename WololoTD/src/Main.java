@@ -273,22 +273,22 @@ public class Main {
 				
 				if (type.equals("damage") && 
 						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getBuilding().upgrade(new DmgC());
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new DmgC());
 				}
 				
 				else if (type.equals("range") && 
 						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getBuilding().upgrade(new RangeC());
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new RangeC());
 				}
 				
 				else if (type.equals("speed") && 
 						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getBuilding().upgrade(new SpeedC());
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new SpeedC());
 				}
 				
 				else if (type.equals("trap") && 
 						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TRAP) {
-					puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getBuilding().upgrade(new TrapC());
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new TrapC());
 				}
 				
 				else throw new Exception("Unrecognized command.");
