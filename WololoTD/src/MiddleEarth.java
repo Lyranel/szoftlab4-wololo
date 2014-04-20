@@ -14,7 +14,13 @@ public class MiddleEarth {
 
 	public MiddleEarth(){
 		updateList = UpdateAble.getUpdateList();
+		TDUtils.map = "C:\\DefaultMap.xml";
+		saruman = new Player(this);
 		map = TDUtils.mapReader();
+		Spawn gonoszBugyor = new Spawn(saruman);
+		
+		
+		
 	}
 
 	public void finalize() throws Throwable {

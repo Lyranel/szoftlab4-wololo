@@ -15,9 +15,8 @@ public class Player {
 
 	}
 	
-	public Player(MiddleEarth puppeteer, int enemyCount) {
+	public Player(MiddleEarth puppeteer) {
 		this.puppetMaster = puppeteer;
-		this.enemyCount = enemyCount;
 		this.mana = 100;
 	}
 
@@ -78,7 +77,7 @@ public class Player {
 	 * @param num
 	 */
 	public void setEnemyCount(int num){
-
+		enemyCount = num;
 	}
 
 	/**
