@@ -1,46 +1,79 @@
+import java.io.PrintWriter;
+
 
 public class TDUtils {
 
-	//logolunk vagy nem ha false akkor nem lesz logolva semmi
-		public static boolean doLogging = true;
-
 		/**
-		 * Ez az egyszeru kiiratas formazva metodusok ezt hivjak meg a logolashoz
-		 * @param className	az osztaly neve
-		 * @param methodName a metodus neve
-		 * @param input	az input amit a metodus kap
-		 * @param comment komment a kiiratashoz
+		 *  Turn on more extensive logging
 		 */
-		 public static void callerLog(String className, String methodName, String input, String comment){
-			 if(doLogging)
-			 System.out.println("called: " + className + "::" + methodName + "(" + input + ")" + (comment.length() != 0 ? " -- " + comment : ""));
-		 }
+		public static boolean debug = false;
+		
+		/**
+		 *  param of --log switch
+		 *  if null, log only to console
+		 */
+		public static PrintWriter logfile;
+		
+		/**
+		 *  param of --branch switch
+		 *  0 : random
+		 *  1 : first
+		 *  2 : round-robin
+		 */
+		public static int branch = 0;
+		
+		/**
+		 *  param of --spawn switch
+		 *  0 : random
+		 *  1 : first
+		 *  2 : round-robin
+		 */
+		public static int spawn = 0;
+		
+		/**
+		 *  param of --enemy switch
+		 *  0 : random
+		 *  1 : round-robin
+		 *  2 : dwarf
+		 *  3 : elf
+		 *  4 : hobbit
+		 *  5 : human
+		 */
+		public static int enemy = 0;
+		
+		/**
+		 *  param of --fog switch
+		 *  0 : random
+		 *  1 : on
+		 *  2 : off
+		 */
+		public static int fog = 0;
+		
+		/**
+		 *  param of --split switch
+		 *  0 : random
+		 *  1 : first
+		 *  2 : off
+		 */
+		public static int split = 0;
 
 		 /**
-		  * a create logolas formazasa
-		  * @param className az osztaly neve
-		  * @param instanceName az osztaly peldanyanak neve
-		  * @param creatorClassName letrehozo osztaly neve
-		  * @param creatorInstanceName a letrehozo osztaly peldanyanak neve
-		  * @param comment komment
+		  * Syslogging 
+		  * @param log event to log
 		  */
-		 public static void createLog(String className, String instanceName, String creatorClassName, String creatorInstanceName, String comment){
-			 if(doLogging)
-			 System.out.println("created: " + className + ":" + instanceName + " by " + creatorClassName + ":" + creatorInstanceName + (comment.length() != 0 ? " -- " + comment : ""));
-		 }
-		 /**
-		  * az alap logolas 
-		  * @param log a szoveg amit ki akarunk iratni
+		public static void sLog(String log) {
+			System.out.println(log);
+			if (logfile != null)
+				logfile.println(log);
+		}
+		
+		/**
+		  * Debug logging 
+		  * @param log event to log
 		  */
-		 public static void simpleLog(String log){
-			 if(doLogging)
-			 System.out.println(log);
-		 }
-		 /**
-		  * kapcsolo a doLogging-nak
-		  */
-		 public static void Logging() {
-			doLogging = !doLogging;
+		public static void dLog(String log) {
+			if (debug)
+				sLog("[DEBUG] " + log);
 		}
 	
 	
