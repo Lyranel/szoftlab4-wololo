@@ -16,12 +16,27 @@ public class Spawn extends UpdateAble {
 	public Spawn(){
 		
 	}
+	
+	public Spawn(Player saru)
+	{
+		saruman = saru;
+	}
 
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
 
 	private Cell getSpawnPoint(){
+		
+		if(TDUtils.spawn == 0)
+		{
+			return Road.roadList.get(new Random().nextInt(Road.roadList.size()));
+		}
+		else if(TDUtils.spawn == 1)
+		{
+			return Road.roadList.get(0);
+		}
+		
 		return null;
 	}
 
@@ -34,7 +49,7 @@ public class Spawn extends UpdateAble {
 	}
 
 	public void incCount(){
-		
+		currentCount++;
 	}
 
 	/**
