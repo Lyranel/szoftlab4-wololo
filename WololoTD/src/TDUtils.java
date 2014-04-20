@@ -1,4 +1,15 @@
+import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
 
 
 public class TDUtils {
@@ -81,5 +92,84 @@ public class TDUtils {
 				sLog("[DEBUG] " + log);
 		}
 	
+	
+		public ArrayList<Cell> mapReader(File file){	
+			//Map letrehozasa
+			ArrayList<Cell> map = new ArrayList<Cell>();
+			
+			try {	 
+				//XML beolvasasa:
+				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+				Document doc = dBuilder.parse(file);
+			 	doc.getDocumentElement().normalize();
+//				System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+				
+			 	//Map meretenek megallapitasa a beolvasott XML Map tagjebol:
+				NodeList nListMap = doc.getElementsByTagName("Map");
+				Node nNodeMap = nListMap.item(0);
+				Element eElementMap = (Element) nNodeMap;
+				int mapSizeX = Integer.parseInt(eElementMap.getAttribute("size_x"));
+				int mapSizeY = Integer.parseInt(eElementMap.getAttribute("size_y"));
+//				System.out.println("Map size x: " + mapSizeX);
+//				System.out.println("Map size y: " + mapSizeY);
+				
+				//map feltoltese annyi default cellaval, amekkora a palya
+				for (int i = 0; i < mapSizeX*mapSizeY-1; i++){
+					Cell c = new Cell();
+					map.add(c);
+				}
+				
+				NodeList nList = doc.getElementsByTagName("Cell");
+			 
+//				System.out.println("----------------------------");
+				
+				for (int temp = 0; temp < nList.getLength(); temp++) {
+			 
+					Node nNode = nList.item(temp);
+			 
+//					System.out.println("\nCurrent Element :" + nNode.getNodeName());
+			 
+					if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+			 
+						Element eElement = (Element) nNode;
+			 
+//						System.out.println("Pos x : " + eElement.getElementsByTagName("Pos_x").item(0).getTextContent());
+//						System.out.println("Pos y : " + eElement.getElementsByTagName("Pos_y").item(0).getTextContent());
+						int posX = Integer.parseInt(eElement.getElementsByTagName("Pos_x").item(0).getTextContent());
+						int posY = Integer.parseInt(eElement.getElementsByTagName("Pos_y").item(0).getTextContent());
+//						System.out.println("En vagyok a " + (posX + posY*mapSizeY) +".ik cella");
+						
+						if(eElement.getElementsByTagName("Next_road").getLength() != 0){
+							for(int i = 0; i < eElement.getElementsByTagName("Next_road").getLength(); i++){
+//								System.out.println("Next_road : ");
+								Element nextRoadElement =(Element) eElement.getElementsByTagName("Next_road").item(i);
+								
+								int posXNeigh = Integer.parseInt(nextRoadElement.getElementsByTagName("Pos_x").item(0).getTextContent());
+								int posYNeigh = Integer.parseInt(nextRoadElement.getElementsByTagName("Pos_y").item(0).getTextContent());
+								map.get(posX + posY*mapSizeY).addNext(map.get(posXNeigh + posYNeigh*mapSizeY));
+//								System.out.println("Az uton a szomszedom a : " + (posXNeigh*mapSizeX + posYNeigh) + ".ik cella.");
+//	
+//								System.out.println("\t" + "Pos x : " + nextRoadElement.getElementsByTagName("Pos_x").item(0).getTextContent());
+//								System.out.println("\t" + "Pos y : " + nextRoadElement.getElementsByTagName("Pos_y").item(0).getTextContent());
+						
+							}
+						}
+						if(eElement.getElementsByTagName("Spawn_point").getLength() != 0){
+//							System.out.println("Spawn_point vagyok!");
+						}
+						if(eElement.getElementsByTagName("Mount_doom").getLength() != 0){
+//							System.out.println("Mount_doom vagyok!");
+							map.get(posX + posY*mapSizeY).mountDoomSetter();
+						}
+					}
+				}
+			    } catch (Exception e) {
+				e.printStackTrace();
+			    }
+			
+			
+			return map;
+		}
 	
 }
