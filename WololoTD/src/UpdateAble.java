@@ -7,12 +7,12 @@
  */
 public abstract class UpdateAble implements IUpdateAble {
 
-	protected float delta = 0;
-	protected float maxDelta = 1;
-	private static UpdateAbleList updateList;
+	protected float delta = 0;		//a delta ido
+	protected float maxDelta = 1;	//a max delta ha ez == delta akkor esemeny
+	private static UpdateAbleList updateList = new UpdateAbleList();	//hozzaferes a statikus updateList-hez
 
 	public UpdateAble(){
-
+		updateList.add(this);
 	}
 
 	public void finalize() throws Throwable {
@@ -20,7 +20,7 @@ public abstract class UpdateAble implements IUpdateAble {
 	}
 
 	public static UpdateAbleList getUpdateList(){
-		return null;
+		return updateList;
 	}
 
 	/**
@@ -28,7 +28,7 @@ public abstract class UpdateAble implements IUpdateAble {
 	 * @param time
 	 */
 	public void incDelta(float time){
-
+		delta += time;
 	}
 
 	/**
@@ -37,6 +37,10 @@ public abstract class UpdateAble implements IUpdateAble {
 	 */
 	public void update(float time){
 
+	}
+	
+	public void remove(){
+		updateList.remove(this);
 	}
 
 }

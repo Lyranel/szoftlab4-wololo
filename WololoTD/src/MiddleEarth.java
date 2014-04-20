@@ -13,7 +13,7 @@ public class MiddleEarth {
 	private UpdateAbleList updateList;
 
 	public MiddleEarth(){
-
+		updateList = UpdateAble.getUpdateList();
 	}
 
 	public void finalize() throws Throwable {

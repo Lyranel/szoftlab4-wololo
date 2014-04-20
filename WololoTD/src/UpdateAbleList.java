@@ -11,7 +11,7 @@ public class UpdateAbleList {
 	private ArrayList<IUpdateAble> toUpdate;
 
 	public UpdateAbleList(){
-
+		toUpdate = new ArrayList<IUpdateAble>();
 	}
 
 	public void finalize() throws Throwable {
@@ -23,7 +23,7 @@ public class UpdateAbleList {
 	 * @param upd
 	 */
 	public void add(IUpdateAble upd){
-
+		toUpdate.add(upd);
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class UpdateAbleList {
 	 * @param upd
 	 */
 	public void remove(IUpdateAble upd){
-
+		toUpdate.remove(upd);
 	}
 
 	/**
@@ -39,7 +39,24 @@ public class UpdateAbleList {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
+		ArrayList<IUpdateAble> cpyToUpdate = new ArrayList<IUpdateAble>(toUpdate);
+		
+		for(IUpdateAble e: cpyToUpdate)
+		{
+			try
+			{
+				e.update(time);
+			}
+			catch(NullPointerException a)
+			{
+				
+			}
+			
+		}
+		
+		
+		
 	}
 
 }
