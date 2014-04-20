@@ -20,13 +20,6 @@ public class Human extends Enemy {
 		super.finalize();
 	}
 
-	/**
-	 * 
-	 * @param location
-	 */
-	public void add(Cell location){
-
-	}
 
 	/**
 	 * 
@@ -45,7 +38,7 @@ public class Human extends Enemy {
 	 * @param amount
 	 */
 	public void slow(float amount){
-
+		//TODO: slow(float amount)
 	}
 
 }
