@@ -38,11 +38,18 @@ public class Player {
 	}
 
 	public void decreaseEnemyCount(){
-
+		
+		enemyCount--;
+		
+		if(this.enemyCount <= 0)
+		{
+			puppetMaster.win();
+		}
+		
 	}
 
 	public int getEnemyCount(){
-		return 0;
+		return enemyCount;
 	}
 
 	public void increaseEnemy(){
@@ -54,7 +61,9 @@ public class Player {
 	 * @param mana
 	 */
 	public void increaseMana(int mana){
-
+		
+		this.mana += mana;
+		
 	}
 
 	/**
@@ -81,6 +90,11 @@ public class Player {
 	 */
 	public void upgradeTrap(int posY, int posX){
 
+	}
+
+	public void lose() {
+		puppetMaster.lose();
+		
 	}
 
 }

@@ -9,6 +9,14 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 
 	private int health;
 
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
 	public DamageAble(){
 
 	}
