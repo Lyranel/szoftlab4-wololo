@@ -62,7 +62,7 @@ public abstract class Enemy extends DamageAble {
 		
 		Cell nextCell = cLocation.getNext();
 		
-		if(nextCell != null)
+		if(nextCell != null)	
 		{
 			cLocation.remove(this);
 			nextCell.add(this);

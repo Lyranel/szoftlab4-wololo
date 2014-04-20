@@ -23,7 +23,8 @@ public class TDUtils {
 		 *  param of --map switch
 		 */
 		public static String map = "DefaultMap.xml";
-		
+		public static int mapSizeX;
+		public static int mapSizeY;
 		/**
 		 *  param of --branch switch
 		 *  0 : random
@@ -32,6 +33,23 @@ public class TDUtils {
 		 */
 		public static int branch = 0;
 		
+		public static int getMapSizeX() {
+			return mapSizeX;
+		}
+
+		public static void setMapSizeX(int mapSizeX) {
+			TDUtils.mapSizeX = mapSizeX;
+		}
+
+		public static int getMapSizeY() {
+			return mapSizeY;
+		}
+
+		public static void setMapSizeY(int mapSizeY) {
+			TDUtils.mapSizeY = mapSizeY;
+		}
+
+
 		/**
 		 *  param of --spawn switch
 		 *  0 : random
@@ -93,7 +111,8 @@ public class TDUtils {
 		}
 	
 	
-		public ArrayList<Cell> mapReader(File file){	
+		public static ArrayList<Cell> mapReader(){	
+			File file = new File(map);
 			//Map letrehozasa
 			ArrayList<Cell> map = new ArrayList<Cell>();
 			
@@ -113,6 +132,9 @@ public class TDUtils {
 				int mapSizeY = Integer.parseInt(eElementMap.getAttribute("size_y"));
 //				System.out.println("Map size x: " + mapSizeX);
 //				System.out.println("Map size y: " + mapSizeY);
+				setMapSizeX(mapSizeX);
+				setMapSizeY(mapSizeY);
+				
 				
 				//map feltoltese annyi default cellaval, amekkora a palya
 				for (int i = 0; i < mapSizeX*mapSizeY-1; i++){
@@ -139,6 +161,9 @@ public class TDUtils {
 						int posX = Integer.parseInt(eElement.getElementsByTagName("Pos_x").item(0).getTextContent());
 						int posY = Integer.parseInt(eElement.getElementsByTagName("Pos_y").item(0).getTextContent());
 //						System.out.println("En vagyok a " + (posX + posY*mapSizeY) +".ik cella");
+						
+						//A Cella szomszedainak beallitas:
+						//map.get(posX + posY*mapSizeY)
 						
 						if(eElement.getElementsByTagName("Next_road").getLength() != 0){
 							for(int i = 0; i < eElement.getElementsByTagName("Next_road").getLength(); i++){
