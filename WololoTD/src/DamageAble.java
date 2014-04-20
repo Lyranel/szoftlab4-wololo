@@ -30,7 +30,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
-
+		health -= amount;
 	}
 
 	/**
@@ -38,7 +38,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	 * @param time
 	 */
 	public void incDelta(float time){
-
+		super.incDelta(time);
 	}
 
 	/**

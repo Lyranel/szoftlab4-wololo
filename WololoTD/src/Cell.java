@@ -19,6 +19,7 @@ public class Cell {
 	public Cell(){
 		enemies = new TreeSet<Enemy>();
 		nextRoad = new ArrayList<Cell>();
+		neighbours = new HashMap<Integer, Cell>();
 		state = State.EMPTY;
 	}
 
@@ -92,6 +93,7 @@ public class Cell {
 	}
 
 	public Cell getNext(){
+		//TODO: Kell a random valasztas
 		return null;
 	}
 	
@@ -105,6 +107,7 @@ public class Cell {
 	 * @param range
 	 */
 	public Set<Cell> getTargets(int range){
+		//TODO: Kell a Tower range
 		return null;
 	}
 
@@ -122,7 +125,7 @@ public class Cell {
 	 * @param index
 	 */
 	public void setNeighbour(Cell n, int index){
-
+		neighbours.put(index, n);
 	}
 	
 	public IPlaceAble getBuilding() {
