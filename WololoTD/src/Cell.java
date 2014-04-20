@@ -12,14 +12,14 @@ public class Cell {
 
 	private IPlaceAble building;
 	private Set<Enemy> enemies;
-	private HashMap<Integer, Cell> neighbours;
+	private ArrayList<Cell> neighbours;
 	private ArrayList<Cell> nextRoad;
 	private State state;
 
 	public Cell(){
 		enemies = new TreeSet<Enemy>();
 		nextRoad = new ArrayList<Cell>();
-		neighbours = new HashMap<Integer, Cell>();
+		neighbours = new ArrayList<Cell>();
 		state = State.EMPTY;
 	}
 
@@ -106,9 +106,17 @@ public class Cell {
 	 * 
 	 * @param range
 	 */
-	public Set<Cell> getTargets(int range){
-		//TODO: Kell a Tower range
-		return null;
+	public void getTargets(int range, Set<Cell> targets){
+		
+		if (state == State.ROAD || state == State.TRAP) {
+			targets.add(this);
+		}
+		
+		if (range > 0) {
+			for (Cell c : neighbours) {
+				c.getTargets(range - 1, targets);
+			}
+		}
 	}
 
 	/**
@@ -124,8 +132,8 @@ public class Cell {
 	 * @param n
 	 * @param index
 	 */
-	public void setNeighbour(Cell n, int index){
-		neighbours.put(index, n);
+	public void setNeighbour(Cell n){
+		neighbours.add(n);
 	}
 	
 	public IPlaceAble getBuilding() {

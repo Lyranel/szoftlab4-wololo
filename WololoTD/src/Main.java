@@ -238,11 +238,11 @@ public class Main {
 			if (type != null && position != null) {
 			
 				if (type.equals("tower")) {
-					building = new Tower(puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])));
+					puppetMaster.getPlayer().buildTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]));
 				}
 			
 				else if (type.equals("trap")) {
-					building = new Trap(puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])));
+					puppetMaster.getPlayer().buildTrap(Integer.parseInt(position[0]), Integer.parseInt(position[1]));
 				}
 				
 				else throw new Exception("Unrecognized command.");
