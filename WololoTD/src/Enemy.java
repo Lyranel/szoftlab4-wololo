@@ -59,7 +59,20 @@ public abstract class Enemy extends DamageAble {
 	}
 
 	public void move(){
-
+		
+		Cell nextCell = cLocation.getNext();
+		
+		if(nextCell != null)
+		{
+			cLocation.remove(this);
+			nextCell.add(this);
+			cLocation = nextCell;
+		}
+		else
+		{
+			saruman.lose();
+		}
+		
 	}
 
 	/**

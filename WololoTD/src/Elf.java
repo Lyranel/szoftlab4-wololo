@@ -33,11 +33,11 @@ public class Elf extends Enemy {
 	 * @param amount
 	 */
 	public void damage(int amount){
-
+		super.damage(amount);
 	}
 
 	public void move(){
-
+		super.move();
 	}
 
 	/**
