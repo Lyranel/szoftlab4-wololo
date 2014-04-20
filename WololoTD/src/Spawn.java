@@ -11,7 +11,6 @@ public class Spawn extends UpdateAble {
 	private int currentCount;
 	private float difficulty;
 	private int maxCount;
-	private ArrayList<Cell> spawnPoints;
 
 	public Spawn(){
 
@@ -26,7 +25,7 @@ public class Spawn extends UpdateAble {
 	}
 
 	public void incCount(){
-
+		
 	}
 
 	/**
@@ -45,4 +44,5 @@ public class Spawn extends UpdateAble {
 
 	}
 
+	
 }
