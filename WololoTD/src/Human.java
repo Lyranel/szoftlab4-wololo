@@ -11,6 +11,11 @@ public class Human extends Enemy {
 
 	}
 
+	public Human(Cell sPoint, Player saruman) {
+		super(sPoint,saruman);
+		this.manaCost = 10;
+	}
+
 	public void finalize() throws Throwable {
 		super.finalize();
 	}

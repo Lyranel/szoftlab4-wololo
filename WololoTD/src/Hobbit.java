@@ -8,7 +8,12 @@
 public class Hobbit extends Enemy {
 
 	public Hobbit(){
+		
+	}
 
+	public Hobbit(Cell sPoint, Player saruman) {
+		super(sPoint,saruman);
+		this.manaCost = 7;
 	}
 
 	public void finalize() throws Throwable {

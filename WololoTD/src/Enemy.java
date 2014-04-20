@@ -10,10 +10,17 @@ public abstract class Enemy extends DamageAble {
 	private Cell cLocation;
 	private Player saruman;
 	private float speed;
+	protected int manaCost;
 
 	public Enemy(){
 
 	}
+
+	public Enemy(Cell sPoint, Player saruman2) {
+		this.add(sPoint);
+		this.saruman = saruman2;
+	}
+
 
 	public void finalize() throws Throwable {
 		super.finalize();
@@ -24,7 +31,8 @@ public abstract class Enemy extends DamageAble {
 	 * @param location
 	 */
 	public void add(Cell location){
-
+		cLocation = location;
+		location.add(this);
 	}
 
 	/**
@@ -32,7 +40,22 @@ public abstract class Enemy extends DamageAble {
 	 * @param amount
 	 */
 	public void damage(int amount){
+		
+		super.damage(amount);
+		
+		if(this.getHealth() <= 0)
+		{
+			this.death();
+		}
+		
+	}
 
+	private void death() {
+		
+		cLocation.remove(this);
+		saruman.decreaseEnemyCount();
+		saruman.increaseMana(manaCost);
+		this.remove();
 	}
 
 	public void move(){
