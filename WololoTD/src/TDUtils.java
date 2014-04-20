@@ -112,7 +112,7 @@ public class TDUtils {
 	
 	
 		public static ArrayList<Cell> mapReader(){	
-			File file = new File("C:/Users/Agi/Downloads/DefaultMap.xml");
+			File file = new File(map);
 			//Map letrehozasa
 			ArrayList<Cell> map = new ArrayList<Cell>();
 			
@@ -198,7 +198,7 @@ public class TDUtils {
 						}
 						if(eElement.getElementsByTagName("Spawn_point").getLength() != 0){
 //							System.out.println("Spawn_point vagyok!");
-							
+							Road.roadList.add(map.get(posX+ posY*mapSizeY));
 						}
 						if(eElement.getElementsByTagName("Mount_doom").getLength() != 0){
 //							System.out.println("Mount_doom vagyok!");
