@@ -14,6 +14,7 @@ public class MiddleEarth {
 
 	public MiddleEarth(){
 		updateList = UpdateAble.getUpdateList();
+		map = TDUtils.mapReader();
 	}
 
 	public void finalize() throws Throwable {
@@ -46,7 +47,7 @@ public class MiddleEarth {
 	 * @param time
 	 */
 	public void update(float time){
-
+		updateList.update(time);
 	}
 
 	public void win(){

@@ -22,7 +22,7 @@ public class Player {
 	}
 
 	public void finalize() throws Throwable {
-
+		//TODO	
 	}
 
 	/**
@@ -31,6 +31,7 @@ public class Player {
 	 * @param posX
 	 */
 	public void buildTower(int posY, int posX){
+		
 
 	}
 
