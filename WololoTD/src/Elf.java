@@ -38,8 +38,9 @@ public class Elf extends Enemy {
 	 * 
 	 * @param amount
 	 */
+	@Override
 	public void slow(float amount){
-		//TODO: slow(float amount)
+		
 	}
 	public String print(){
 		String print = "Elf - " + getHealth() + "/" + TDUtils.ElfHP + " speed: " + maxDelta;

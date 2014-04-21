@@ -81,7 +81,7 @@ public abstract class Enemy extends DamageAble {
 	 * @param amount
 	 */
 	public void slow(float amount){
-
+		speed = 1 - amount;
 	}
 
 	@Override

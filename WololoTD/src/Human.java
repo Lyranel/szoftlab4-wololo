@@ -34,13 +34,7 @@ public class Human extends Enemy {
 		super.move();
 	}
 
-	/**
-	 * 
-	 * @param amount
-	 */
-	public void slow(float amount){
-		//TODO: slow(float amount)
-	}
+	
 	
 	public String print(){
 		String print = "Human - " + getHealth() + "/" + TDUtils.HumanHP + " speed: " + maxDelta;

@@ -34,13 +34,7 @@ public class Dwarf extends Enemy {
 		super.move();
 	}
 
-	/**
-	 * 
-	 * @param amount
-	 */
-	public void slow(float amount){
-		//TODO: slow(float amount)
-	}
+	
 	public String print(){
 		String print = "Dwarf - " + getHealth() + "/" + TDUtils.DwarfHP + " speed: " + maxDelta;
 		return print;

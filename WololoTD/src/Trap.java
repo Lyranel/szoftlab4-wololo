@@ -33,7 +33,11 @@ public class Trap extends PlayerControlled {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
+		for(Enemy e: this.home.getEnemyList())
+		{
+			e.slow(slowAmount);
+		}
 	}
 
 	/**
