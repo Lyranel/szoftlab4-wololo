@@ -30,9 +30,9 @@ public class Tower extends PlayerControlled {
 	public Tower(Cell home) {
 		
 		if (TDUtils.fog == 1) {
-			this.range = 0;
+			this.range = 1;
 		}
-		else this.range = 1;
+		else this.range = 2;
 		
 		super.home = home;
 		this.damage = 15;
