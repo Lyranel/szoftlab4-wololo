@@ -105,7 +105,13 @@ public class Cell {
 
 	/**
 	 * Kedves comment.
+	 * 
+	 * This function is called by Tower objects on their home attribute to populate their targets, which contains the roads in their range.
+	 * The function gets propagated by the recursive call from the home Cell, adding each Cell which has either ROAD or TRAP state.
+	 * The parameter targets is a Set for all Cells to be added only once. 
+	 * 
 	 * @param range
+	 * @param targets
 	 */
 	public void getTargets(int range, Set<Cell> targets){
 		
