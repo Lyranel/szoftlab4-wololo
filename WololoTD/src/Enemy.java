@@ -9,7 +9,7 @@ public abstract class Enemy extends DamageAble {
 
 	private Cell cLocation;
 	private Player saruman;
-	private float speed = 1.0f;
+	protected float speed = 1.0f;
 	protected int manaCost;
 
 	public Enemy(){

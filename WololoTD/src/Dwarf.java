@@ -15,6 +15,7 @@ public class Dwarf extends Enemy {
 		super(sPoint,saruman);
 		this.setHealth(TDUtils.DwarfHP);
 		this.manaCost = 10;
+		this.speed = TDUtils.DwarfSpeed;
 	}
 
 	public void finalize() throws Throwable {
@@ -36,7 +37,7 @@ public class Dwarf extends Enemy {
 
 	
 	public String print(){
-		String print = "Dwarf - " + getHealth() + "/" + TDUtils.DwarfHP + " speed: " + maxDelta;
+		String print = "Dwarf - " + getHealth() + "/" + TDUtils.DwarfHP + " speed: " + (maxDelta*speed);
 		return print;
 	}
 

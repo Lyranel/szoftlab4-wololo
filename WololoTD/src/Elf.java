@@ -15,6 +15,7 @@ public class Elf extends Enemy {
 		super(sPoint,saruman);
 		this.manaCost = 12;
 		this.setHealth(TDUtils.ElfHP);
+		this.speed = TDUtils.ElfSpeed;
 	}
 
 	public void finalize() throws Throwable {
@@ -43,7 +44,7 @@ public class Elf extends Enemy {
 		
 	}
 	public String print(){
-		String print = "Elf - " + getHealth() + "/" + TDUtils.ElfHP + " speed: " + maxDelta;
+		String print = "Elf - " + getHealth() + "/" + TDUtils.ElfHP + " speed: " + (maxDelta*speed);
 		return print;
 	}
 	

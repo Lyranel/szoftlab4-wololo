@@ -67,7 +67,7 @@ public class Trap extends PlayerControlled {
 
 	@Override
 	public String print() {
-		String print = new String("Slow: " + slowAmount * 10.f + "%");
+		String print = new String("Slow: " + slowAmount * 100.f + "%");
 		
 		return print;
 	}
