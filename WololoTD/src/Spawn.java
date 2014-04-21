@@ -71,7 +71,6 @@ public class Spawn extends UpdateAble {
 				
 				Enemy myEvilChild = getEnemy(sPoint);
 				
-				//myEvilChild.update(delta - (time % maxDelta));
 				myEvilChild.update(delta);
 				
 				incCount();
