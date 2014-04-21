@@ -34,6 +34,13 @@ public class TDUtils {
 		public static int trapCrystalCost = 20;
 		
 		/**
+		 * param of --count switch
+		 * number of enemies to kill
+		 * 0 : calculated from map size
+		 */
+		public static int enemyCount = 0;
+		
+		/**
 		 *  param of --branch switch
 		 *  0 : random
 		 *  1 : first

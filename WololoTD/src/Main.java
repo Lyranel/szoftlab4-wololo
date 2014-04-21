@@ -247,6 +247,17 @@ public class Main {
 				else throw new Exception("Unrecognized command.");
 			}
 			
+			else if (command[i].equals("-C") || command[i].equals("--count")) {
+				
+				int count = Integer.parseInt(command[i+1]);
+				
+				if (count >= 0) {
+					TDUtils.enemyCount = count;
+				}
+				
+				else throw new Exception("Unrecognized command.");
+			}
+			
 			else if (command[i].equals("-L") || command[i].equals("--log")) {
 				TDUtils.logfile = new PrintWriter(command[i+1]);
 			}
