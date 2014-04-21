@@ -94,15 +94,15 @@ public class Main {
 				else throw new Exception("Unrecognized command.");
 		
 			} catch (Exception e) {
+				if (TDUtils.logfile != null) {
+					TDUtils.logfile.close();
+				}
 				e.printStackTrace();
 
 			}
 		}
 		
 		System.out.println("Exiting WololoTD.");
-		if(TDUtils.logfile != null){
-			TDUtils.logfile.close();
-		}
 		return;
 	}
 	
@@ -141,10 +141,6 @@ public class Main {
 					TDUtils.spawn = 1;
 				}
 				
-				else if (command[i+1].equals("rr")) {
-					TDUtils.spawn = 2;
-				}
-				
 				else throw new Exception("Unrecognized command.");
 			}
 			
@@ -154,24 +150,20 @@ public class Main {
 					TDUtils.enemy = 0;
 				}
 				
-				else if (command[i+1].equals("rr")) {
+				else if (command[i+1].equals("dwarf")) {
 					TDUtils.enemy = 1;
 				}
 				
-				else if (command[i+1].equals("dwarf")) {
+				else if (command[i+1].equals("elf")) {
 					TDUtils.enemy = 2;
 				}
 				
-				else if (command[i+1].equals("elf")) {
+				else if (command[i+1].equals("hobbit")) {
 					TDUtils.enemy = 3;
 				}
 				
-				else if (command[i+1].equals("hobbit")) {
-					TDUtils.enemy = 4;
-				}
-				
 				else if (command[i+1].equals("human")) {
-					TDUtils.enemy = 5;
+					TDUtils.enemy = 4;
 				}
 				
 				else throw new Exception("Unrecognized command.");
