@@ -102,4 +102,14 @@ public class Tower extends PlayerControlled {
 		}
 	}
 
+	@Override
+	public String print() {
+		String print = new String("Damage: "+ damage);
+		print += "\n\t\t" + "Range: " + range; 
+		print += "\n\t\t" + "Speed: " + speed;
+		
+		return print;
+	}
+	
+
 }

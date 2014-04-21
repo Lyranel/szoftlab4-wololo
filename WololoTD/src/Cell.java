@@ -149,12 +149,17 @@ public class Cell {
 	public String print(int i) {
 		int posX = i % TDUtils.mapSizeX;
 		int posY = (i - posX) / TDUtils.mapSizeX;
-		String print = "Cell(" + posX + "," + posY + ")";
+		String print = "Cell(" + posX + "," + posY + ") " + this.state;
 		if(getEnemyList().size() != 0){
 			print += "\n\tENEMIES: ";
 			for(int j = 0; j < getEnemyList().size(); j++){
 				print += "\n\t\t" + getEnemyList().get(j).print();
 			}
+		}
+		if(this.building != null)
+		{
+			print += "\n\tBUILDING: ";
+			print += "\n\t\t" + this.building.print();
 		}
 		
 		return print;

@@ -41,5 +41,9 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 	public void upgrade(Crystal Cryst){
 
 	}
+	
+	public String print(){
+		return null;
+	}
 
 }

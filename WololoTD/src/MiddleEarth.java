@@ -47,7 +47,8 @@ public class MiddleEarth {
 	}
 
 	public void lose(){
-		System.out.println("Saruman lost");
+		//Kiirjuk, hogy veszitettunk
+		System.out.println("********** LOSE **********");
 	}
 
 	/**
@@ -64,9 +65,8 @@ public class MiddleEarth {
 		System.out.println("REMAINING ENEMIES: " + saruman.getEnemyCount());
 		for(int i = 0; i < map.size(); i++)
 		{
-			if(map.get(i).getEnemyCount() != 0)
+			if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null)
 			{
-				System.out.println("Cella ID: "+i+" Ellenseg Szam:" + map.get(i).getEnemyCount());
 				System.out.println(map.get(i).print(i));
 			}
 		}
@@ -74,7 +74,10 @@ public class MiddleEarth {
 	}
 
 	public void win(){
-
+		//Kiirjuk, hogy nyertunk
+		System.out.println("********** WIN **********");
 	}
 
+	
+	
 }
