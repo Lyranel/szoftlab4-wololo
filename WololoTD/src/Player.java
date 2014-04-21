@@ -33,17 +33,19 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * Torony epites
 	 * @param posY
 	 * @param posX
 	 */
 	public void buildTower(int posY, int posX){
 		
 		try {
+			//Csak akkor tudunk tornyot epiteni, ha a cella allapota ures...
 			if (puppetMaster.getCell(posY, posX).getState() != State.EMPTY) {
 				throw new Exception("This type of building cannot be placed to the specified position.");
 			}
 			
+			//...es van eleg penzunk ra
 			else if (TDUtils.towerCost > mana) {
 				throw new Exception("There is not enough mana to perform the tower summoning ritual.");
 			}
@@ -59,18 +61,18 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * Csapda epites
 	 * @param posY
 	 * @param posX
 	 */
 	public void buildTrap(int posY, int posX){
 		
 		try {
-			
+			//Csak utra lehet csapdat epiteni
 			if (puppetMaster.getCell(posY, posX).getState() != State.ROAD) {
 				throw new Exception("This type of building cannot be placed to the specified position.");
 			}
-			
+			//es csak akkor, ha vanr a eleg penzunk
 			else if (TDUtils.trapCost > mana) {
 				throw new Exception("There is not enough mana to perform the trap summoning ritual.");
 			}
@@ -85,6 +87,7 @@ public class Player {
 		}
 	}
 
+	//Globalisan mennyi elleneseg van meg a palyan
 	public void decreaseEnemyCount(){
 		
 		enemyCount--;
@@ -123,18 +126,19 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * Torony fejlesztes
 	 * @param posY
 	 * @param posX
 	 */
+	
 	public void upgradeTower(int posY, int posX, Crystal type){
 		
 		try {
-			
+			//csak tornyot akarjunk toronyfejeleszteni...
 			if (puppetMaster.getCell(posY, posX).getState() != State.TOWER) {
 				throw new Exception("This type of cell cannot be upgraded with this crystal.");
 			}
-			
+			//es csak akkor, ha van eleg penzunk
 			else if (TDUtils.towerCrystalCost > mana) {
 				throw new Exception("There is not enough mana to perform the tower enhancement ritual.");
 			}
@@ -150,18 +154,18 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * CSapda fejlesztes
 	 * @param posY
 	 * @param posX
 	 */
 	public void upgradeTrap(int posY, int posX, Crystal type){
 		
 		try {
-			
+			//Csak csapdat akarjunk csapdafejleszteni...
 			if (puppetMaster.getCell(posY, posX).getState() != State.TRAP) {
 				throw new Exception("This type of cell cannot be upgraded with this crystal.");
 			}
-			
+			//...es csak akkor, ha van ra eleg penzunk
 			else if (TDUtils.trapCrystalCost > mana) {
 				throw new Exception("There is not enough mana to perform the trap enhancement ritual.");
 			}

@@ -7,6 +7,7 @@
  */
 public abstract class DamageAble extends UpdateAble implements IDamageAble {
 
+	//Az ellenseg HP-ja, alapbol a TDUtilsban levo default ertekre inicializaljuk
 	private int health;
 
 	public int getHealth() {

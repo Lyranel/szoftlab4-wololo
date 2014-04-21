@@ -7,6 +7,7 @@
  */
 public class Human extends Enemy {
 
+	//ember ellenseg
 	public Human(){
 
 	}

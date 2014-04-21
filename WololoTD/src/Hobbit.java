@@ -7,6 +7,7 @@
  */
 public class Hobbit extends Enemy {
 
+	//Hobbit elleneseg, gyors, de nagyon gyenge
 	public Hobbit(){
 		
 	}

@@ -7,6 +7,7 @@
  */
 public class TrapC extends Crystal {
 
+	//Csapda fejleszto kristaly
 	public TrapC(){
 		super.whatAmI = "trap";
 	}

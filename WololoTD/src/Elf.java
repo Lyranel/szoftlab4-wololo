@@ -7,6 +7,7 @@
  */
 public class Elf extends Enemy {
 
+	//Tunde ellenseg, gyors, es nem lassitja a csapda
 	public Elf(){
 
 	}

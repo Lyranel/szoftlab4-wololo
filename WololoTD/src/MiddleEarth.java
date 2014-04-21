@@ -59,7 +59,7 @@ public class MiddleEarth {
 
 
 	/**
-	 * 
+	 * Update fuggveny
 	 * @param time
 	 */
 	public void update(float time){
@@ -81,6 +81,7 @@ public class MiddleEarth {
 	}
 	
 	public void lose(){
+		//Kiirjuk, hogy vesztettunk
 		TDUtils.sLog("********** LOSE **********");
 	}
 

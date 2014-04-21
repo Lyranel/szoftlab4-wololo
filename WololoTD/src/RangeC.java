@@ -7,6 +7,7 @@
  */
 public class RangeC extends Crystal {
 
+	//Range fejleszto kristaly
 	public RangeC(){
 		super.whatAmI = "range";
 	}

@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Road {
 
+	//Statikus ut lista
 	public static ArrayList<Cell> roadList = new ArrayList<Cell>();
 
 	public Road(){

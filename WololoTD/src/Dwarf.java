@@ -7,6 +7,7 @@
  */
 public class Dwarf extends Enemy {
 
+	//Torp elleneseg, eros,de picit lassu
 	public Dwarf(){
 
 	}

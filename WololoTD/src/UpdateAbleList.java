@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class UpdateAbleList {
 
+	//mindenki, aki a palyan van, es frissitheto
 	private ArrayList<IUpdateAble> toUpdate;
 
 	public UpdateAbleList(){
@@ -35,7 +36,7 @@ public class UpdateAbleList {
 	}
 
 	/**
-	 * 
+	 * update - vegigmegy mindenen, amit updetelni kell
 	 * @param time
 	 */
 	public void update(float time){

@@ -7,6 +7,7 @@
  */
 public class DmgC extends Crystal {
 
+	//Damage novelo kristaly
 	public DmgC(){
 		super.whatAmI = "damage";
 	}

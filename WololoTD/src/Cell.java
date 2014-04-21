@@ -10,12 +10,17 @@ import java.util.TreeSet;
  */
 public class Cell {
 
+	//Milyen epulet van a cellan
 	private IPlaceAble building;
+	//Milyen ellensegek vannak a cellan
 	private ArrayList<Enemy> enemies;
+	//Kik a cella szomszedai (ezeket a TDUtils.readMap allitja be)
 	private ArrayList<Cell> neighbours;
+	//Amennyiben a cella egy ut resze, ki koveti ot az uton
 	private ArrayList<Cell> nextRoad;
 	private State state;
 
+	//Minden cella alapbol ures allapotu, azaz nincs rajta semmi
 	public Cell(){
 		enemies = new ArrayList<Enemy>();
 		nextRoad = new ArrayList<Cell>();
@@ -24,7 +29,6 @@ public class Cell {
 	}
 
 	public void finalize() throws Throwable {
-
 	}
 
 	/**
@@ -65,6 +69,7 @@ public class Cell {
 	 * 
 	 * @param amount
 	 */
+	//A torony az egesz cellat sebzi, tehat a rajta talalhato osszes ellenseget
 	public void damage(int amount){
 
 		for (IDamageAble e: enemies)
@@ -89,6 +94,8 @@ public class Cell {
 		return enemies;
 	}
 
+	//Azon vella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
+	//amennyiben tobb szomszedja van, akkor random valasztas tortenik
 	public Cell getNext(){
 		//TODO: Kell a random valasztas
 		if(this.nextRoad.size() != 0)
@@ -98,11 +105,6 @@ public class Cell {
 		return null;
 	}
 	
-
-	public State getState(){
-		return state;
-	}
-
 	/**
 	 * 
 	 * @param range
@@ -151,6 +153,11 @@ public class Cell {
 		
 	}
 
+	public State getState(){
+		return state;
+	}
+
+
 	public String print(int i) {
 		int posX = i % TDUtils.mapSizeX;
 		int posY = (i - posX) / TDUtils.mapSizeX;
@@ -168,7 +175,6 @@ public class Cell {
 		}
 		
 		return print;
-		
 	}
 
 
