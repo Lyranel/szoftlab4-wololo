@@ -78,7 +78,10 @@ public class Tower extends PlayerControlled {
 	
 	private void shoot()
 	{
-		
+		Cell target = getMaxTargets();
+		for (Enemy e : target.getEnemyList()) {
+			e.damage(damage);
+		}
 	}
 
 	/**
