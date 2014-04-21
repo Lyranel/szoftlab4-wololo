@@ -11,25 +11,12 @@ import java.util.Set;
 
 public class DiffTool {
 
-	//TODO Egyelore Stringjei vannak, lehet, hogy fajlra kelle majd valtoztatni
-	private String expected;
-	private String actual;
 	private File expectedFile;
 	private File actualFile;
 	
 	public DiffTool(String expected, String actual){
-		this.expected = expected;
-		this.actual = actual;
-	}
-	
-	public DiffTool(File expectedFile, File actualFile){
-		this.expectedFile = expectedFile;
-		this.actualFile = actualFile;
-	}
-
-
-	public int diffString(){
-		return expected.compareTo(actual);
+		this.expectedFile = new File(expected);
+		this.actualFile = new File(actual);
 	}
 	
 	public int diffFile(){

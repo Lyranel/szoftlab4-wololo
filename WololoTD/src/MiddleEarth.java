@@ -57,7 +57,6 @@ public class MiddleEarth {
 		return saruman;
 	}
 
-
 	/**
 	 * Update fuggveny
 	 * @param time
@@ -81,7 +80,6 @@ public class MiddleEarth {
 	}
 	
 	public void lose(){
-		//Kiirjuk, hogy vesztettunk
 		TDUtils.sLog("********** LOSE **********");
 	}
 
@@ -89,7 +87,4 @@ public class MiddleEarth {
 		//Kiirjuk, hogy nyertunk
 		TDUtils.sLog("********** WIN **********");
 	}
-
-	
-	
 }

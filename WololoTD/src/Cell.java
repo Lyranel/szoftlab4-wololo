@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -21,6 +22,8 @@ public class Cell {
 	private State state;
 
 	//Minden cella alapbol ures allapotu, azaz nincs rajta semmi
+	private int RR = 0;
+	
 	public Cell(){
 		enemies = new ArrayList<Enemy>();
 		nextRoad = new ArrayList<Cell>();
@@ -97,17 +100,61 @@ public class Cell {
 	//Azon vella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
 	//amennyiben tobb szomszedja van, akkor random valasztas tortenik
 	public Cell getNext(){
-		//TODO: Kell a random valasztas
-		if(this.nextRoad.size() != 0)
+		
+		if(TDUtils.branch == 0)
 		{
-			return this.nextRoad.get(0);
+			if(this.nextRoad.size() != 0)
+			{
+				return nextRoad.get(new Random().nextInt(nextRoad.size()));
+			}
 		}
+		else if(TDUtils.branch == 1)
+		{
+			if(this.nextRoad.size() != 0)
+			{
+				return this.nextRoad.get(0);
+			}
+		}
+		else if(TDUtils.branch == 2)
+		{
+			
+			if(this.nextRoad.size() != 0)
+			{
+				if(this.nextRoad.size() == 1)
+				{
+					return this.nextRoad.get(0);
+				}
+				else
+				{
+					
+					if(RR < this.nextRoad.size())
+					{
+						RR++;
+						return this.nextRoad.get(RR-1);
+					}
+					else if(RR >= this.nextRoad.size())
+					{
+						RR = 0;
+						return this.nextRoad.get(RR);
+					}
+					
+				}
+			}
+			
+		}
+		
 		return null;
 	}
 	
 	/**
+	 * Kedves comment.
+	 * 
+	 * This function is called by Tower objects on their home attribute to populate their targets, which contains the roads in their range.
+	 * The function gets propagated by the recursive call from the home Cell, adding each Cell which has either ROAD or TRAP state.
+	 * The parameter targets is a Set for all Cells to be added only once. 
 	 * 
 	 * @param range
+	 * @param targets
 	 */
 	public void getTargets(int range, Set<Cell> targets){
 		
