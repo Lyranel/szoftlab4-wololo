@@ -63,6 +63,10 @@ public class Main {
 						}
 					}
 					
+					if (TDUtils.logfile != null) {
+						TDUtils.logfile.close();
+					}
+					
 					System.out.println("The game has ended.");
 				}
 				
@@ -85,6 +89,10 @@ public class Main {
 					while ((line = fileRead.readLine()) != null && !TDUtils.end) {
 						cmd = line.split(" ");
 						ExecuteCommand(puppetMaster, cmd);
+					}
+					
+					if (TDUtils.logfile != null) {
+						TDUtils.logfile.close();
 					}
 					
 					System.out.println("The game has ended.");
@@ -132,11 +140,7 @@ public class Main {
 				else throw new Exception("Unrecognized command.");
 		
 			} catch (Exception e) {
-				if (TDUtils.logfile != null) {
-					TDUtils.logfile.close();
-				}
 				e.printStackTrace();
-
 			}
 		}
 		
@@ -324,7 +328,7 @@ public class Main {
 				
 				else if (type.equals("trap") && 
 						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TRAP) {
-					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new TrapC());
+					puppetMaster.getPlayer().upgradeTrap(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new TrapC());
 				}
 				
 				else throw new Exception("Unrecognized command.");
