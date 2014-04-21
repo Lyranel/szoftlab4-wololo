@@ -18,13 +18,6 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 		super.finalize();
 	}
 
-	/**
-	 * 
-	 * @param time
-	 */
-	public void incDelta(float time){
-
-	}
 
 	/**
 	 * 

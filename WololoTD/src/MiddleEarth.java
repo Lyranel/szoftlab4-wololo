@@ -17,8 +17,8 @@ public class MiddleEarth {
 		saruman = new Player(this);
 		map = TDUtils.mapReader();
 		Spawn gonoszBugyor = new Spawn(saruman);
-		saruman.setEnemyCount(10);
-		gonoszBugyor.setMaxCount(10);
+		saruman.setEnemyCount(1);
+		gonoszBugyor.setMaxCount(1);
 		
 		TDUtils.sLog("********** START **********");
 		//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak

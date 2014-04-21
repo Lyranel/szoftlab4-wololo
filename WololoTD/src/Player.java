@@ -25,7 +25,7 @@ public class Player {
 	
 	public Player(MiddleEarth puppeteer) {
 		this.puppetMaster = puppeteer;
-		this.mana = 100;
+		this.mana = 150;
 	}
 
 	public void finalize() throws Throwable {

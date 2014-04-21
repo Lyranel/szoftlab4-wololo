@@ -46,7 +46,10 @@ public class UpdateAbleList {
 		{
 			try
 			{
-				e.update(time);
+				if(toUpdate.contains(e))
+				{
+					e.update(time);
+				}
 			}
 			catch(NullPointerException a)
 			{

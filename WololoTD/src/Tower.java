@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -114,7 +115,8 @@ public class Tower extends PlayerControlled {
 	private void shoot()
 	{
 		Cell target = getMaxTargets();
-		for (Enemy e : target.getEnemyList()) {
+		ArrayList<Enemy> Enemylist = new ArrayList<Enemy>(target.getEnemyList());
+		for (Enemy e : Enemylist) {
 			e.damage(damage);
 		}
 	}
