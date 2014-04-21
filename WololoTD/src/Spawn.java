@@ -52,13 +52,6 @@ public class Spawn extends UpdateAble {
 		currentCount++;
 	}
 
-	/**
-	 * 
-	 * @param time
-	 */
-	public void incDelta(float time){
-
-	}
 
 	/**
 	 * 
@@ -66,21 +59,22 @@ public class Spawn extends UpdateAble {
 	 */
 	public void update(float time){
 			
-		if(delta >= maxDelta)
+		incDelta(time);
+		
+		while(delta >= maxDelta)
 		{
 			if(currentCount < maxCount)
 			{
 				Cell sPoint = getSpawnPoint();
 				
-				Enemy myEvilChild;
+				Enemy myEvilChild = getEnemy(sPoint);
+				
+				myEvilChild.update(delta - (time % maxDelta));
 				
 				incCount();
 			}
 			
-		}
-		else
-		{
-				incDelta(time);
+			delta -= maxDelta;
 		}
 		
 	}

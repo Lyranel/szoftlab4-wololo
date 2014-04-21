@@ -9,7 +9,7 @@ public abstract class Enemy extends DamageAble {
 
 	private Cell cLocation;
 	private Player saruman;
-	private float speed;
+	private float speed = 1.0f;
 	protected int manaCost;
 
 	public Enemy(){
@@ -67,6 +67,7 @@ public abstract class Enemy extends DamageAble {
 			cLocation.remove(this);
 			nextCell.add(this);
 			cLocation = nextCell;
+			speed = 1.f;
 		}
 		else
 		{
@@ -89,25 +90,13 @@ public abstract class Enemy extends DamageAble {
 		
 		incDelta(time);
 		
-		while(delta >= maxDelta)
+		while(delta >= maxDelta * (1 / speed))
 		{
 			move();
 			delta -= maxDelta;
 		}
 		
-		/*
-		//while(time > maxDelta)
-		//{
-			if(delta >= maxDelta)
-			{
-				move();
-				delta = 0;
-			}
-			else
-			{
-				incDelta(time);
-			}
-		//}*/
+		
 	}
 	
 	

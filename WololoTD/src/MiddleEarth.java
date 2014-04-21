@@ -17,9 +17,11 @@ public class MiddleEarth {
 		TDUtils.map = "C:\\DefaultMap.xml";
 		saruman = new Player(this);
 		map = TDUtils.mapReader();
-		//Spawn gonoszBugyor = new Spawn(saruman);
+		Spawn gonoszBugyor = new Spawn(saruman);
+		saruman.setEnemyCount(10);
+		gonoszBugyor.setMaxCount(10);
 		
-		Dwarf test1 = new Dwarf(Road.roadList.get(0),saruman);
+		
 		
 	}
 
