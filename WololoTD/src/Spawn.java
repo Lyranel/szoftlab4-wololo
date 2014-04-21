@@ -82,25 +82,45 @@ public class Spawn extends UpdateAble {
 	private Enemy getEnemy(Cell sPoint)
 	{
 		 Random gen = new Random();
-		 int i = gen.nextInt(100)+1;
 		 
-		 if(i > 0 && i <= 25)
+		 if(TDUtils.enemy == 0)
 		 {
-			 return new Hobbit(sPoint, saruman);
+			 int i = gen.nextInt(100)+1;
+			 
+			 if(i > 0 && i <= 25)
+			 {
+				 return new Hobbit(sPoint, saruman);
+			 }
+			 else if(i > 25 && i <= 50)
+			 {
+				 return new Human(sPoint, saruman);
+			 }
+			 else if(i > 50 && i <= 75)
+			 {
+				 return new Dwarf(sPoint, saruman);
+			 }
+			 else if(i > 75 && i <= 100)
+			 {
+				 return new Elf(sPoint, saruman);
+			 }
 		 }
-		 else if(i > 25 && i <= 50)
-		 {
-			 return new Human(sPoint, saruman);
-		 }
-		 else if(i > 50 && i <= 75)
+		 else if(TDUtils.enemy == 1)
 		 {
 			 return new Dwarf(sPoint, saruman);
 		 }
-		 else if(i > 75 && i <= 100)
+		 else if(TDUtils.enemy == 2)
 		 {
 			 return new Elf(sPoint, saruman);
 		 }
-		
+		 else if(TDUtils.enemy == 3)
+		 {
+			 return new Hobbit(sPoint, saruman);
+		 }
+		 else if(TDUtils.enemy == 4)
+		 {
+			 return new Human(sPoint, saruman);
+		 }
+		 
 		return null;
 	}
 

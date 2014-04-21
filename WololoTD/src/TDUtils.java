@@ -60,18 +60,16 @@ public class TDUtils {
 		 *  param of --spawn switch
 		 *  0 : random
 		 *  1 : first
-		 *  2 : round-robin
 		 */
 		public static int spawn = 0;
 		
 		/**
 		 *  param of --enemy switch
 		 *  0 : random
-		 *  1 : round-robin
-		 *  2 : dwarf
-		 *  3 : elf
-		 *  4 : hobbit
-		 *  5 : human
+		 *  1 : dwarf
+		 *  2 : elf
+		 *  3 : hobbit
+		 *  4 : human
 		 */
 		public static int enemy = 0;
 		
