@@ -19,6 +19,8 @@ public class TDUtils {
 		 */
 		public static boolean debug = false;
 		
+		public static boolean end = false;
+		
 		/**
 		 *  param of --map switch
 		 */
