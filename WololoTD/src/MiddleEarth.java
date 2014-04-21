@@ -17,9 +17,9 @@ public class MiddleEarth {
 		TDUtils.map = "C:\\DefaultMap.xml";
 		saruman = new Player(this);
 		map = TDUtils.mapReader();
-		Spawn gonoszBugyor = new Spawn(saruman);
+		//Spawn gonoszBugyor = new Spawn(saruman);
 		
-		
+		Dwarf test1 = new Dwarf(Road.roadList.get(0),saruman);
 		
 	}
 
@@ -45,7 +45,7 @@ public class MiddleEarth {
 	}
 
 	public void lose(){
-
+		System.out.println("Saruman lost");
 	}
 
 	/**
@@ -54,6 +54,15 @@ public class MiddleEarth {
 	 */
 	public void update(float time){
 		updateList.update(time);
+		
+		for(int i = 0; i < map.size(); i++)
+		{
+			if(map.get(i).getEnemyCount() != 0)
+			{
+				System.out.println("Cella ID: "+i+" Ellenseg Szam:" + map.get(i).getEnemyCount());
+			}
+		}
+		
 	}
 
 	public void win(){

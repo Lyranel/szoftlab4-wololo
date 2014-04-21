@@ -11,13 +11,13 @@ import java.util.TreeSet;
 public class Cell {
 
 	private IPlaceAble building;
-	private Set<Enemy> enemies;
+	private ArrayList<Enemy> enemies;
 	private ArrayList<Cell> neighbours;
 	private ArrayList<Cell> nextRoad;
 	private State state;
 
 	public Cell(){
-		enemies = new TreeSet<Enemy>();
+		enemies = new ArrayList<Enemy>();
 		nextRoad = new ArrayList<Cell>();
 		neighbours = new ArrayList<Cell>();
 		state = State.EMPTY;
@@ -40,6 +40,7 @@ public class Cell {
 	 * @param cell
 	 */
 	public void addNext(Cell cell){
+		state = State.ROAD;
 		nextRoad.add(cell);
 	}
 
@@ -84,12 +85,16 @@ public class Cell {
 		return enemies.size();
 	}
 
-	public Set<Enemy> getEnemyList(){
+	public ArrayList<Enemy> getEnemyList(){
 		return enemies;
 	}
 
 	public Cell getNext(){
 		//TODO: Kell a random valasztas
+		if(this.nextRoad.size() != 0)
+		{
+			return this.nextRoad.get(0);
+		}
 		return null;
 	}
 	
