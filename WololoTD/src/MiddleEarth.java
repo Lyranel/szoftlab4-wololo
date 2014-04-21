@@ -37,11 +37,11 @@ public class MiddleEarth {
 	 * @param x
 	 */
 	public Cell getCell(int y, int x){
-		return null;
+		return map.get(TDUtils.mapSizeY * y + x);
 	}
 
 	public Player getPlayer(){
-		return null;
+		return saruman;
 	}
 
 	public void lose(){

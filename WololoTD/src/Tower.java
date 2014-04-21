@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Set;
 
 
@@ -36,7 +37,26 @@ public class Tower extends PlayerControlled {
 	}
 
 	public Cell getMaxTargets(){
-		return null;
+		
+		if (targets.size() == 0) {
+			return null;
+		}
+		
+		Iterator<Cell> iter = targets.iterator();
+		
+		Cell minCell = iter.next();
+		int minCount = minCell.getEnemyCount();
+		
+		while (iter.hasNext()) {
+			Cell tempCell = iter.next();
+			int tempCount = tempCell.getEnemyCount();
+			
+			if (tempCount < minCount) {
+				minCell = tempCell;
+			}
+		}
+		
+		return minCell;
 	}
 
 	/**
