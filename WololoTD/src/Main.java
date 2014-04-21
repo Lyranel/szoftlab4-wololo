@@ -95,10 +95,14 @@ public class Main {
 		
 			} catch (Exception e) {
 				e.printStackTrace();
+
 			}
 		}
 		
 		System.out.println("Exiting WololoTD.");
+		if(TDUtils.logfile != null){
+			TDUtils.logfile.close();
+		}
 		return;
 	}
 	
@@ -312,4 +316,6 @@ public class Main {
 		
 		else throw new Exception("Unrecognized command.");
 	}
+	
+	
 }
