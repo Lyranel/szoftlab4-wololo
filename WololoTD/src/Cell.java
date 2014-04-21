@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -15,7 +16,8 @@ public class Cell {
 	private ArrayList<Cell> neighbours;
 	private ArrayList<Cell> nextRoad;
 	private State state;
-
+	private int RR = 0;
+	
 	public Cell(){
 		enemies = new ArrayList<Enemy>();
 		nextRoad = new ArrayList<Cell>();
@@ -90,11 +92,49 @@ public class Cell {
 	}
 
 	public Cell getNext(){
-		//TODO: Kell a random valasztas
-		if(this.nextRoad.size() != 0)
+		
+		if(TDUtils.branch == 0)
 		{
-			return this.nextRoad.get(0);
+			if(this.nextRoad.size() != 0)
+			{
+				return nextRoad.get(new Random().nextInt(nextRoad.size()));
+			}
 		}
+		else if(TDUtils.branch == 1)
+		{
+			if(this.nextRoad.size() != 0)
+			{
+				return this.nextRoad.get(0);
+			}
+		}
+		else if(TDUtils.branch == 2)
+		{
+			
+			if(this.nextRoad.size() != 0)
+			{
+				if(this.nextRoad.size() == 1)
+				{
+					return this.nextRoad.get(0);
+				}
+				else
+				{
+					
+					if(RR < this.nextRoad.size())
+					{
+						RR++;
+						return this.nextRoad.get(RR-1);
+					}
+					else if(RR >= this.nextRoad.size())
+					{
+						RR = 0;
+						return this.nextRoad.get(RR);
+					}
+					
+				}
+			}
+			
+		}
+		
 		return null;
 	}
 	
