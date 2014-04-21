@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -29,6 +30,8 @@ public class Tower extends PlayerControlled {
 		this.damage = 15;
 		this.range = 1;
 		this.speed = 0.5f;
+		this.targets = new HashSet<Cell>();
+		super.home.getTargets(range, targets);
 		
 	}
 
@@ -101,6 +104,7 @@ public class Tower extends PlayerControlled {
 				
 				else if (Cryst.whatAmI.equals("range")) {
 					range++;
+					home.getTargets(range, targets);
 					upgradeCount++;
 				}
 				
