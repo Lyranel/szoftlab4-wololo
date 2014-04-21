@@ -64,7 +64,24 @@ public class Tower extends PlayerControlled {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
+		incDelta(time);
+		
+		while(delta >= maxDelta * speed)
+		{
+			shoot();
+			delta -= maxDelta;
+		}
+		
+		
+	}
+	
+	private void shoot()
+	{
+		Cell target = getMaxTargets();
+		for (Enemy e : target.getEnemyList()) {
+			e.damage(damage);
+		}
 	}
 
 	/**

@@ -121,6 +121,10 @@ public class TDUtils {
 		public static int HumanHP = 50;
 		public static int HobbitHP = 30;
 	
+		public static float ElfSpeed = 1.f/1.1f;
+		public static float DwarfSpeed = 1.f/.8f;
+		public static float HumanSpeed = 1.f/1.f;
+		public static float HobbitSpeed = 1.f/1.2f;
 	
 		public static ArrayList<Cell> mapReader(){	
 			File file = new File(map);

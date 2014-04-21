@@ -33,7 +33,11 @@ public class Trap extends PlayerControlled {
 	 * @param time
 	 */
 	public void update(float time){
-
+		
+		for(Enemy e: this.home.getEnemyList())
+		{
+			e.slow(slowAmount);
+		}
 	}
 
 	/**
@@ -63,7 +67,7 @@ public class Trap extends PlayerControlled {
 
 	@Override
 	public String print() {
-		String print = new String("Slow: " + slowAmount * 10.f + "%");
+		String print = new String("Slow: " + slowAmount * 100.f + "%");
 		
 		return print;
 	}

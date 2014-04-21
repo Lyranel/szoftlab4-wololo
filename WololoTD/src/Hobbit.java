@@ -15,6 +15,7 @@ public class Hobbit extends Enemy {
 		super(sPoint,saruman);
 		this.manaCost = 7;
 		this.setHealth(TDUtils.HobbitHP);
+		this.speed = TDUtils.HobbitSpeed;
 	}
 
 	public void finalize() throws Throwable {
@@ -34,15 +35,9 @@ public class Hobbit extends Enemy {
 		super.move();
 	}
 
-	/**
-	 * 
-	 * @param amount
-	 */
-	public void slow(float amount){
-		//TODO: slow(float amount)
-	}
+	
 	public String print(){
-		String print = "Hobbit - " + getHealth() + "/" + TDUtils.HobbitHP + " speed: " + maxDelta;
+		String print = "Hobbit - " + getHealth() + "/" + TDUtils.HobbitHP + " speed: " + (maxDelta*speed);
 		return print;
 	}
 

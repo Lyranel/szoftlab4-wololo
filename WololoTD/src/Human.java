@@ -15,6 +15,7 @@ public class Human extends Enemy {
 		super(sPoint,saruman);
 		this.manaCost = 10;
 		this.setHealth(TDUtils.HumanHP);
+		this.speed = TDUtils.HumanSpeed;
 	}
 
 	public void finalize() throws Throwable {
@@ -34,16 +35,10 @@ public class Human extends Enemy {
 		super.move();
 	}
 
-	/**
-	 * 
-	 * @param amount
-	 */
-	public void slow(float amount){
-		//TODO: slow(float amount)
-	}
+	
 	
 	public String print(){
-		String print = "Human - " + getHealth() + "/" + TDUtils.HumanHP + " speed: " + maxDelta;
+		String print = "Human - " + getHealth() + "/" + TDUtils.HumanHP + " speed: " + (maxDelta*speed);
 		return print;
 	}
 
