@@ -49,7 +49,7 @@ public class Main {
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
 					
 					
-					while (!exit || TDUtils.end) {
+					while (!exit && !TDUtils.end) {
 					
 						cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
@@ -82,14 +82,14 @@ public class Main {
 						throw new Exception("Test file does not start with initialization.");
 					}
 					
-					while ((line = fileRead.readLine()) != null || !TDUtils.end) {
+					while ((line = fileRead.readLine()) != null && !TDUtils.end) {
 						cmd = line.split(" ");
 						ExecuteCommand(puppetMaster, cmd);
 					}
 					
 					System.out.println("The game has ended.");
 					System.out.println("If you wish to validate your test results, please use the 'validate' command.");
-					System.out.println("To return to the main menu, type 'exit'.");
+					System.out.println("To exit, type 'exit'.");
 					
 					BufferedReader validateRead = new BufferedReader(new InputStreamReader(System.in));
 					String validateInput = "";
@@ -111,10 +111,12 @@ public class Main {
 							else System.out.println("Test result: FAIL");
 							
 							exit = true;
+							quit = true;
 						}
 						
 						else if (validateCmd[0].equals("exit")) {
 							exit = true;
+							quit = true;
 						}
 						
 						else throw new Exception("Unrecognized command.");
