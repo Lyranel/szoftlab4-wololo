@@ -72,9 +72,9 @@ public abstract class Enemy extends DamageAble {
 				this.death();
 			}
 		}
-		//Ha kotelezo a splitteles be van kapcsolva
+		//Ha kotelezo  splitteles be van kapcsolva
 		if(TDUtils.split == 1){
-		 	if(this.getHealth() <= 0){
+		 	if(this.getHealth() <= 1){
 		 		this.death();
 		 	}
 		 	else{
