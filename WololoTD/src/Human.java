@@ -35,7 +35,10 @@ public class Human extends Enemy {
 		super.move();
 	}
 
-	
+	protected void split(int health, Cell cLocation){
+		Human Clone = new Human(cLocation, saruman);
+		Clone.setHealth(health);
+	}
 	
 	public String print(){
 		String print = "Human - " + getHealth() + "/" + TDUtils.HumanHP + " speed: " + ((1/maxDelta)*speed);

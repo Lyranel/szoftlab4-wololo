@@ -34,7 +34,11 @@ public class Dwarf extends Enemy {
 	public void move(){
 		super.move();
 	}
-
+	
+	protected void split(int health, Cell cLocation){
+		Dwarf Clone = new Dwarf(cLocation, saruman);
+		Clone.setHealth(health);
+	}
 	
 	public String print(){
 		String print = "Dwarf - " + getHealth() + "/" + TDUtils.DwarfHP + " speed: " + ((1/maxDelta)*speed);

@@ -43,6 +43,11 @@ public class Elf extends Enemy {
 	public void slow(float amount){
 		
 	}
+	
+	protected void split(int health, Cell cLocation){
+		Elf Clone = new Elf(cLocation, saruman);
+		Clone.setHealth(health);
+	}
 	public String print(){
 		String print = "Elf - " + getHealth() + "/" + TDUtils.ElfHP + " speed: " + ((1/maxDelta)*speed);
 		return print;

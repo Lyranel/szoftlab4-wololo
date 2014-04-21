@@ -40,5 +40,10 @@ public class Hobbit extends Enemy {
 		String print = "Hobbit - " + getHealth() + "/" + TDUtils.HobbitHP + " speed: " + ((1/maxDelta)*speed);
 		return print;
 	}
+	
+	protected void split(int health, Cell cLocation){
+		Hobbit Clone = new Hobbit(cLocation, saruman);
+		Clone.setHealth(health);
+	}
 
 }
