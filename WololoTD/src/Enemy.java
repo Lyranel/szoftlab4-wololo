@@ -114,6 +114,7 @@ public abstract class Enemy extends DamageAble {
 				saruman.lose();
 			}
 			
+			
 		}
 		else 
 		{
