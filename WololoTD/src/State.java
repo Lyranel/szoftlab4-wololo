@@ -10,5 +10,6 @@ public enum State {
 	TOWER,
 	ROAD,
 	TRAP,
+	SPAWNPOINT,
 	MOUNTDOOM
 }

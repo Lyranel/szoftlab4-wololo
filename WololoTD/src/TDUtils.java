@@ -210,6 +210,7 @@ public class TDUtils {
 						if(eElement.getElementsByTagName("Spawn_point").getLength() != 0){
 //							System.out.println("Spawn_point vagyok!");
 							Road.roadList.add(map.get(posX+ posY*mapSizeY));
+							map.get(posX + posY*mapSizeY).spawnPointSetter();
 						}
 						if(eElement.getElementsByTagName("Mount_doom").getLength() != 0){
 //							System.out.println("Mount_doom vagyok!");

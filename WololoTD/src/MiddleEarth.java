@@ -21,7 +21,19 @@ public class MiddleEarth {
 		saruman.setEnemyCount(10);
 		gonoszBugyor.setMaxCount(10);
 		
-		
+		TDUtils.sLog("********** START **********");
+		//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
+		TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
+		//Kiirjuk, hogy mennyi ellenseg van meg a palyan
+		TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
+		//Kiirjuk, hogy melyik cellan mi talalhato (MD ES SP csak a START-nal irjuk ki)
+		for(int i = 0; i < map.size(); i++)
+			{
+				if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null || map.get(i).getState()!=State.EMPTY)
+					{
+						TDUtils.sLog(map.get(i).print(i));
+					}
+			}
 		
 	}
 
@@ -48,7 +60,9 @@ public class MiddleEarth {
 
 	public void lose(){
 		//Kiirjuk, hogy veszitettunk
-		System.out.println("********** LOSE **********");
+		String lose = "********** LOSE **********";
+		//System.out.println(lose);
+		TDUtils.sLog(lose);
 	}
 
 	/**
@@ -58,16 +72,16 @@ public class MiddleEarth {
 	public void update(float time){
 		updateList.update(time);
 		//Kiirjuk, hogy update esemeny tortent:
-		System.out.println("******** UPDATE " + time + " ********" );
+		TDUtils.sLog("******** UPDATE " + time + " ********" );
 		//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
-		System.out.println("CURRENT MANA: " + saruman.getMana());
+		TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
 		//Kiirjuk, hogy mennyi ellenseg van meg a palyan
-		System.out.println("REMAINING ENEMIES: " + saruman.getEnemyCount());
+		TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
 		for(int i = 0; i < map.size(); i++)
 		{
 			if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null)
 			{
-				System.out.println(map.get(i).print(i));
+				TDUtils.sLog(map.get(i).print(i));
 			}
 		}
 		
@@ -75,7 +89,7 @@ public class MiddleEarth {
 
 	public void win(){
 		//Kiirjuk, hogy nyertunk
-		System.out.println("********** WIN **********");
+		TDUtils.sLog("********** WIN **********");
 	}
 
 	

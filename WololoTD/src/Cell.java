@@ -145,6 +145,11 @@ public class Cell {
 	public void mountDoomSetter(){
 		this.state = State.MOUNTDOOM;
 	}
+	
+	public void spawnPointSetter() {
+		this.state = State.SPAWNPOINT;
+		
+	}
 
 	public String print(int i) {
 		int posX = i % TDUtils.mapSizeX;
@@ -165,5 +170,7 @@ public class Cell {
 		return print;
 		
 	}
+
+
 
 }
