@@ -103,8 +103,10 @@ public class TDUtils {
 		  */
 		public static void sLog(String log) {
 			System.out.println(log);
-			if (logfile != null)
+			if (logfile != null){
 				logfile.println(log);
+				logfile.flush();
+			}
 		}
 		
 		/**
