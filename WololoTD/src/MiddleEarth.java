@@ -57,12 +57,6 @@ public class MiddleEarth {
 		return saruman;
 	}
 
-	public void lose(){
-		//Kiirjuk, hogy veszitettunk
-		TDUtils.sLog("********** LOSE **********");
-		TDUtils.end = true;
-	}
-
 	/**
 	 * 
 	 * @param time
@@ -84,13 +78,16 @@ public class MiddleEarth {
 		}
 		
 	}
+	
+	public void lose(){
+		//Kiirjuk, hogy veszitettunk
+		TDUtils.sLog("********** LOSE **********");
+		TDUtils.end = true;
+	}
 
 	public void win(){
 		//Kiirjuk, hogy nyertunk
 		TDUtils.sLog("********** WIN **********");
 		TDUtils.end = true;
 	}
-
-	
-	
 }

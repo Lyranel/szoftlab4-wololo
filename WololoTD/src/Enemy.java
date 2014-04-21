@@ -72,9 +72,9 @@ public abstract class Enemy extends DamageAble {
 				this.death();
 			}
 		}
-		//Ha kotelezo a splitteles be van kapcsolva
+		//Ha kotelezo  splitteles be van kapcsolva
 		if(TDUtils.split == 1){
-		 	if(this.getHealth() <= 0){
+		 	if(this.getHealth() <= 1){
 		 		this.death();
 		 	}
 		 	else{
@@ -108,8 +108,14 @@ public abstract class Enemy extends DamageAble {
 			nextCell.add(this);
 			cLocation = nextCell;
 			speed = 1.f;
+			
+			if(cLocation.getState() == State.MOUNTDOOM)
+			{
+				saruman.lose();
+			}
+			
 		}
-		else
+		else 
 		{
 			saruman.lose();
 		}
