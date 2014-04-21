@@ -57,12 +57,6 @@ public class MiddleEarth {
 		return saruman;
 	}
 
-	public void lose(){
-		//Kiirjuk, hogy veszitettunk
-		String lose = "********** LOSE **********";
-		//System.out.println(lose);
-		TDUtils.sLog(lose);
-	}
 
 	/**
 	 * 
@@ -84,6 +78,10 @@ public class MiddleEarth {
 			}
 		}
 		
+	}
+	
+	public void lose(){
+		TDUtils.sLog("********** LOSE **********");
 	}
 
 	public void win(){
