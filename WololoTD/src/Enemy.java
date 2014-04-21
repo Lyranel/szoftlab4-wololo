@@ -87,15 +87,27 @@ public abstract class Enemy extends DamageAble {
 	public void update(float time) {
 		super.update(time);
 		
-		if(delta >= maxDelta)
+		incDelta(time);
+		
+		while(delta >= maxDelta)
 		{
 			move();
-			delta = 0;
+			delta -= maxDelta;
 		}
-		else
-		{
-			incDelta(time);
-		}
+		
+		/*
+		//while(time > maxDelta)
+		//{
+			if(delta >= maxDelta)
+			{
+				move();
+				delta = 0;
+			}
+			else
+			{
+				incDelta(time);
+			}
+		//}*/
 	}
 
 	public String print(){
