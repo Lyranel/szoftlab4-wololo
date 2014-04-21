@@ -59,9 +59,8 @@ public class MiddleEarth {
 
 	public void lose(){
 		//Kiirjuk, hogy veszitettunk
-		String lose = "********** LOSE **********";
-		//System.out.println(lose);
-		TDUtils.sLog(lose);
+		TDUtils.sLog("********** LOSE **********");
+		TDUtils.end = true;
 	}
 
 	/**
@@ -89,6 +88,7 @@ public class MiddleEarth {
 	public void win(){
 		//Kiirjuk, hogy nyertunk
 		TDUtils.sLog("********** WIN **********");
+		TDUtils.end = true;
 	}
 
 	

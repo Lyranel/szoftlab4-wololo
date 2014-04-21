@@ -16,7 +16,7 @@ public class Main {
 		
 		System.out.println("\nWelcome to WololoTD prototype.");
 		System.out.println("For manual testing, please write a valid 'start' command to initialize the game.");
-		System.out.println("Prepared tests can be run with the 'load <inputfile>' command.");
+		System.out.println("Prepared tests can be run with the 'load' command.");
 		System.out.println("The application can be closed with the 'quit' command.");
 		
 		while (!quit) {
@@ -49,7 +49,7 @@ public class Main {
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
 					
 					
-					while (!exit) {
+					while (!exit || TDUtils.end) {
 					
 						cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
@@ -62,6 +62,8 @@ public class Main {
 							ExecuteCommand(puppetMaster, cmd);
 						}
 					}
+					
+					System.out.println("The game has ended.");
 				}
 				
 				else if (command[0].equals("load")) {
@@ -80,10 +82,44 @@ public class Main {
 						throw new Exception("Test file does not start with initialization.");
 					}
 					
-					while ((line = fileRead.readLine()) != null) {
+					while ((line = fileRead.readLine()) != null || !TDUtils.end) {
 						cmd = line.split(" ");
 						ExecuteCommand(puppetMaster, cmd);
 					}
+					
+					System.out.println("The game has ended.");
+					System.out.println("If you wish to validate your test results, please use the 'validate' command.");
+					System.out.println("To return to the main menu, type 'exit'.");
+					
+					BufferedReader validateRead = new BufferedReader(new InputStreamReader(System.in));
+					String validateInput = "";
+					String[] validateCmd;
+					boolean exit = false;
+					
+					while (!exit) {
+						
+						validateInput = validateRead.readLine();
+						validateCmd = validateInput.split(" ");
+						
+						if (validateCmd[0].equals("validate")) {	
+							DiffTool validator = new DiffTool(validateCmd[1], validateCmd[2]);
+							int result = validator.diffFile();
+							
+							if (result == 0) {
+								System.out.println("Test result: PASS");
+							}
+							else System.out.println("Test result: FAIL");
+							
+							exit = true;
+						}
+						
+						else if (validateCmd[0].equals("exit")) {
+							exit = true;
+						}
+						
+						else throw new Exception("Unrecognized command.");
+					}
+					
 					
 				}
 				
@@ -107,6 +143,8 @@ public class Main {
 	}
 	
 	public static void Initialize(String[] command) throws Exception {
+		
+		TDUtils.end = false;
 		
 		for (int i = 1; i < command.length; i+=2) {
 			
@@ -234,11 +272,11 @@ public class Main {
 			if (type != null && position != null) {
 			
 				if (type.equals("tower")) {
-					puppetMaster.getPlayer().buildTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]));
+					puppetMaster.getPlayer().buildTower(Integer.parseInt(position[1]), Integer.parseInt(position[0]));
 				}
 			
 				else if (type.equals("trap")) {
-					puppetMaster.getPlayer().buildTrap(Integer.parseInt(position[0]), Integer.parseInt(position[1]));
+					puppetMaster.getPlayer().buildTrap(Integer.parseInt(position[1]), Integer.parseInt(position[0]));
 				}
 				
 				else throw new Exception("Unrecognized command.");

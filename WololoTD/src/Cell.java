@@ -104,7 +104,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * Kedves comment.
 	 * @param range
 	 */
 	public void getTargets(int range, Set<Cell> targets){
