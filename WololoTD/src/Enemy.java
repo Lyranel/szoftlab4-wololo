@@ -108,8 +108,14 @@ public abstract class Enemy extends DamageAble {
 			nextCell.add(this);
 			cLocation = nextCell;
 			speed = 1.f;
+			
+			if(cLocation.getState() == State.MOUNTDOOM)
+			{
+				saruman.lose();
+			}
+			
 		}
-		else
+		else 
 		{
 			saruman.lose();
 		}
