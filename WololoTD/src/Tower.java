@@ -47,19 +47,19 @@ public class Tower extends PlayerControlled {
 		
 		Iterator<Cell> iter = targets.iterator();
 		
-		Cell minCell = iter.next();
-		int minCount = minCell.getEnemyCount();
+		Cell maxCell = iter.next();
+		int maxCount = maxCell.getEnemyCount();
 		
 		while (iter.hasNext()) {
 			Cell tempCell = iter.next();
 			int tempCount = tempCell.getEnemyCount();
 			
-			if (tempCount < minCount) {
-				minCell = tempCell;
+			if (tempCount > maxCount) {
+				maxCell = tempCell;
 			}
 		}
 		
-		return minCell;
+		return maxCell;
 	}
 
 	/**
