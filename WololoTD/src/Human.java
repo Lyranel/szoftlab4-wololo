@@ -14,6 +14,7 @@ public class Human extends Enemy {
 	public Human(Cell sPoint, Player saruman) {
 		super(sPoint,saruman);
 		this.manaCost = 10;
+		this.setHealth(TDUtils.HumanHP);
 	}
 
 	public void finalize() throws Throwable {
@@ -39,6 +40,11 @@ public class Human extends Enemy {
 	 */
 	public void slow(float amount){
 		//TODO: slow(float amount)
+	}
+	
+	public String print(){
+		String print = "Human - " + getHealth() + "/" + TDUtils.HumanHP + " speed: " + maxDelta;
+		return print;
 	}
 
 }

@@ -13,6 +13,7 @@ public class Dwarf extends Enemy {
 
 	public Dwarf(Cell sPoint, Player saruman) {
 		super(sPoint,saruman);
+		this.setHealth(TDUtils.DwarfHP);
 		this.manaCost = 10;
 	}
 
@@ -39,6 +40,10 @@ public class Dwarf extends Enemy {
 	 */
 	public void slow(float amount){
 		//TODO: slow(float amount)
+	}
+	public String print(){
+		String print = "Dwarf - " + getHealth() + "/" + TDUtils.DwarfHP + " speed: " + maxDelta;
+		return print;
 	}
 
 }

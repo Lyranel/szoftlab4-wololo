@@ -84,7 +84,6 @@ public class Main {
 						ExecuteCommand(puppetMaster, cmd);
 					}
 					
-					fileRead.close();
 				}
 				
 				else if (consoleInput.toLowerCase().equals("quit")) {

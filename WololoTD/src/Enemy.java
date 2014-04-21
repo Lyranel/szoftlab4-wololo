@@ -98,6 +98,18 @@ public abstract class Enemy extends DamageAble {
 		
 		
 	}
+
+	public String print(){
+		return null;
+	}
+
+	public float getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(float speed) {
+		this.speed = speed;
+	}
 	
 	
 	

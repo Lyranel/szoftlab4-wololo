@@ -9,6 +9,14 @@ public class Player {
 
 	private int enemyCount;
 	private int mana;
+	public int getMana() {
+		return mana;
+	}
+
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
+
 	private MiddleEarth puppetMaster;
 
 	public Player(){
@@ -32,7 +40,6 @@ public class Player {
 	public void buildTower(int posY, int posX){
 		
 		try {
-		
 			if (puppetMaster.getCell(posY, posX).getState() != State.EMPTY) {
 				throw new Exception("This type of building cannot be placed to the specified position.");
 			}

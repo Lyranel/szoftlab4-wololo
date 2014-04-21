@@ -14,7 +14,7 @@ public class MiddleEarth {
 
 	public MiddleEarth(){
 		updateList = UpdateAble.getUpdateList();
-		TDUtils.map = "C:\\DefaultMap.xml";
+		//TDUtils.map = "C:\\DefaultMap.xml";
 		saruman = new Player(this);
 		map = TDUtils.mapReader();
 		Spawn gonoszBugyor = new Spawn(saruman);
@@ -56,12 +56,18 @@ public class MiddleEarth {
 	 */
 	public void update(float time){
 		updateList.update(time);
-		
+		//Kiirjuk, hogy update esemeny tortent:
+		System.out.println("******** UPDATE " + time + " ********" );
+		//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
+		System.out.println("CURRENT MANA: " + saruman.getMana());
+		//Kiirjuk, hogy mennyi ellenseg van meg a palyan
+		System.out.println("REMAINING ENEMIES: " + saruman.getEnemyCount());
 		for(int i = 0; i < map.size(); i++)
 		{
 			if(map.get(i).getEnemyCount() != 0)
 			{
 				System.out.println("Cella ID: "+i+" Ellenseg Szam:" + map.get(i).getEnemyCount());
+				System.out.println(map.get(i).print(i));
 			}
 		}
 		
