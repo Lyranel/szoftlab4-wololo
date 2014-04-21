@@ -11,6 +11,7 @@ public class MiddleEarth {
 	private ArrayList<Cell> map;
 	private Player saruman;
 	private UpdateAbleList updateList;
+	private boolean gameEnd = false;
 
 	public MiddleEarth(){
 		updateList = UpdateAble.getUpdateList();
@@ -62,29 +63,37 @@ public class MiddleEarth {
 	 * @param time
 	 */
 	public void update(float time){
-		updateList.update(time);
-		//Kiirjuk, hogy update esemeny tortent:
-		TDUtils.sLog("******** UPDATE " + time + " ********" );
-		//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
-		TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
-		//Kiirjuk, hogy mennyi ellenseg van meg a palyan
-		TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
-		for(int i = 0; i < map.size(); i++)
+		if(!gameEnd)
 		{
-			if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null)
+			updateList.update(time);
+			
+			if(!gameEnd)
 			{
-				TDUtils.sLog(map.get(i).print(i));
+				//Kiirjuk, hogy update esemeny tortent:
+				TDUtils.sLog("******** UPDATE " + time + " ********" );
+				//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
+				TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
+				//Kiirjuk, hogy mennyi ellenseg van meg a palyan
+				TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
+				for(int i = 0; i < map.size(); i++)
+				{
+					if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null)
+					{
+						TDUtils.sLog(map.get(i).print(i));
+					}
+				}
 			}
 		}
-		
 	}
 	
 	public void lose(){
 		TDUtils.sLog("********** LOSE **********");
+		gameEnd = true;
 	}
 
 	public void win(){
 		//Kiirjuk, hogy nyertunk
 		TDUtils.sLog("********** WIN **********");
+		gameEnd = true;
 	}
 }

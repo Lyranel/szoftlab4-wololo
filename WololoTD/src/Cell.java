@@ -97,7 +97,7 @@ public class Cell {
 		return enemies;
 	}
 
-	//Azon vella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
+	//Azon cella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
 	//amennyiben tobb szomszedja van, akkor random valasztas tortenik
 	public Cell getNext(){
 		
