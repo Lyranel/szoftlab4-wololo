@@ -115,6 +115,11 @@ public class TDUtils {
 			if (debug)
 				sLog("[DEBUG] " + log);
 		}
+		
+		public static int ElfHP = 50;
+		public static int DwarfHP = 65;
+		public static int HumanHP = 50;
+		public static int HobbitHP = 30;
 	
 	
 		public static ArrayList<Cell> mapReader(){	

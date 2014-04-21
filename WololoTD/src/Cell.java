@@ -146,4 +146,19 @@ public class Cell {
 		this.state = State.MOUNTDOOM;
 	}
 
+	public String print(int i) {
+		int posX = i % TDUtils.mapSizeX;
+		int posY = (i - posX) / TDUtils.mapSizeX;
+		String print = "Cell(" + posX + "," + posY + ")";
+		if(getEnemyList().size() != 0){
+			print += "\n\tENEMIES: ";
+			for(int j = 0; j < getEnemyList().size(); j++){
+				print += "\n\t\t" + getEnemyList().get(j).print();
+			}
+		}
+		
+		return print;
+		
+	}
+
 }
