@@ -63,19 +63,20 @@ public class Spawn extends UpdateAble {
 		
 		while(delta >= maxDelta)
 		{
+			delta -= maxDelta;
+			
 			if(currentCount < maxCount)
 			{
 				Cell sPoint = getSpawnPoint();
 				
 				Enemy myEvilChild = getEnemy(sPoint);
 				
-				//myEvilChild.update(delta - (time % maxDelta));
-				myEvilChild.update((delta % maxDelta)+ time-delta);
+				myEvilChild.update(delta);
 				
 				incCount();
 			}
 			
-			delta -= maxDelta;
+			
 		}
 		
 	}
