@@ -8,15 +8,19 @@ import java.util.Random;
  */
 public class Spawn extends UpdateAble {
 
-	private int currentCount;
-	private float difficulty = 0;
-	private int maxCount;
-	private Player saruman;
+	private int currentCount;	 	// A jelenlegi ellenseg szam
+	private float difficulty = 0;	//a jatek nehezsege
+	private int maxCount;			//a maximalis ellenseg szam
+	private Player saruman;			//Szaruman a player
 
 	public Spawn(){
 		
 	}
 	
+	/**
+	 * A player konstuktora
+	 * @param saru	a player amit beallitunk
+	 */
 	public Spawn(Player saru)
 	{
 		saruman = saru;
@@ -27,6 +31,10 @@ public class Spawn extends UpdateAble {
 		super.finalize();
 	}
 
+	/**
+	 * Vissza ad egy cellat ahova spawnolunk
+	 * @return
+	 */
 	private Cell getSpawnPoint(){
 		
 		if(TDUtils.spawn == 0)
@@ -40,22 +48,32 @@ public class Spawn extends UpdateAble {
 		
 		return null;
 	}
-
+	/**
+	 * vissza adja a maximalis ellenseg szamot
+	 * @return
+	 */
 	public int getMaxCount() {
 		return maxCount;
 	}
 
+	/**
+	 * beallitja a maximalis ellensegszamot
+	 * @param maxCount
+	 */
 	public void setMaxCount(int maxCount) {
 		this.maxCount = maxCount;
 	}
-
+	
+	/**
+	 * növeli az ellenseg szamot
+	 */
 	public void incCount(){
 		currentCount++;
 	}
 
 
 	/**
-	 * 
+	 * A spawn update-je amiben letrehoz egy uj ellenseget
 	 * @param time
 	 */
 	public void update(float time){
@@ -72,6 +90,7 @@ public class Spawn extends UpdateAble {
 				
 				Enemy myEvilChild = getEnemy(sPoint);
 				
+				//update, hogy nagy delta eseten ne ragadjon benn a spawn pontban
 				myEvilChild.update(delta);
 				
 				incCount();
@@ -82,6 +101,11 @@ public class Spawn extends UpdateAble {
 		
 	}
 	
+	/**
+	 * Vissza ad egy enemy tipust, a valasztos random vagy beallitott modon
+	 * @param sPoint	a pont ahova eled az ellenseg
+	 * @return
+	 */
 	private Enemy getEnemy(Cell sPoint)
 	{
 		 Random gen = new Random();

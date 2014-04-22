@@ -12,20 +12,20 @@ import java.util.Set;
  */
 public class Tower extends PlayerControlled {
 
-	private int damage;
-	private boolean fog;
-	private float fogTimer;
-	private int range;
-	private float speed;
-	private Set<Cell> targets;
+	private int damage;				//sebzes merteke
+	private boolean fog;			//kod alatt van-e a torony
+	private float fogTimer;			//a kod timer
+	private int range;				//a torony lotavja
+	private float speed;			//a torony speed-je
+	private Set<Cell> targets;		//a torony lehetseges celpontjai
 
 	public Tower(){
 
 	}
 	
 	/**
-	 * 
-	 * @param home
+	 * A tower konstruktora	
+	 * @param home	a cella ahova kerul
 	 */
 	public Tower(Cell home) {
 		
@@ -47,6 +47,10 @@ public class Tower extends PlayerControlled {
 		super.finalize();
 	}
 
+	/**
+	 * vissza adja azt a cellat amiben a legtobb ellenseg talalhato
+	 * @return
+	 */
 	public Cell getMaxTargets(){
 		
 		if (targets.size() == 0) {
@@ -71,7 +75,7 @@ public class Tower extends PlayerControlled {
 	}
 
 	/**
-	 * 
+	 * A torony update-je
 	 * @param time
 	 */
 	public void update(float time){
@@ -114,17 +118,20 @@ public class Tower extends PlayerControlled {
 		}
 	}
 	
+	/**
+	 * a torony itt tuzel az ellensegre
+	 */
 	private void shoot()
 	{
 		Cell target = getMaxTargets();
 		ArrayList<Enemy> Enemylist = new ArrayList<Enemy>(target.getEnemyList());
-		for (Enemy e : Enemylist) {
+		for (Enemy e : Enemylist) {			// minden a cellaban levo ellenseget megsebzunk
 			e.damage(damage);
 		}
 	}
 
 	/**
-	 * 
+	 * A torony upgrade-je itt kerulnek ra a kristalyok
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){

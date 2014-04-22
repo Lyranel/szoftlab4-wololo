@@ -38,7 +38,7 @@ public abstract class Enemy extends DamageAble {
 	}
 
 	/**
-	 * 
+	 * A serules itt tortenik meg a damage alapjan illetve itt van a split is
 	 * @param amount
 	 */
 	public void damage(int amount){
@@ -94,11 +94,19 @@ public abstract class Enemy extends DamageAble {
 		}
 		
 	}
-
+	
+	/**
+	 * A leszarmazottak majd override-oljak
+	 * @param health	a leendo ellenseg elete
+	 * @param cLocation	a leendo ellenseg helye
+	 */
 	protected void split(int health, Cell cLocation) {
 		
 	}
 
+	/**
+	 * Az ellenseg halala
+	 */
 	private void death() {
 		
 		cLocation.remove(this);
@@ -107,24 +115,27 @@ public abstract class Enemy extends DamageAble {
 		this.remove();
 	}
 
+	/**
+	 * A  mozgas van itt megoldva
+	 */
 	public void move(){
 		
-		Cell nextCell = cLocation.getNext();
+		Cell nextCell = cLocation.getNext();		//lekerjuk a kovi cellat
 		
-		if(nextCell != null)	
+		if(nextCell != null)						//ha az nem nulla
 		{
-			cLocation.remove(this);
-			nextCell.add(this);
-			cLocation = nextCell;
-			speed = 1.f;
+			cLocation.remove(this);					//kivesszuk a cellabol
+			nextCell.add(this);						//hozzadjuk a uj cellahoz
+			cLocation = nextCell;					//at allitjuk a jelenlegi cellat
+			speed = 1.f;							//resetelve 
 			
-			if(cLocation.getState() == State.MOUNTDOOM)
+			if(cLocation.getState() == State.MOUNTDOOM)	//ha a mountdoom-ra lepunk akkor lose
 			{
-				saruman.lose();
+				saruman.lose();							//veszitunk
 			}
-			if(cLocation.getState() == State.TRAP)
+			if(cLocation.getState() == State.TRAP)		//ha trap-ra lepunk
 			{
-				((Trap)cLocation.getBuilding()).update(2);
+				((Trap)cLocation.getBuilding()).update(2);	//akkor lassulunk
 
 			}
 			

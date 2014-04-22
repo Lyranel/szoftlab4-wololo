@@ -37,7 +37,7 @@ public class Elf extends Enemy {
 	}
 
 	/**
-	 * 
+	 * Elf felulirja a meglevo slow-t mert arra az nem hat
 	 * @param amount
 	 */
 	@Override

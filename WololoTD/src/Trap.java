@@ -7,14 +7,14 @@
  */
 public class Trap extends PlayerControlled {
 
-	private float slowAmount;
+	private float slowAmount;		// a csapda lassitas merteke
 
 	public Trap(){
 
 	}
 	
 	/**
-	 * 
+	 * A csapda konstruktora
 	 * @param home
 	 */
 	public Trap(Cell home) {
@@ -29,7 +29,7 @@ public class Trap extends PlayerControlled {
 	}
 
 	/**
-	 * 
+	 * az update metodus
 	 * @param time
 	 */
 	public void update(float time){
@@ -41,7 +41,7 @@ public class Trap extends PlayerControlled {
 	}
 
 	/**
-	 * 
+	 * upgrade amivel a lassitas merteke novelheto
 	 * @param Cryst
 	 */
 	public void upgrade(Crystal Cryst){

@@ -10,10 +10,18 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	//Az ellenseg HP-ja, alapbol a TDUtilsban levo default ertekre inicializaljuk
 	private int health;
 
+	/**
+	 * vissza adja az eletet
+	 * @return
+	 */
 	public int getHealth() {
 		return health;
 	}
 
+	/**
+	 * beallitja az eletet
+	 * @param health
+	 */
 	public void setHealth(int health) {
 		this.health = health;
 	}
@@ -27,7 +35,7 @@ public abstract class DamageAble extends UpdateAble implements IDamageAble {
 	}
 
 	/**
-	 * 
+	 * levonja a sebzest az eletebol
 	 * @param amount
 	 */
 	public void damage(int amount){

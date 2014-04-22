@@ -108,7 +108,7 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * Megnoveljuk a mana-t
 	 * @param mana
 	 */
 	public void increaseMana(int mana){
@@ -118,7 +118,7 @@ public class Player {
 	}
 
 	/**
-	 * 
+	 * Beallitjuk az enemyCount-ot
 	 * @param num
 	 */
 	public void setEnemyCount(int num){
