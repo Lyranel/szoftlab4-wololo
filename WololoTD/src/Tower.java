@@ -81,7 +81,7 @@ public class Tower extends PlayerControlled {
 		while(delta >= maxDelta * speed)
 		{
 			shoot();
-			delta -= maxDelta;
+			delta -= maxDelta * speed;
 			
 			if (TDUtils.fog == 0) {
 				
