@@ -97,8 +97,6 @@ Cell(2,2) ROAD
 	ENEMIES: 
 		Dwarf - 4/65 speed: 0.8
 ********** LOSE **********
-********** LOSE **********
-********** LOSE **********
 ******** UPDATE 1.25 ********
 CURRENT MANA: 580
 REMAINING ENEMIES: 4
