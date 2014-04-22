@@ -25,6 +25,8 @@ public class Main {
 				consoleInput = bufferRead.readLine();
 			} catch (IOException e) {
 				e.printStackTrace();
+				System.out.println("Exiting WololoTD.");
+				return;
 			}
 			
 			try {
@@ -141,6 +143,8 @@ public class Main {
 		
 			} catch (Exception e) {
 				e.printStackTrace();
+				System.out.println("Exiting WololoTD.");
+				return;
 			}
 		}
 		
