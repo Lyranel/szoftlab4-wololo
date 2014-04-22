@@ -134,8 +134,6 @@ public class TDUtils {
 		public static float DwarfSpeed = 1.f/.8f;
 		public static float HumanSpeed = 1.f/1.f;
 		public static float HobbitSpeed = 1.f/1.2f;
-
-		public static int enemyCount = 0;
 	
 		public static ArrayList<Cell> mapReader(){	
 			File file = new File(map);
