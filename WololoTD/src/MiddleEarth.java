@@ -92,7 +92,11 @@ public class MiddleEarth {
 	}
 	
 	public void lose(){
-		TDUtils.sLog("********** LOSE **********");
+		if(gameEnd != true)
+		{
+			TDUtils.sLog("********** LOSE **********");
+		}
+		
 		TDUtils.end = true;
 		gameEnd = true;
 	}
