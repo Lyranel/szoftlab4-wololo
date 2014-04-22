@@ -122,6 +122,11 @@ public abstract class Enemy extends DamageAble {
 			{
 				saruman.lose();
 			}
+			if(cLocation.getState() == State.TRAP)
+			{
+				((Trap)cLocation.getBuilding()).update(2);
+
+			}
 			
 			
 		}
