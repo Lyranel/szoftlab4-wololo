@@ -1,0 +1,7 @@
+start -B first -S first -E human -F on -C 1 -L Test03_output.txt
+build -T tower -P 0,0
+update -T 0.1
+update
+update
+update
+update

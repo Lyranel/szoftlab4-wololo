@@ -1,0 +1,57 @@
+********** START **********
+CURRENT MANA: 150
+REMAINING ENEMIES: 1
+Cell(0,1) SPAWNPOINT
+Cell(1,1) ROAD
+Cell(2,1) ROAD
+Cell(3,1) ROAD
+Cell(4,1) MOUNTDOOM
+Cell(2,2) ROAD
+Cell(4,2) ROAD
+Cell(2,3) ROAD
+Cell(3,3) ROAD
+Cell(4,3) ROAD
+Cell(2,4) ROAD
+Cell(2,5) SPAWNPOINT
+******** UPDATE 0.1 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(1,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2
+******** UPDATE 0.1 ********
+CURRENT MANA: 75
+REMAINING ENEMIES: 1
+Cell(1,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 2
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2
+******** UPDATE 0.5 ********
+CURRENT MANA: 75
+REMAINING ENEMIES: 1
+Cell(1,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 2
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Hobbit - 15/30 speed: 1.2
+********** WIN **********
+******** UPDATE 0.5 ********
+CURRENT MANA: 82
+REMAINING ENEMIES: 0
+Cell(1,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 2
+		Speed: 0.5

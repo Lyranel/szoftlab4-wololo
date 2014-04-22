@@ -1,0 +1,117 @@
+********** START **********
+CURRENT MANA: 150
+REMAINING ENEMIES: 1
+Cell(0,1) SPAWNPOINT
+Cell(1,1) ROAD
+Cell(2,1) ROAD
+Cell(3,1) ROAD
+Cell(4,1) MOUNTDOOM
+Cell(2,2) ROAD
+Cell(4,2) ROAD
+Cell(2,3) ROAD
+Cell(3,3) ROAD
+Cell(4,3) ROAD
+Cell(2,4) ROAD
+Cell(2,5) SPAWNPOINT
+******** UPDATE 0.1 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Dwarf - 65/65 speed: 0.8
+******** UPDATE 1.0 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 4
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Dwarf - 16/65 speed: 0.8
+		Dwarf - 16/65 speed: 0.8
+		Dwarf - 16/65 speed: 0.8
+		Dwarf - 16/65 speed: 0.8
+******** UPDATE 1.25 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 16
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+Cell(1,1) ROAD
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+******** UPDATE 1.25 ********
+CURRENT MANA: 580
+REMAINING ENEMIES: 4
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(2,1) ROAD
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+******** UPDATE 1.25 ********
+CURRENT MANA: 580
+REMAINING ENEMIES: 4
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(3,1) ROAD
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+Cell(2,2) ROAD
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+********** LOSE **********
+********** LOSE **********
+********** LOSE **********
+******** UPDATE 1.25 ********
+CURRENT MANA: 580
+REMAINING ENEMIES: 4
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 1
+		Speed: 0.5
+Cell(4,1) MOUNTDOOM
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+		Dwarf - 4/65 speed: 0.8
+Cell(2,3) ROAD
+	ENEMIES: 
+		Dwarf - 4/65 speed: 0.8

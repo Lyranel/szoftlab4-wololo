@@ -1,0 +1,69 @@
+********** START **********
+CURRENT MANA: 150
+REMAINING ENEMIES: 1
+Cell(0,1) SPAWNPOINT
+Cell(1,1) ROAD
+Cell(2,1) ROAD
+Cell(3,1) ROAD
+Cell(4,1) MOUNTDOOM
+Cell(2,2) ROAD
+Cell(4,2) ROAD
+Cell(2,3) ROAD
+Cell(3,3) ROAD
+Cell(4,3) ROAD
+Cell(2,4) ROAD
+Cell(2,5) SPAWNPOINT
+******** UPDATE 0.1 ********
+CURRENT MANA: 115
+REMAINING ENEMIES: 1
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2
+Cell(1,1) TRAP
+	BUILDING: 
+		Slow: 10.0%
+******** UPDATE 1.0 ********
+CURRENT MANA: 115
+REMAINING ENEMIES: 1
+Cell(1,1) TRAP
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.08
+	BUILDING: 
+		Slow: 10.0%
+******** UPDATE 0.1 ********
+CURRENT MANA: 95
+REMAINING ENEMIES: 1
+Cell(1,1) TRAP
+	ENEMIES: 
+		Hobbit - 30/30 speed: 0.96000004
+	BUILDING: 
+		Slow: 20.0%
+******** UPDATE 1.0 ********
+CURRENT MANA: 95
+REMAINING ENEMIES: 1
+Cell(1,1) TRAP
+	BUILDING: 
+		Slow: 20.0%
+Cell(2,1) ROAD
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2
+******** UPDATE 1.0 ********
+CURRENT MANA: 95
+REMAINING ENEMIES: 1
+Cell(1,1) TRAP
+	BUILDING: 
+		Slow: 20.0%
+Cell(3,1) ROAD
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2
+********** LOSE **********
+********** LOSE **********
+******** UPDATE 1.0 ********
+CURRENT MANA: 95
+REMAINING ENEMIES: 1
+Cell(1,1) TRAP
+	BUILDING: 
+		Slow: 20.0%
+Cell(4,1) MOUNTDOOM
+	ENEMIES: 
+		Hobbit - 30/30 speed: 1.2

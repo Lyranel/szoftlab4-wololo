@@ -1,0 +1,9 @@
+start -B first -S first -E hobbit -F off -C 1 -L Test01_output.txt
+build -T trap -P 1,1
+update -T 0.1
+update
+upgrade -C trap -P 1,1
+update -T 0.1
+update
+update
+update

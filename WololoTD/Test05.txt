@@ -1,0 +1,12 @@
+start -B first -P off -S first -E hobbit -F off -C 1 -L Test05_output.txt
+build -T tower -P 1,0
+update -T 0.1
+upgrade -C damage -P 1,0
+update -T 0.1
+upgrade -C damage -P 1,0
+update -T 0.1
+upgrade -C damage -P 1,0
+update -T 0.1
+update
+update -T 0.5
+update -T 0.5

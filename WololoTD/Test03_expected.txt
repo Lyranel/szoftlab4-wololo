@@ -1,0 +1,71 @@
+********** START **********
+CURRENT MANA: 150
+REMAINING ENEMIES: 1
+Cell(0,1) SPAWNPOINT
+Cell(1,1) ROAD
+Cell(2,1) ROAD
+Cell(3,1) ROAD
+Cell(4,1) MOUNTDOOM
+Cell(2,2) ROAD
+Cell(4,2) ROAD
+Cell(2,3) ROAD
+Cell(3,3) ROAD
+Cell(4,3) ROAD
+Cell(2,4) ROAD
+Cell(2,5) SPAWNPOINT
+******** UPDATE 0.1 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 0
+		Speed: 0.5
+Cell(0,1) SPAWNPOINT
+	ENEMIES: 
+		Human - 50/50 speed: 1.0
+******** UPDATE 1.0 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 0
+		Speed: 0.5
+Cell(1,1) ROAD
+	ENEMIES: 
+		Human - 50/50 speed: 1.0
+******** UPDATE 1.0 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 0
+		Speed: 0.5
+Cell(2,1) ROAD
+	ENEMIES: 
+		Human - 50/50 speed: 1.0
+******** UPDATE 1.0 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 0
+		Speed: 0.5
+Cell(3,1) ROAD
+	ENEMIES: 
+		Human - 50/50 speed: 1.0
+********** LOSE **********
+******** UPDATE 1.0 ********
+CURRENT MANA: 100
+REMAINING ENEMIES: 1
+Cell(0,0) TOWER
+	BUILDING: 
+		Damage: 15
+		Range: 0
+		Speed: 0.5
+Cell(4,1) MOUNTDOOM
+	ENEMIES: 
+		Human - 50/50 speed: 1.0

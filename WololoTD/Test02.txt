@@ -1,0 +1,9 @@
+start -B rr -P first -S first -E dwarf -F off -C 1 -L Test02_output.txt
+build -T tower -P 0,0
+update -T 0.1
+update
+update -T 1.25
+update -T 1.25
+update -T 1.25
+update -T 1.25
+update -T 1.25
