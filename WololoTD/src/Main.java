@@ -318,6 +318,8 @@ public class Main {
 					position = command[i+1].split(",");
 				}
 				
+				else throw new Exception("Unrecognized command.");
+				
 			}
 			
 			if (type != null && position != null) {
@@ -342,7 +344,12 @@ public class Main {
 					puppetMaster.getPlayer().upgradeTrap(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new TrapC());
 				}
 				
-				else throw new Exception("Unrecognized command.");
+				else {
+					System.out.println(type);
+					System.out.println(position[0] + "," + position[1]);
+					System.out.println(puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState().toString());
+					throw new Exception("Unrecognized command.");
+				}
 			}
 			
 		}
