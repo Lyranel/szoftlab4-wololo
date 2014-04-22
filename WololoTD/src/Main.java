@@ -325,23 +325,23 @@ public class Main {
 			if (type != null && position != null) {
 				
 				if (type.equals("damage") && 
-						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new DmgC());
+						puppetMaster.getCell(Integer.parseInt(position[1]), Integer.parseInt(position[0])).getState() == State.TOWER) {
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[1]), Integer.parseInt(position[0]), new DmgC());
 				}
 				
 				else if (type.equals("range") && 
-						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new RangeC());
+						puppetMaster.getCell(Integer.parseInt(position[1]), Integer.parseInt(position[0])).getState() == State.TOWER) {
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[1]), Integer.parseInt(position[0]), new RangeC());
 				}
 				
 				else if (type.equals("speed") && 
-						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TOWER) {
-					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new SpeedC());
+						puppetMaster.getCell(Integer.parseInt(position[1]), Integer.parseInt(position[0])).getState() == State.TOWER) {
+					puppetMaster.getPlayer().upgradeTower(Integer.parseInt(position[1]), Integer.parseInt(position[0]), new SpeedC());
 				}
 				
 				else if (type.equals("trap") && 
-						puppetMaster.getCell(Integer.parseInt(position[0]), Integer.parseInt(position[1])).getState() == State.TRAP) {
-					puppetMaster.getPlayer().upgradeTrap(Integer.parseInt(position[0]), Integer.parseInt(position[1]), new TrapC());
+						puppetMaster.getCell(Integer.parseInt(position[1]), Integer.parseInt(position[0])).getState() == State.TRAP) {
+					puppetMaster.getPlayer().upgradeTrap(Integer.parseInt(position[1]), Integer.parseInt(position[0]), new TrapC());
 				}
 				
 				else {

@@ -20,6 +20,7 @@ public class Spawn extends UpdateAble {
 	public Spawn(Player saru)
 	{
 		saruman = saru;
+		delta = maxDelta;
 	}
 
 	public void finalize() throws Throwable {

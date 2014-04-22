@@ -30,9 +30,9 @@ public class Tower extends PlayerControlled {
 	public Tower(Cell home) {
 		
 		if (TDUtils.fog == 1) {
-			this.range = 1;
+			this.range = 0;
 		}
-		else this.range = 2;
+		else this.range = 1;
 		
 		super.home = home;
 		this.damage = 15;
@@ -76,7 +76,9 @@ public class Tower extends PlayerControlled {
 	 */
 	public void update(float time){
 		
-		incDelta(time);
+		if (getMaxTargets().getEnemyCount() > 0) {
+			incDelta(time);
+		}
 		
 		while(delta >= maxDelta * speed)
 		{

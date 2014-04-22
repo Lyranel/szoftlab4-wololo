@@ -4,26 +4,6 @@
         <Pos_y>0</Pos_y>
     </Cell>
     <Cell>
-        <Pos_x>1</Pos_x>
-        <Pos_y>0</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>2</Pos_x>
-        <Pos_y>0</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>3</Pos_x>
-        <Pos_y>0</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>4</Pos_x>
-        <Pos_y>0</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>5</Pos_x>
-        <Pos_y>0</Pos_y>
-    </Cell>
-    <Cell>
         <Pos_x>0</Pos_x>
         <Pos_y>1</Pos_y>
         <Next_road>
@@ -33,12 +13,52 @@
         <Spawn_point/>
     </Cell>
     <Cell>
+        <Pos_x>0</Pos_x>
+        <Pos_y>2</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>0</Pos_x>
+        <Pos_y>3</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>0</Pos_x>
+        <Pos_y>4</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>0</Pos_x>
+        <Pos_y>5</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>1</Pos_x>
+        <Pos_y>0</Pos_y>
+    </Cell>
+    <Cell>
         <Pos_x>1</Pos_x>
         <Pos_y>1</Pos_y>
         <Next_road>
             <Pos_x>2</Pos_x>
             <Pos_y>1</Pos_y>
         </Next_road>
+    </Cell>
+    <Cell>
+        <Pos_x>1</Pos_x>
+        <Pos_y>2</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>1</Pos_x>
+        <Pos_y>3</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>1</Pos_x>
+        <Pos_y>4</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>1</Pos_x>
+        <Pos_y>5</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>2</Pos_x>
+        <Pos_y>0</Pos_y>
     </Cell>
     <Cell>
         <Pos_x>2</Pos_x>
@@ -53,61 +73,12 @@
         </Next_road>
     </Cell>
     <Cell>
-        <Pos_x>3</Pos_x>
-        <Pos_y>1</Pos_y>
-        <Next_road>
-            <Pos_x>4</Pos_x>
-            <Pos_y>1</Pos_y>
-        </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>4</Pos_x>
-        <Pos_y>1</Pos_y>
-        <Mount_doom/>
-    </Cell>
-    <Cell>
-        <Pos_x>5</Pos_x>
-        <Pos_y>1</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>0</Pos_x>
-        <Pos_y>2</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>1</Pos_x>
-        <Pos_y>2</Pos_y>
-    </Cell>
-    <Cell>
         <Pos_x>2</Pos_x>
         <Pos_y>2</Pos_y>
         <Next_road>
             <Pos_x>2</Pos_x>
             <Pos_y>3</Pos_y>
         </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>3</Pos_x>
-        <Pos_y>2</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>4</Pos_x>
-        <Pos_y>2</Pos_y>
-        <Next_road>
-            <Pos_x>4</Pos_x>
-            <Pos_y>1</Pos_y>
-        </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>5</Pos_x>
-        <Pos_y>2</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>0</Pos_x>
-        <Pos_y>3</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>1</Pos_x>
-        <Pos_y>3</Pos_y>
     </Cell>
     <Cell>
         <Pos_x>2</Pos_x>
@@ -118,60 +89,12 @@
         </Next_road>
     </Cell>
     <Cell>
-        <Pos_x>3</Pos_x>
-        <Pos_y>3</Pos_y>
-        <Next_road>
-            <Pos_x>4</Pos_x>
-            <Pos_y>3</Pos_y>
-        </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>4</Pos_x>
-        <Pos_y>3</Pos_y>
-        <Next_road>
-            <Pos_x>4</Pos_x>
-            <Pos_y>2</Pos_y>
-        </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>5</Pos_x>
-        <Pos_y>3</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>0</Pos_x>
-        <Pos_y>4</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>1</Pos_x>
-        <Pos_y>4</Pos_y>
-    </Cell>
-    <Cell>
         <Pos_x>2</Pos_x>
         <Pos_y>4</Pos_y>
         <Next_road>
             <Pos_x>2</Pos_x>
             <Pos_y>3</Pos_y>
         </Next_road>
-    </Cell>
-    <Cell>
-        <Pos_x>3</Pos_x>
-        <Pos_y>4</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>4</Pos_x>
-        <Pos_y>4</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>5</Pos_x>
-        <Pos_y>4</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>0</Pos_x>
-        <Pos_y>5</Pos_y>
-    </Cell>
-    <Cell>
-        <Pos_x>1</Pos_x>
-        <Pos_y>5</Pos_y>
     </Cell>
     <Cell>
         <Pos_x>2</Pos_x>
@@ -184,11 +107,88 @@
     </Cell>
     <Cell>
         <Pos_x>3</Pos_x>
+        <Pos_y>0</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>3</Pos_x>
+        <Pos_y>1</Pos_y>
+        <Next_road>
+            <Pos_x>4</Pos_x>
+            <Pos_y>1</Pos_y>
+        </Next_road>
+    </Cell>
+    <Cell>
+        <Pos_x>3</Pos_x>
+        <Pos_y>2</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>3</Pos_x>
+        <Pos_y>3</Pos_y>
+        <Next_road>
+            <Pos_x>4</Pos_x>
+            <Pos_y>3</Pos_y>
+        </Next_road>
+    </Cell>
+    <Cell>
+        <Pos_x>3</Pos_x>
+        <Pos_y>4</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>3</Pos_x>
         <Pos_y>5</Pos_y>
     </Cell>
     <Cell>
         <Pos_x>4</Pos_x>
+        <Pos_y>0</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>4</Pos_x>
+        <Pos_y>1</Pos_y>
+        <Mount_doom/>
+    </Cell>
+    <Cell>
+        <Pos_x>4</Pos_x>
+        <Pos_y>2</Pos_y>
+        <Next_road>
+            <Pos_x>4</Pos_x>
+            <Pos_y>1</Pos_y>
+        </Next_road>
+    </Cell>
+    <Cell>
+        <Pos_x>4</Pos_x>
+        <Pos_y>3</Pos_y>
+        <Next_road>
+            <Pos_x>4</Pos_x>
+            <Pos_y>2</Pos_y>
+        </Next_road>
+    </Cell>
+    <Cell>
+        <Pos_x>4</Pos_x>
+        <Pos_y>4</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>4</Pos_x>
         <Pos_y>5</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>5</Pos_x>
+        <Pos_y>0</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>5</Pos_x>
+        <Pos_y>1</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>5</Pos_x>
+        <Pos_y>2</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>5</Pos_x>
+        <Pos_y>3</Pos_y>
+    </Cell>
+    <Cell>
+        <Pos_x>5</Pos_x>
+        <Pos_y>4</Pos_y>
     </Cell>
     <Cell>
         <Pos_x>5</Pos_x>

@@ -158,7 +158,7 @@ public class Cell {
 	 */
 	public void getTargets(int range, Set<Cell> targets){
 		
-		if (state == State.ROAD || state == State.TRAP) {
+		if (state == State.ROAD || state == State.TRAP || state == State.SPAWNPOINT) {
 			targets.add(this);
 		}
 		
