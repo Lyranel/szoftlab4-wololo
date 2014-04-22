@@ -62,6 +62,15 @@ public abstract class Enemy extends DamageAble {
 						this.split(getHealth(), cLocation);
 					}																
 			 }
+			 else
+			 {
+				 super.damage(amount);
+					
+					if(this.getHealth() <= 0)
+					{
+						this.death();
+					}
+			 }
 		}
 		//Ha a splitteles teljesen ki van kapcsolva
 		if(TDUtils.split == 2){
