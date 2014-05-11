@@ -61,9 +61,16 @@ public class EnemyGraphic {
 	}
 	
 	public void paintComponent(Graphics g, JPanel panel) {
-       
-		im2.paintIcon(panel, g, (int)(percent*newPosX+(1-percent)*posX), (int)(percent*newPosY+(1-percent)*posY));
-        
+       try
+       {
+		if(panel != null && g != null)
+			//TODO: itt esik egy exception ami nemtudom miért esik
+			im2.paintIcon(panel, g, (int)(percent*newPosX+(1-percent)*posX), (int)(percent*newPosY+(1-percent)*posY));
+       }
+       catch (Exception e)
+       {
+    	   
+       }
     }
 
 	public int getPosX() {

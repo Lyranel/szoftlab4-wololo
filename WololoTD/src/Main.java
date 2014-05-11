@@ -58,9 +58,10 @@ public class Main {
 					
 					long oldTime = System.nanoTime();
 					long cTime = 0;
+					float coolDown = 1;
 					while (!exit && !TDUtils.end) {
 					
-						cTime = System.nanoTime() - oldTime;
+						cTime += System.nanoTime() - oldTime;
 						//cmdInput = "update";
 						//cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
@@ -71,11 +72,17 @@ public class Main {
 						
 						else {
 							//ExecuteCommand(puppetMaster, cmd);
-							puppetMaster.update(cTime/10000000);
+							//puppetMaster.update(cTime/1000000000);
 							
 						}
+						if(cTime/1000000000 >= coolDown)
+						{
+							puppetMaster.update(1);
+							testView.repaint();
+							cTime = 0;
+						}
+						
 						oldTime = System.nanoTime();
-						testView.repaint();
 					}
 					
 					if (TDUtils.logfile != null) {

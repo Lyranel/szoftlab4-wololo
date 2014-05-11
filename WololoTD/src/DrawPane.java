@@ -33,11 +33,15 @@ public class DrawPane extends JPanel{
         super.paintComponent(g);
         
         map.paintComponent(g);
-        if(eList != null)
+        
+        ArrayList<EnemyGraphic> cpyEList = new ArrayList<EnemyGraphic>(eList);
+        
+        if(cpyEList != null)
         {
-        	for(EnemyGraphic e: eList)
+        	for(EnemyGraphic e: cpyEList)
         	{
-        		e.paintComponent(g, this);
+        		if(e != null)
+        			e.paintComponent(g, this);
         	}
         }
         if(towerList != null)
