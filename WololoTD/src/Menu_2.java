@@ -60,14 +60,7 @@ public class Menu_2 {
             }
         });   
 	}
-	/*
 
-	public void paintComponent(Graphics g, JPanel panel, int mana, int enemy_count) {
-
-
-
-		
-	}*/
 	public void paintComponent(Graphics g, JPanel panel) {
        
 		u_blue.setLocation(540, 415);
