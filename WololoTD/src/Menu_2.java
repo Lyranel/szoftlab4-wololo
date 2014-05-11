@@ -18,6 +18,7 @@ public class Menu_2 {
 	JButton u_green;
 	JButton u_blue;
 	JButton u_red;
+	JButton start;
 	
 	int mana = 0;
 	int enemyCount = 0;
@@ -32,6 +33,18 @@ public class Menu_2 {
 		tower = new ImageIcon(im3.getImage().getScaledInstance(60, 60, java.awt.Image.SCALE_DEFAULT));
 		ImageIcon im4 = new ImageIcon(this.getClass().getResource("tra_v2.png"));
 		trap = new ImageIcon(im4.getImage().getScaledInstance(40, 50, java.awt.Image.SCALE_DEFAULT));
+
+		start = new JButton("START");
+		//start.setBackground(Color.LIGHT_GRAY);
+		start.setForeground(Color.black);
+		start.setToolTipText("Start Game");
+		start.setFocusPainted(false);
+		start.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("You clicked the START button");
+            }
+        });  
 		
 		u_green = new JButton("Speed upgrade");
 		u_green.setBackground(new Color(100,238,17));
@@ -76,14 +89,17 @@ public class Menu_2 {
 		u_blue.setLocation(540, 415);
 		u_red.setLocation(540, 375);
 		u_green.setLocation(540, 335);
+		start.setLocation(540, 490);
 		
 		u_green.setSize(235, 30);
 		u_red.setSize(235, 30);
 		u_blue.setSize(235, 30);
+		start.setSize(235, 40);
 		
 		panel.add(this.u_blue);
 		panel.add(this.u_green);
 		panel.add(this.u_red);
+		panel.add(this.start);
 		
 		saruman.paintIcon(panel, g, 540, 51);
 		enemy.paintIcon(panel, g, 540, 110);
@@ -98,14 +114,14 @@ public class Menu_2 {
 		g.drawString("Tower mana cost:", 585, 200);
 		g.drawString("Trap mana cost:", 585, 260);
 		g.drawString("Tower upgrade cost:", 540, 320);
-		g.drawString("Trap upgrade cost:", 540, 490);
+		g.drawString("Trap upgrade cost:", 540, 475);
 		
 		g.setColor(Color.BLUE);
 		g.drawString(Integer.toString(mana), 750, 84);
 		g.drawString("50", 750, 200);
 		g.drawString("35", 750, 260);
 		g.drawString("25", 750, 320);
-		g.drawString("20", 750, 490);
+		g.drawString("20", 750, 475);
 		
 		g.setColor(Color.RED);
 		g.drawString(Integer.toString(enemyCount), 750, 140);
