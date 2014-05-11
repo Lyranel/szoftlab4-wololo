@@ -11,6 +11,7 @@ public class Main {
 		String consoleInput = "";
 		String[] command;
 		MiddleEarth puppetMaster= null;;
+		final long startTime = System.nanoTime();
 		
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -55,9 +56,13 @@ public class Main {
 					testView.setMap(puppetMaster.getMap());
 					testView.repaint();
 					
+					long oldTime = System.nanoTime();
+					long cTime = 0;
 					while (!exit && !TDUtils.end) {
 					
-						cmdInput = commandRead.readLine();
+						cTime = System.nanoTime() - oldTime;
+						//cmdInput = "update";
+						//cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
 						
 						if (cmd[0].equals("exit")) {
@@ -65,10 +70,11 @@ public class Main {
 						}
 						
 						else {
-							ExecuteCommand(puppetMaster, cmd);
-							
+							//ExecuteCommand(puppetMaster, cmd);
+							puppetMaster.update(cTime/10000000);
 							
 						}
+						oldTime = System.nanoTime();
 						testView.repaint();
 					}
 					
