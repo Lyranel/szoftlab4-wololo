@@ -58,7 +58,14 @@ public class View extends JFrame implements MouseListener{
 				else if(toBuild.getState() == State.ROAD)
 					puppetMaster.getPlayer().buildTrap(cell_y, cell_x);
 				else if(toBuild.getState() == State.TOWER)
-					puppetMaster.getPlayer().upgradeTower(cell_y, cell_x, new DmgC());
+				{
+					if(getUpgrade() == 1)
+						puppetMaster.getPlayer().upgradeTower(cell_y, cell_x, new DmgC());
+					if(getUpgrade() == 2)
+						puppetMaster.getPlayer().upgradeTower(cell_y, cell_x, new SpeedC());
+					if(getUpgrade() == 3)
+						puppetMaster.getPlayer().upgradeTower(cell_y, cell_x, new RangeC());
+				}
 				else if(toBuild.getState() == State.TRAP)
 					puppetMaster.getPlayer().upgradeTrap(cell_y, cell_x, new TrapC());
 				}
@@ -100,5 +107,9 @@ public class View extends JFrame implements MouseListener{
 		dp.removeEnemyG(e);
 	}
 	
+	public int getUpgrade()
+	{
+		return dp.getUpgrade();
+	}
 	
 }

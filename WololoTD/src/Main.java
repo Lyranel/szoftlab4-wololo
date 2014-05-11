@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
+import javax.swing.JOptionPane;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -34,6 +36,7 @@ public class Main {
 				System.out.println("Exiting WololoTD.");
 				return;
 			}*/
+			JOptionPane.showMessageDialog(null, "Start", "Start Message", JOptionPane.INFORMATION_MESSAGE);
 			consoleInput = "start";
 			
 			try {

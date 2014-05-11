@@ -117,4 +117,9 @@ public class DrawPane extends JPanel{
 		menu.setMana(mana);
 	}
 	
+	public int getUpgrade()
+	{
+		return menu.getUpdateType();
+	}
+	
 }

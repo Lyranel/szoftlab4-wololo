@@ -20,6 +20,7 @@ public class Menu_2 {
 	JButton u_red;
 	JButton start;
 	
+	int upgradeType = 1;
 	int mana = 0;
 	int enemyCount = 0;
 	
@@ -43,6 +44,7 @@ public class Menu_2 {
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println("You clicked the START button");
+                
             }
         });  
 		
@@ -54,6 +56,7 @@ public class Menu_2 {
         u_green.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e)
             {
+            	upgradeType = 2;
                 System.out.println("You clicked the GREEN button");
             }
         });   
@@ -66,6 +69,7 @@ public class Menu_2 {
         u_red.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e)
             {
+            	upgradeType = 1;
                 System.out.println("You clicked the RED button");
             }
         });   
@@ -79,6 +83,7 @@ public class Menu_2 {
         u_blue.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e)
             {
+            	upgradeType = 3;
                 System.out.println("You clicked the BLUE button");
             }
         });   
@@ -144,4 +149,10 @@ public class Menu_2 {
 	public void setEnemyCount(int enemyCount) {
 		this.enemyCount = enemyCount;
 	}
+	
+	public int getUpdateType()
+	{
+		return upgradeType;
+	}
+	
 }
