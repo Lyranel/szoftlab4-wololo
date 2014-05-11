@@ -14,26 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/elf_v2.gif</name>
-			<type>1</type>
-			<location>C:/Users/AnettZsófia/Desktop/kepek/elf_v2.gif</location>
-		</link>
-		<link>
-			<name>src/hobbit_v3.gif</name>
-			<type>1</type>
-			<location>C:/Users/AnettZsófia/Desktop/kepek/hobbit_v3.gif</location>
-		</link>
-		<link>
-			<name>src/human.gif</name>
-			<type>1</type>
-			<location>C:/Users/AnettZsófia/Desktop/kepek/human.gif</location>
-		</link>
-		<link>
-			<name>src/szakkalas_torpe.gif</name>
-			<type>1</type>
-			<location>C:/Users/AnettZsófia/Desktop/kepek/szakkalas_torpe.gif</location>
-		</link>
-	</linkedResources>
 </projectDescription>
