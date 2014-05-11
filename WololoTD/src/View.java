@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.awt.geom.*;
 
 public class View extends JFrame{
@@ -23,6 +24,9 @@ public class View extends JFrame{
 		add(dp);
 	}
 	
-	
+	public void setMap(ArrayList<Cell> map)
+	{
+		dp.setMap(map);
+	}
 	
 }

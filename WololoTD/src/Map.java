@@ -6,10 +6,40 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
 import java.awt.geom.*;
 
 public class Map {
 
+	BufferedImage grass;
+	BufferedImage road;
+	
+	private ArrayList<Cell> map;
+	
+	public ArrayList<Cell> getMap() {
+		return map;
+	}
+
+	public void setMap(ArrayList<Cell> map) {
+		this.map = map;
+		
+	}
+
+	public Map()
+	{
+		URL url = this.getClass().getResource("grass.jpg");
+		URL url2 = this.getClass().getResource("stone.jpg");
+		try {
+			grass = ImageIO.read(url);
+			road = ImageIO.read(url2);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public void paintComponent(Graphics g) {
        
         
@@ -35,6 +65,33 @@ public class Map {
         g2.draw(new Line2D.Double(50, 370, 530, 370));
         g2.draw(new Line2D.Double(50, 450, 530, 450));
         
+       /* g2.drawImage(road, 50,50,80,80,null);
+        g2.drawImage(road, 130,50,80,80,null);
+        g2.drawImage(road, 50,130,80,80,null);
+        g2.drawImage(road, 130,130,80,80,null);*/
+        
+        if(map != null)
+		{
+			for(int i = 0; i < 6; i++)
+			{
+				for(int l = 0; l < 6; l++)
+				{
+					State curr = map.get(i + 6 * l).getState();
+					
+					if((curr == State.EMPTY) || (curr == State.TOWER))
+					{
+						g2.drawImage(grass, 50 + (i*80),50 + (l*80),80,80,null);
+					}
+					else
+					{
+						g2.drawImage(road, 50 + (i*80),50 + (l*80),80,80,null);
+					}
+					
+				}
+			}
+			
+			
+		}
         
         
     }

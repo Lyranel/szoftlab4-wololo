@@ -10,7 +10,7 @@ public class Main {
 		boolean quit = false;
 		String consoleInput = "";
 		String[] command;
-		MiddleEarth puppetMaster;
+		MiddleEarth puppetMaster= null;;
 		
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -52,7 +52,7 @@ public class Main {
 					System.out.println("To upgrade already existing towers or traps, use the 'upgrade' command.");
 					System.out.println("To increase ingame time, use the 'update' command.");
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
-					
+					testView.setMap(puppetMaster.getMap());
 					
 					while (!exit && !TDUtils.end) {
 					
@@ -65,6 +65,8 @@ public class Main {
 						
 						else {
 							ExecuteCommand(puppetMaster, cmd);
+							
+							
 						}
 					}
 					
@@ -149,6 +151,7 @@ public class Main {
 				System.out.println("Exiting WololoTD.");
 				return;
 			}
+			
 		}
 		
 		System.out.println("Exiting WololoTD.");
