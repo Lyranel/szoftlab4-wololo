@@ -14,21 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/torony.png</name>
-			<type>1</type>
-			<location>C:/Users/HonorDragon/Szglab4/WololoTD/WololoTD/src/torony.png</location>
-		</link>
-		<link>
-			<name>src/tra_v2.png</name>
-			<type>1</type>
-			<location>C:/Users/HonorDragon/Szglab4/WololoTD/WololoTD/src/tra_v2.png</location>
-		</link>
-		<link>
-			<name>src/vegzet_hegye.png</name>
-			<type>1</type>
-			<location>C:/Users/HonorDragon/Szglab4/WololoTD/WololoTD/src/vegzet_hegye.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>
