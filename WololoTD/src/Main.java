@@ -12,6 +12,7 @@ public class Main {
 		String[] command;
 		MiddleEarth puppetMaster= null;;
 		final long startTime = System.nanoTime();
+		boolean gameFinished = false;
 		
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -25,19 +26,21 @@ public class Main {
 		
 		while (!quit) {
 			
-			try {
-				consoleInput = bufferRead.readLine();
+			/*try {
+				//consoleInput = bufferRead.readLine();
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.out.println("Exiting WololoTD.");
 				return;
-			}
+			}*/
+			consoleInput = "start";
 			
 			try {
 			
 				command = consoleInput.split(" ");
 				
-				if (command[0].equals("start")) {
+				if (command[0].equals("start") && !gameFinished) {
 					
 					Initialize(command);
 					puppetMaster = new MiddleEarth();
@@ -67,7 +70,8 @@ public class Main {
 						//cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
 						
-						if (cmd[0].equals("exit")) {
+						if (cmd[0].equals("exit") || puppetMaster.isGameEnd()) {
+							gameFinished = true;
 							exit = true;
 						}
 						
@@ -80,9 +84,17 @@ public class Main {
 						
 						if(cTime/1000000000 >= coolDown)
 						{
-							puppetMaster.update(1);
-							testView.repaint();
-							cTime = 0;
+							if(!gameFinished)
+							{
+								puppetMaster.update(1);
+								testView.repaint();
+								cTime = 0;
+							}
+						}
+						
+						if(puppetMaster.isGameEnd())
+						{
+							gameFinished = true;
 						}
 						
 						oldTime = System.nanoTime();
@@ -163,7 +175,7 @@ public class Main {
 					quit = true;
 				}
 				
-				else throw new Exception("Unrecognized command.");
+				//else throw new Exception("Unrecognized command.");
 		
 			} catch (Exception e) {
 				e.printStackTrace();

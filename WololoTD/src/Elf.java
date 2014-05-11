@@ -32,6 +32,8 @@ public class Elf extends Enemy {
 	 */
 	public void damage(int amount){
 		super.damage(amount);
+		if(getHealth()!=0)
+			myGraph.setHealth(TDUtils.ElfHP/getHealth());
 	}
 
 	public void move(){

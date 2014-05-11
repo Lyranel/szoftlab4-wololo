@@ -32,6 +32,8 @@ public class Dwarf extends Enemy {
 	 */
 	public void damage(int amount){
 		super.damage(amount);
+		if(getHealth()!=0)
+			myGraph.setHealth(TDUtils.DwarfHP/getHealth());
 	}
 
 	public void move(){

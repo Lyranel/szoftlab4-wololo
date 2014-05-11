@@ -17,7 +17,7 @@ public class EnemyGraphic {
 	int newPosY = 0;
 	float percent = 0;
 	DrawPane container = null;
-	
+	float health = 1;
 
 	public DrawPane getContainer() {
 		return container;
@@ -117,4 +117,16 @@ public class EnemyGraphic {
 	{
 		DrawPane.removeEnemyG(this);
 	}
+	
+	public void setHealth(float hp)
+	{
+		health = hp;
+		im2 = getScale(im2, 60/hp);
+	}
+	
+	private ImageIcon getScale(ImageIcon orig, float size)
+	{
+		return new ImageIcon(orig.getImage().getScaledInstance((int)size, (int)size, java.awt.Image.SCALE_DEFAULT));
+	}
+	
 }
