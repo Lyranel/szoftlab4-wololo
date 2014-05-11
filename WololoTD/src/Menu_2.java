@@ -38,25 +38,35 @@ public class Menu_2 {
 		u_green.setForeground(Color.black);
 		u_green.setToolTipText("Upgrade tower with speed for 25 mana.");
 		u_green.setFocusPainted(false);
+        u_green.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("You clicked the GREEN button");
+            }
+        });   
 		
 		u_red = new JButton("Power upgrade");
 		u_red.setBackground(new Color(252,77,1));
 		u_red.setForeground(Color.black);
 		u_red.setToolTipText("Upgrade tower with power for 25 mana.");
 		u_red.setFocusPainted(false);
-		
+        u_red.addActionListener(new ActionListener() { 
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("You clicked the RED button");
+            }
+        });   
+        
 		u_blue = new JButton("Range upgrade");
 		u_blue.setBackground(new Color(7,168,251));
 		u_blue.setForeground(Color.black);
 		u_blue.setToolTipText("Upgrade the tower's range for 25 mana.");
 		u_blue.setFocusPainted(false);
 		
-        u_blue.addActionListener(new ActionListener() {
-        	 
+        u_blue.addActionListener(new ActionListener() { 
             public void actionPerformed(ActionEvent e)
             {
-              
-                System.out.println("You clicked the button");
+                System.out.println("You clicked the BLUE button");
             }
         });   
 	}
