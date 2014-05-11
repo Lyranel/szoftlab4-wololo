@@ -41,8 +41,12 @@ public class Tower extends PlayerControlled {
 		this.fogTimer = 0;
 		this.targets = new HashSet<Cell>();
 		super.home.getTargets(range, targets);
-		this.myGraph = new towerGraphic(pos % 6, (int)(pos/6)+1);
-		
+		if(pos%6 != 0)
+			this.myGraph = new towerGraphic(pos % 6, (int)(pos/6)+1);
+		else
+		{
+			this.myGraph = new towerGraphic(6, (int)(pos/6));
+		}
 		
 	}
 
