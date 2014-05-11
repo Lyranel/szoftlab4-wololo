@@ -113,6 +113,7 @@ public abstract class Enemy extends DamageAble {
 		cLocation.remove(this);
 		saruman.decreaseEnemyCount();
 		saruman.increaseMana(manaCost);
+		myGraph.dead();
 		this.remove();
 	}
 
@@ -129,6 +130,9 @@ public abstract class Enemy extends DamageAble {
 			nextCell.add(this);						//hozzadjuk a uj cellahoz
 			cLocation = nextCell;					//at allitjuk a jelenlegi cellat
 			speed = 1.f;							//resetelve 
+			int pos = saruman.getMapIndex(cLocation)+1;
+			this.myGraph.setPosX((pos % 6)-1);
+			this.myGraph.setPosY((pos / 6));
 			
 			if(cLocation.getState() == State.MOUNTDOOM)	//ha a mountdoom-ra lepunk akkor lose
 			{

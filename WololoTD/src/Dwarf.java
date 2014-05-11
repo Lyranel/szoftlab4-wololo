@@ -17,6 +17,8 @@ public class Dwarf extends Enemy {
 		this.setHealth(TDUtils.DwarfHP);
 		this.manaCost = 10;
 		this.maxDelta = TDUtils.DwarfSpeed;
+		int pos = saruman.getMapIndex(sPoint)+1;
+		this.myGraph = new EnemyGraphic(pos % 6, (int)(pos/6)+1, 0);
 	}
 
 	public void finalize() throws Throwable {

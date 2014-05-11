@@ -17,6 +17,8 @@ public class Human extends Enemy {
 		this.manaCost = 10;
 		this.setHealth(TDUtils.HumanHP);
 		this.maxDelta = TDUtils.HumanSpeed;
+		int pos = saruman.getMapIndex(sPoint)+1;
+		this.myGraph = new EnemyGraphic(pos % 6, (int)(pos/6)+1, 3);
 	}
 
 	public void finalize() throws Throwable {

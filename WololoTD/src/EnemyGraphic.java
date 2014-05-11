@@ -29,7 +29,9 @@ public class EnemyGraphic {
 
 	public EnemyGraphic(int posX, int posY, int type) {
 		
-		
+		setPosX(posX-1);
+		setPosY(posY-1);
+		DrawPane.addEnemyG(this);
 		
 		if(type == 0)
 		{
@@ -104,5 +106,8 @@ public class EnemyGraphic {
 		this.newPosY = newPosY;
 	}
 	
-	
+	public void dead()
+	{
+		DrawPane.removeEnemyG(this);
+	}
 }

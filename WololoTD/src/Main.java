@@ -53,6 +53,7 @@ public class Main {
 					System.out.println("To increase ingame time, use the 'update' command.");
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
 					testView.setMap(puppetMaster.getMap());
+					testView.repaint();
 					
 					while (!exit && !TDUtils.end) {
 					
@@ -68,6 +69,7 @@ public class Main {
 							
 							
 						}
+						testView.repaint();
 					}
 					
 					if (TDUtils.logfile != null) {

@@ -24,6 +24,11 @@ public class View extends JFrame{
 		add(dp);
 	}
 	
+	public void repaint()
+	{
+		dp.repaint();
+	}
+	
 	public void setMap(ArrayList<Cell> map)
 	{
 		dp.setMap(map);

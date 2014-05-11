@@ -12,15 +12,20 @@ import java.awt.geom.*;
 public class DrawPane extends JPanel{
 
 	Map map;
-	EnemyGraphic enemy;
-	ArrayList<EnemyGraphic> eList;
+	//EnemyGraphic enemy;
+	static ArrayList<EnemyGraphic> eList;
+	static ArrayList<EnemyGraphic> towerList;
+	static ArrayList<EnemyGraphic> trapList;
 	
 	public DrawPane() {
         setPreferredSize(new Dimension(600, 600));
         map = new Map();
-        enemy = new EnemyGraphic(0,0,2);
-        enemy.setPosX(1);
-        enemy.setPosY(2);
+       // enemy = new EnemyGraphic(0,0,2);
+       // enemy.setPosX(1);
+       // enemy.setPosY(2);
+        eList = new ArrayList<EnemyGraphic>();
+        towerList = new ArrayList<EnemyGraphic>();
+        trapList = new ArrayList<EnemyGraphic>();
     }
 	
 	@Override
@@ -28,7 +33,15 @@ public class DrawPane extends JPanel{
         super.paintComponent(g);
         
         map.paintComponent(g);
-        enemy.paintComponent(g, this);
+        if(eList != null)
+        {
+        	for(EnemyGraphic e: eList)
+        	{
+        		e.paintComponent(g, this);
+        	}
+        }
+        
+     //   enemy.paintComponent(g, this);
     }
 	
 	public void setMap(ArrayList<Cell> mapC)
@@ -36,14 +49,16 @@ public class DrawPane extends JPanel{
 		map.setMap(mapC);
 	}
 	
-	public void addEnemyG(EnemyGraphic e)
+	public static void addEnemyG(EnemyGraphic e)
 	{
 		eList.add(e);
 	}
 	
-	public void removeEnemyG(EnemyGraphic e)
+	public static void removeEnemyG(EnemyGraphic e)
 	{
 		eList.remove(e);
 	}
+
+	
 	
 }
