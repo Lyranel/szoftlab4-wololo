@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import javax.swing.JOptionPane;
 
 /**
  * @author HonorDragon
@@ -108,6 +108,7 @@ public class MiddleEarth {
 		if(gameEnd != true)
 		{
 			TDUtils.sLog("********** LOSE **********");
+			JOptionPane.showMessageDialog(null, "LOSE", "Lose Message", JOptionPane.INFORMATION_MESSAGE);
 		}
 		
 		TDUtils.end = true;
@@ -117,7 +118,16 @@ public class MiddleEarth {
 	public void win(){
 		//Kiirjuk, hogy nyertunk
 		TDUtils.sLog("********** WIN **********");
+		JOptionPane.showMessageDialog(null, "WIN", "Win Message", JOptionPane.INFORMATION_MESSAGE);
 		TDUtils.end = true;
 		gameEnd = true;
+	}
+
+	public boolean isGameEnd() {
+		return gameEnd;
+	}
+
+	public void setGameEnd(boolean gameEnd) {
+		this.gameEnd = gameEnd;
 	}
 }
