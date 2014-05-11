@@ -15,7 +15,10 @@ public class towerGraphic {
 	BufferedImage im2 = null;
 	int posX = 60;
 	int posY = 60;
-
+	int upgrade1 = 0;
+	int upgrade2 = 0;
+	int upgrade3 = 0;
+	
 	public towerGraphic(int posX, int posY)
 	{
 		setPosX(posX-1);
@@ -38,6 +41,69 @@ public class towerGraphic {
 		
 		g.drawImage(im2, posX,posY,80,80,null);
 		
+		if(upgrade1 == 0)
+		{
+			g.setColor(Color.GRAY);
+			g.fillRect(posX+15, posY+5, 8, 8);
+		}
+		if(upgrade1 == 1)
+		{
+			g.setColor(Color.red);
+			g.fillRect(posX+15, posY+5, 8, 8);
+		}
+		if(upgrade1 == 2)
+		{
+			g.setColor(Color.blue);
+			g.fillRect(posX+15, posY+5, 8, 8);
+		}
+		if(upgrade1 == 3)
+		{
+			g.setColor(Color.green);
+			g.fillRect(posX+15, posY+5, 8, 8);
+		}
+		
+		if(upgrade2 == 0)
+		{
+			g.setColor(Color.GRAY);
+			g.fillRect(posX+35, posY+5, 8, 8);
+		}
+		if(upgrade2 == 1)
+		{
+			g.setColor(Color.red);
+			g.fillRect(posX+35, posY+5, 8, 8);
+		}
+		if(upgrade2 == 2)
+		{
+			g.setColor(Color.blue);
+			g.fillRect(posX+35, posY+5, 8, 8);
+		}
+		if(upgrade2 == 3)
+		{
+			g.setColor(Color.green);
+			g.fillRect(posX+35, posY+5, 8, 8);
+		}
+		
+		if(upgrade3 == 0)
+		{
+			g.setColor(Color.GRAY);
+			g.fillRect(posX+55, posY+5, 8, 8);
+		}
+		if(upgrade3 == 1)
+		{
+			g.setColor(Color.red);
+			g.fillRect(posX+55, posY+5, 8, 8);
+		}
+		if(upgrade3 == 2)
+		{
+			g.setColor(Color.blue);
+			g.fillRect(posX+55, posY+5, 8, 8);
+		}
+		if(upgrade3 == 3)
+		{
+			g.setColor(Color.green);
+			g.fillRect(posX+55, posY+5, 8, 8);
+		}
+		
 	}
 	
 	public int getPosX() {
@@ -55,4 +121,19 @@ public class towerGraphic {
 	public void setPosY(int posY) {
 		this.posY = 50 + posY*80;
 	}
+	
+	public void addUpgrade(int i)
+	{
+		if(upgrade1 == 0)
+			upgrade1 = i;
+		else if(upgrade2 == 0)
+		{
+			upgrade2 = i;
+		}
+		else if(upgrade3 == 0)
+		{
+			upgrade3 = i;
+		}
+	}
+	
 }

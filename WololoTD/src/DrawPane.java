@@ -44,7 +44,12 @@ public class DrawPane extends JPanel{
         
         map.paintComponent(g);
 
-        menu.paintComponent(g, this, 120, 40);
+
+//        menu.paintComponent(g, this, 120, 40);
+
+        
+        menu.paintComponent(g, this);
+
 
         
         ArrayList<EnemyGraphic> cpyEList = new ArrayList<EnemyGraphic>(eList);
@@ -99,6 +104,17 @@ public class DrawPane extends JPanel{
 	public static void addTrapG(trapGraphic e)
 	{
 		trapList.add(e);
+	}
+	
+	public Cell getCell(int i)
+	{
+		return map.getCell(i);
+	}
+	
+	public void updateNumbers(int mana, int enemyCount)
+	{
+		menu.setEnemyCount(enemyCount);
+		menu.setMana(mana);
 	}
 	
 }

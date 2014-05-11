@@ -19,6 +19,9 @@ public class Menu_2 {
 	JButton u_blue;
 	JButton u_red;
 	
+	int mana = 0;
+	int enemyCount = 0;
+	
 	public Menu_2() {
 		
 		ImageIcon im1 = new ImageIcon(this.getClass().getResource("saruman.png"));
@@ -47,10 +50,26 @@ public class Menu_2 {
 		u_blue.setForeground(Color.black);
 		u_blue.setToolTipText("Upgrade the tower's range for 25 mana.");
 		u_blue.setFocusPainted(false);
+		
+        u_blue.addActionListener(new ActionListener() {
+        	 
+            public void actionPerformed(ActionEvent e)
+            {
+                //Execute when button is pressed
+                System.out.println("You clicked the button");
+            }
+        });   
 	}
-	
+	/*
+
 	public void paintComponent(Graphics g, JPanel panel, int mana, int enemy_count) {
 
+
+
+		
+	}*/
+	public void paintComponent(Graphics g, JPanel panel) {
+       
 		u_blue.setLocation(540, 415);
 		u_red.setLocation(540, 375);
 		u_green.setLocation(540, 335);
@@ -62,7 +81,6 @@ public class Menu_2 {
 		panel.add(this.u_blue);
 		panel.add(this.u_green);
 		panel.add(this.u_red);
-
 		
 		saruman.paintIcon(panel, g, 540, 51);
 		enemy.paintIcon(panel, g, 540, 110);
@@ -87,8 +105,24 @@ public class Menu_2 {
 		g.drawString("20", 750, 490);
 		
 		g.setColor(Color.RED);
-		g.drawString(Integer.toString(enemy_count), 750, 140);
+		g.drawString(Integer.toString(enemyCount), 750, 140);
 
  
     }
+
+	public int getMana() {
+		return mana;
+	}
+
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
+
+	public int getEnemyCount() {
+		return enemyCount;
+	}
+
+	public void setEnemyCount(int enemyCount) {
+		this.enemyCount = enemyCount;
+	}
 }

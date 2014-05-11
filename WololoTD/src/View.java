@@ -12,7 +12,7 @@ import java.awt.geom.*;
 public class View extends JFrame implements MouseListener{
 
 	DrawPane dp;
-	
+	public MiddleEarth puppetMaster;
 	
 	public View()
 	{
@@ -50,6 +50,22 @@ public class View extends JFrame implements MouseListener{
 			if((e.getY() >= 50) && (e.getY() <= 530)){
 				int cell_x = (int) ((e.getX()  - 50) / 80);
 				int cell_y = (int) ((e.getY()  - 50) / 80);
+				
+				Cell toBuild = getCell(cell_y*6+cell_x);
+				try{
+				if(toBuild.getState() == State.EMPTY)
+					puppetMaster.getPlayer().buildTower(cell_y, cell_x);
+				else if(toBuild.getState() == State.ROAD)
+					puppetMaster.getPlayer().buildTrap(cell_y, cell_x);
+				else if(toBuild.getState() == State.TOWER)
+					puppetMaster.getPlayer().upgradeTower(cell_y, cell_x, new DmgC());
+				else if(toBuild.getState() == State.TRAP)
+					puppetMaster.getPlayer().upgradeTrap(cell_y, cell_x, new TrapC());
+				}
+				catch(Exception c)
+				{
+					System.out.printf("Mana" + puppetMaster.getPlayer().getMana());
+				}
 				System.out.printf("Cella x:" + cell_x + "\n");
 				System.out.printf("Cella y:" + cell_y + "\n");
 		}
@@ -58,12 +74,20 @@ public class View extends JFrame implements MouseListener{
 	
 	public void repaint()
 	{
+		if(puppetMaster != null)
+			dp.updateNumbers(puppetMaster.getPlayer().getMana(), puppetMaster.getPlayer().getEnemyCount());
+		
 		dp.repaint();
 	}
 	
 	public void setMap(ArrayList<Cell> map)
 	{
 		dp.setMap(map);
+	}
+	
+	public Cell getCell(int i)
+	{
+		return dp.getCell(i);
 	}
 	
 	public void addEnemyG(EnemyGraphic e)
