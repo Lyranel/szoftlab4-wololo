@@ -32,6 +32,8 @@ public class Hobbit extends Enemy {
 	 */
 	public void damage(int amount){
 		super.damage(amount);
+		if(getHealth()!=0)
+			myGraph.setHealth(TDUtils.HobbitHP/getHealth());
 	}
 
 	public void move(){
