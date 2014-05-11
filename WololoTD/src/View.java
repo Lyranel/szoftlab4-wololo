@@ -24,6 +24,7 @@ public class View extends JFrame implements MouseListener{
 		add(dp);
 		dp.addMouseListener(this);
 		addMouseListener(this);
+
 	}
 	
 	public void mousePressed(MouseEvent e) {

@@ -68,6 +68,7 @@ public class Main {
 							
 							
 						}
+						testView.repaint();
 					}
 					
 					if (TDUtils.logfile != null) {
