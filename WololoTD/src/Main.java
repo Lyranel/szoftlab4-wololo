@@ -11,6 +11,7 @@ public class Main {
 		String consoleInput = "";
 		String[] command;
 		MiddleEarth puppetMaster= null;;
+		final long startTime = System.nanoTime();
 		
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -53,10 +54,16 @@ public class Main {
 					System.out.println("To increase ingame time, use the 'update' command.");
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
 					testView.setMap(puppetMaster.getMap());
+					testView.repaint();
 					
+					long oldTime = System.nanoTime();
+					long cTime = 0;
+					float coolDown = 1;
 					while (!exit && !TDUtils.end) {
 					
-						cmdInput = commandRead.readLine();
+						cTime += System.nanoTime() - oldTime;
+						//cmdInput = "update";
+						//cmdInput = commandRead.readLine();
 						cmd = cmdInput.split(" ");
 						
 						if (cmd[0].equals("exit")) {
@@ -64,11 +71,21 @@ public class Main {
 						}
 						
 						else {
-							ExecuteCommand(puppetMaster, cmd);
-							
+							//ExecuteCommand(puppetMaster, cmd);
+							//puppetMaster.update(cTime/1000000000);
 							
 						}
-						testView.repaint();
+
+						
+						if(cTime/1000000000 >= coolDown)
+						{
+							puppetMaster.update(1);
+							testView.repaint();
+							cTime = 0;
+						}
+						
+						oldTime = System.nanoTime();
+
 					}
 					
 					if (TDUtils.logfile != null) {

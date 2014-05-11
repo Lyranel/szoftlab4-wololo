@@ -56,9 +56,25 @@ public class View extends JFrame implements MouseListener{
 	}
 	}
 	
+	public void repaint()
+	{
+		dp.repaint();
+	}
+	
 	public void setMap(ArrayList<Cell> map)
 	{
 		dp.setMap(map);
 	}
+	
+	public void addEnemyG(EnemyGraphic e)
+	{
+		dp.addEnemyG(e);
+	}
+	
+	public void removeEnemyG(EnemyGraphic e)
+	{
+		dp.removeEnemyG(e);
+	}
+	
 	
 }

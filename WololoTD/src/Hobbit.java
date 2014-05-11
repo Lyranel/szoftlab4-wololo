@@ -17,6 +17,8 @@ public class Hobbit extends Enemy {
 		this.manaCost = 7;
 		this.setHealth(TDUtils.HobbitHP);
 		this.maxDelta = TDUtils.HobbitSpeed;
+		int pos = saruman.getMapIndex(sPoint)+1;
+		this.myGraph = new EnemyGraphic(pos % 6, (int)(pos/6)+1, 2);
 	}
 
 	public void finalize() throws Throwable {

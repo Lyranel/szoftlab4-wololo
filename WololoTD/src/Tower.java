@@ -18,7 +18,8 @@ public class Tower extends PlayerControlled {
 	private int range;				//a torony lotavja
 	private float speed;			//a torony speed-je
 	private Set<Cell> targets;		//a torony lehetseges celpontjai
-
+	private towerGraphic myGraph = null;
+	
 	public Tower(){
 
 	}
@@ -27,7 +28,7 @@ public class Tower extends PlayerControlled {
 	 * A tower konstruktora	
 	 * @param home	a cella ahova kerul
 	 */
-	public Tower(Cell home) {
+	public Tower(Cell home, int pos) {
 		
 		if (TDUtils.fog == 1) {
 			this.range = 0;
@@ -40,6 +41,8 @@ public class Tower extends PlayerControlled {
 		this.fogTimer = 0;
 		this.targets = new HashSet<Cell>();
 		super.home.getTargets(range, targets);
+		this.myGraph = new towerGraphic(pos % 6, (int)(pos/6)+1);
+		
 		
 	}
 

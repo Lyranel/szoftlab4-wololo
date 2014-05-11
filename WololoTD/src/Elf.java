@@ -17,6 +17,8 @@ public class Elf extends Enemy {
 		this.manaCost = 12;
 		this.setHealth(TDUtils.ElfHP);
 		this.maxDelta = TDUtils.ElfSpeed;
+		int pos = saruman.getMapIndex(sPoint)+1;
+		this.myGraph = new EnemyGraphic(pos % 6, (int)(pos/6)+1, 1);
 	}
 
 	public void finalize() throws Throwable {

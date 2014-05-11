@@ -53,6 +53,11 @@ public class MiddleEarth {
 		this.map = map;
 	}
 
+	public int getMapIndex(Cell i)
+	{
+		return map.indexOf(i);
+	}
+	
 	public void finalize() throws Throwable {
 
 	}
@@ -84,16 +89,16 @@ public class MiddleEarth {
 			updateList.update(time);
 			
 			//Kiirjuk, hogy update esemeny tortent:
-			TDUtils.sLog("******** UPDATE " + time + " ********" );
+			//TDUtils.sLog("******** UPDATE " + time + " ********" );
 			//Kiirjuk, hogy mennyi Mana-ja van meg Sarumannak
-			TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
+			//TDUtils.sLog("CURRENT MANA: " + saruman.getMana());
 			//Kiirjuk, hogy mennyi ellenseg van meg a palyan
-			TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
+			//TDUtils.sLog("REMAINING ENEMIES: " + saruman.getEnemyCount());
 			for(int i = 0; i < map.size(); i++)
 			{
 				if(map.get(i).getEnemyCount() != 0 || map.get(i).getBuilding() != null)
 				{
-					TDUtils.sLog(map.get(i).print(i));
+					//TDUtils.sLog(map.get(i).print(i));
 				}
 			}
 		}
