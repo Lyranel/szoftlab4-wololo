@@ -45,6 +45,14 @@ public class MiddleEarth {
 		
 	}
 
+	public ArrayList<Cell> getMap() {
+		return map;
+	}
+
+	public void setMap(ArrayList<Cell> map) {
+		this.map = map;
+	}
+
 	public void finalize() throws Throwable {
 
 	}

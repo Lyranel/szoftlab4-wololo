@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.awt.geom.*;
 
 public class View extends JFrame implements MouseListener{
@@ -54,6 +55,9 @@ public class View extends JFrame implements MouseListener{
 	}
 	}
 	
-	
+	public void setMap(ArrayList<Cell> map)
+	{
+		dp.setMap(map);
+	}
 	
 }

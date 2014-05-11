@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.awt.geom.*;
 
 
@@ -16,7 +17,7 @@ public class DrawPane extends JPanel{
 	public DrawPane() {
         setPreferredSize(new Dimension(600, 600));
         map = new Map();
-        enemy = new EnemyGraphic();
+        enemy = new EnemyGraphic(130,130,2);
     }
 	
 	@Override
@@ -26,5 +27,10 @@ public class DrawPane extends JPanel{
         map.paintComponent(g);
         enemy.paintComponent(g, this);
     }
+	
+	public void setMap(ArrayList<Cell> mapC)
+	{
+		map.setMap(mapC);
+	}
 	
 }
