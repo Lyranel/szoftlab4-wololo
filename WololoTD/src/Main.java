@@ -36,7 +36,8 @@ public class Main {
 				System.out.println("Exiting WololoTD.");
 				return;
 			}*/
-			JOptionPane.showMessageDialog(null, "Start", "Start Message", JOptionPane.INFORMATION_MESSAGE);
+			if(gameFinished == false)
+				JOptionPane.showMessageDialog(null, "Start", "Start Message", JOptionPane.INFORMATION_MESSAGE);
 			consoleInput = "start";
 			
 			try {
