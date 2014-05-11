@@ -13,7 +13,8 @@ public abstract class Enemy extends DamageAble {
 	protected Player saruman;
 	protected float speed = 1.0f;
 	protected int manaCost;
-
+	protected EnemyGraphic myGraph = null;
+	
 	public Enemy(){
 
 	}

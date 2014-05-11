@@ -184,5 +184,11 @@ public class Player {
 		puppetMaster.lose();
 		
 	}
+	
+	public int getMapIndex(Cell i)
+	{
+		return puppetMaster.getMapIndex(i);
+	}
+	
 
 }

@@ -29,4 +29,15 @@ public class View extends JFrame{
 		dp.setMap(map);
 	}
 	
+	public void addEnemyG(EnemyGraphic e)
+	{
+		dp.addEnemyG(e);
+	}
+	
+	public void removeEnemyG(EnemyGraphic e)
+	{
+		dp.removeEnemyG(e);
+	}
+	
+	
 }

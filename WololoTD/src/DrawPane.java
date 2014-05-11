@@ -13,11 +13,14 @@ public class DrawPane extends JPanel{
 
 	Map map;
 	EnemyGraphic enemy;
+	ArrayList<EnemyGraphic> eList;
 	
 	public DrawPane() {
         setPreferredSize(new Dimension(600, 600));
         map = new Map();
-        enemy = new EnemyGraphic(130,130,2);
+        enemy = new EnemyGraphic(0,0,2);
+        enemy.setPosX(1);
+        enemy.setPosY(2);
     }
 	
 	@Override
@@ -31,6 +34,16 @@ public class DrawPane extends JPanel{
 	public void setMap(ArrayList<Cell> mapC)
 	{
 		map.setMap(mapC);
+	}
+	
+	public void addEnemyG(EnemyGraphic e)
+	{
+		eList.add(e);
+	}
+	
+	public void removeEnemyG(EnemyGraphic e)
+	{
+		eList.remove(e);
 	}
 	
 }

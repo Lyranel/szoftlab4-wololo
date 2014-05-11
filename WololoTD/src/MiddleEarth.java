@@ -53,6 +53,11 @@ public class MiddleEarth {
 		this.map = map;
 	}
 
+	public int getMapIndex(Cell i)
+	{
+		return map.indexOf(i);
+	}
+	
 	public void finalize() throws Throwable {
 
 	}

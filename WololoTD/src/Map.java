@@ -1,7 +1,6 @@
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -65,10 +64,6 @@ public class Map {
         g2.draw(new Line2D.Double(50, 370, 530, 370));
         g2.draw(new Line2D.Double(50, 450, 530, 450));
         
-       /* g2.drawImage(road, 50,50,80,80,null);
-        g2.drawImage(road, 130,50,80,80,null);
-        g2.drawImage(road, 50,130,80,80,null);
-        g2.drawImage(road, 130,130,80,80,null);*/
         
         if(map != null)
 		{
@@ -95,5 +90,12 @@ public class Map {
         
         
     }
+	
+	public int getMapIndex(Cell c)
+	{
+		
+		return map.indexOf(c);
+		
+	}
 	
 }
