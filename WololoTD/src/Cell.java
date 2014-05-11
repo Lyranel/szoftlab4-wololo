@@ -224,6 +224,13 @@ public class Cell {
 		return print;
 	}
 
-
+	public int getUpdateCount()
+	{
+		if(building != null)
+		{
+			return ((PlayerControlled)building).getUpdates();
+		}
+		return -1;
+	}
 
 }

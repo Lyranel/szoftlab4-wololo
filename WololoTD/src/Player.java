@@ -144,12 +144,15 @@ public class Player {
 			}
 			//es csak akkor, ha van eleg penzunk
 			else if (TDUtils.towerCrystalCost > mana) {
-				throw new Exception("There is not enough mana to perform the tower enhancement ritual.");
+				return;
 			}
 			
 			else {
-				puppetMaster.getCell(posY, posX).getBuilding().upgrade(type);
-				mana -= TDUtils.towerCrystalCost;
+				if(puppetMaster.getCell(posY, posX).getUpdateCount() < 3)
+				{
+					puppetMaster.getCell(posY, posX).getBuilding().upgrade(type);
+					mana -= TDUtils.towerCrystalCost;
+				}
 			}		
 		}		
 		catch (Exception e) {
@@ -175,8 +178,11 @@ public class Player {
 			}
 			
 			else {
-				puppetMaster.getCell(posY, posX).getBuilding().upgrade(type);
-				mana -= TDUtils.trapCrystalCost;
+				if(puppetMaster.getCell(posY, posX).getUpdateCount() < 3)
+				{
+					puppetMaster.getCell(posY, posX).getBuilding().upgrade(type);
+					mana -= TDUtils.trapCrystalCost;
+				}
 			}		
 		}		
 		catch (Exception e) {

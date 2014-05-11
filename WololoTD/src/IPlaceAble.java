@@ -14,5 +14,7 @@ public interface IPlaceAble {
 	public abstract void upgrade(Crystal Cryst);
 	
 	public abstract String print();
+	
+	
 
 }
