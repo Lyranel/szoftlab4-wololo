@@ -14,4 +14,26 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/elf_v2.gif</name>
+			<type>1</type>
+			<location>C:/Users/HonorDragon/Google Drive/Szoftlab4/Archiv/11.hét_GrafikusSpeci/gif_enemy/elf_v2.gif</location>
+		</link>
+		<link>
+			<name>src/hobbit_v3.gif</name>
+			<type>1</type>
+			<location>C:/Users/HonorDragon/Google Drive/Szoftlab4/Archiv/11.hét_GrafikusSpeci/gif_enemy/hobbit_v3.gif</location>
+		</link>
+		<link>
+			<name>src/human.gif</name>
+			<type>1</type>
+			<location>C:/Users/HonorDragon/Google Drive/Szoftlab4/Archiv/11.hét_GrafikusSpeci/gif_enemy/human.gif</location>
+		</link>
+		<link>
+			<name>src/szakkalas_torpe.gif</name>
+			<type>1</type>
+			<location>C:/Users/HonorDragon/Google Drive/Szoftlab4/Archiv/11.hét_GrafikusSpeci/gif_enemy/szakkalas_torpe.gif</location>
+		</link>
+	</linkedResources>
 </projectDescription>

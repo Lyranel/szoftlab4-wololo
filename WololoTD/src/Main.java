@@ -14,6 +14,9 @@ public class Main {
 		
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		
+		View testView = new View();
+		testView.setVisible(true);
+		
 		System.out.println("\nWelcome to WololoTD prototype.");
 		System.out.println("For manual testing, please write a valid 'start' command to initialize the game.");
 		System.out.println("Prepared tests can be run with the 'load' command.");
