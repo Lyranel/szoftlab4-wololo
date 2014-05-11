@@ -86,11 +86,11 @@ public class Main {
 						}
 
 						
-						if(cTime/1000000000 >= coolDown)
+						if(cTime/100000000 >= coolDown)
 						{
 							if(!gameFinished)
 							{
-								puppetMaster.update(1);
+								puppetMaster.update(0.1f);
 								testView.repaint();
 								cTime = 0;
 							}
