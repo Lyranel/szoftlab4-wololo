@@ -12,7 +12,7 @@ import java.awt.geom.*;
 public class DrawPane extends JPanel{
 
 	Map map;
-	EnemyGraphic enemy;
+	
 	Menu_2 menu;
 
 	//EnemyGraphic enemy;
@@ -41,8 +41,8 @@ public class DrawPane extends JPanel{
         super.paintComponent(g);
         
         map.paintComponent(g);
-        enemy.paintComponent(g, this);
-        menu.paintComponent(g, this, 120, 40);
+        
+        menu.paintComponent(g, this);
 
         
         ArrayList<EnemyGraphic> cpyEList = new ArrayList<EnemyGraphic>(eList);
@@ -97,6 +97,17 @@ public class DrawPane extends JPanel{
 	public static void addTrapG(trapGraphic e)
 	{
 		trapList.add(e);
+	}
+	
+	public Cell getCell(int i)
+	{
+		return map.getCell(i);
+	}
+	
+	public void updateNumbers(int mana, int enemyCount)
+	{
+		menu.setEnemyCount(enemyCount);
+		menu.setMana(mana);
 	}
 	
 }

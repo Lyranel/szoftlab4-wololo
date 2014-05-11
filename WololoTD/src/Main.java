@@ -55,6 +55,7 @@ public class Main {
 					System.out.println("To leave the ongoing game, use the 'exit' command.");
 					testView.setMap(puppetMaster.getMap());
 					testView.repaint();
+					testView.puppetMaster = puppetMaster;
 					
 					long oldTime = System.nanoTime();
 					long cTime = 0;

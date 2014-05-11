@@ -146,17 +146,20 @@ public class Tower extends PlayerControlled {
 				if (Cryst.whatAmI.equals("damage")) {
 					damage += 5;
 					upgradeCount++;
+					myGraph.addUpgrade(1);
 				}
 				
 				else if (Cryst.whatAmI.equals("range")) {
 					range++;
 					home.getTargets(range, targets);
 					upgradeCount++;
+					myGraph.addUpgrade(2);
 				}
 				
 				else if (Cryst.whatAmI.equals("speed")) {
 					speed -= 0.1f;
 					upgradeCount++;
+					myGraph.addUpgrade(3);
 				}
 				
 				else throw new Exception("This building cannot be upgraded with this type of crystal.");

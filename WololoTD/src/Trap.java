@@ -54,6 +54,7 @@ public class Trap extends PlayerControlled {
 				if (Cryst.whatAmI.equals("trap")) {
 					slowAmount += 0.1f;
 					upgradeCount++;
+					myGraph.upgrade();
 				}
 				
 				else throw new Exception("This building cannot be upgraded with this type of crystal.");

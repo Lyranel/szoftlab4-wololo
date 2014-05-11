@@ -108,6 +108,10 @@ public class Map {
 		
 	}
 	
+	public Cell getCell(int i)
+	{
+		return map.get(i);
+	}
 
 }
 

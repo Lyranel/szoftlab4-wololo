@@ -15,6 +15,9 @@ public class Menu_2 {
 	ImageIcon tower = null;
 	ImageIcon trap = null;
 	
+	int mana = 0;
+	int enemyCount = 0;
+	
 	public Menu_2() {
 		ImageIcon im1 = new ImageIcon(this.getClass().getResource("saruman.png"));
 		saruman = new ImageIcon(im1.getImage().getScaledInstance(40, 45, java.awt.Image.SCALE_DEFAULT));
@@ -26,7 +29,7 @@ public class Menu_2 {
 		trap = new ImageIcon(im4.getImage().getScaledInstance(40, 50, java.awt.Image.SCALE_DEFAULT));
 	}
 	
-	public void paintComponent(Graphics g, JPanel panel, int mana, int enemy_count) {
+	public void paintComponent(Graphics g, JPanel panel) {
        
 		saruman.paintIcon(panel, g, 540, 51);
 		enemy.paintIcon(panel, g, 540, 110);
@@ -45,10 +48,26 @@ public class Menu_2 {
 		g.drawString("50", 750, 200);
 		g.drawString("35", 750, 260);
 		g.setColor(Color.RED);
-		g.drawString(Integer.toString(enemy_count), 750, 140);
+		g.drawString(Integer.toString(enemyCount), 750, 140);
 
 		
 
         
     }
+
+	public int getMana() {
+		return mana;
+	}
+
+	public void setMana(int mana) {
+		this.mana = mana;
+	}
+
+	public int getEnemyCount() {
+		return enemyCount;
+	}
+
+	public void setEnemyCount(int enemyCount) {
+		this.enemyCount = enemyCount;
+	}
 }
