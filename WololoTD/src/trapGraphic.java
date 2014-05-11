@@ -9,20 +9,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.awt.geom.*;
 
+public class trapGraphic {
 
-public class towerGraphic {
-	
 	BufferedImage im2 = null;
 	int posX = 60;
 	int posY = 60;
-
-	public towerGraphic(int posX, int posY)
+	
+	public trapGraphic(int posX, int posY)
 	{
 		setPosX(posX-1);
 		setPosY(posY-1);
-		DrawPane.addTowerG(this);
+		DrawPane.addTrapG(this);
 		
-		URL url = this.getClass().getResource("torony.png");
+		URL url = this.getClass().getResource("tra_v2.png");
 		
 		try {
 			im2 = ImageIO.read(url);
@@ -31,7 +30,6 @@ public class towerGraphic {
 			
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -55,4 +53,5 @@ public class towerGraphic {
 	public void setPosY(int posY) {
 		this.posY = 50 + posY*80;
 	}
+	
 }

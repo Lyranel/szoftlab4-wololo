@@ -8,7 +8,8 @@
 public class Trap extends PlayerControlled {
 
 	private float slowAmount;		// a csapda lassitas merteke
-
+	trapGraphic myGraph = null;
+	
 	public Trap(){
 
 	}
@@ -17,11 +18,11 @@ public class Trap extends PlayerControlled {
 	 * A csapda konstruktora
 	 * @param home
 	 */
-	public Trap(Cell home) {
+	public Trap(Cell home, int pos) {
 		
 		super.home = home;
 		this.slowAmount = 0.1f;
-		
+		this.myGraph = new trapGraphic(pos % 6, (int)(pos/6)+1);
 	}
 
 	public void finalize() throws Throwable {

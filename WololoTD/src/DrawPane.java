@@ -14,8 +14,8 @@ public class DrawPane extends JPanel{
 	Map map;
 	//EnemyGraphic enemy;
 	static ArrayList<EnemyGraphic> eList;
-	static ArrayList<EnemyGraphic> towerList;
-	static ArrayList<EnemyGraphic> trapList;
+	static ArrayList<towerGraphic> towerList;
+	static ArrayList<trapGraphic> trapList;
 	
 	public DrawPane() {
         setPreferredSize(new Dimension(600, 600));
@@ -24,8 +24,8 @@ public class DrawPane extends JPanel{
        // enemy.setPosX(1);
        // enemy.setPosY(2);
         eList = new ArrayList<EnemyGraphic>();
-        towerList = new ArrayList<EnemyGraphic>();
-        trapList = new ArrayList<EnemyGraphic>();
+        towerList = new ArrayList<towerGraphic>();
+        trapList = new ArrayList<trapGraphic>();
     }
 	
 	@Override
@@ -38,6 +38,20 @@ public class DrawPane extends JPanel{
         	for(EnemyGraphic e: eList)
         	{
         		e.paintComponent(g, this);
+        	}
+        }
+        if(towerList != null)
+        {
+        	for(towerGraphic t: towerList)
+        	{
+        		t.paintComponent(g);
+        	}
+        }
+        if(trapList != null)
+        {
+        	for(trapGraphic tr: trapList)
+        	{
+        		tr.paintComponent(g);
         	}
         }
         
@@ -59,6 +73,14 @@ public class DrawPane extends JPanel{
 		eList.remove(e);
 	}
 
+	public static void addTowerG(towerGraphic e)
+	{
+		towerList.add(e);
+	}
 	
+	public static void addTrapG(trapGraphic e)
+	{
+		trapList.add(e);
+	}
 	
 }

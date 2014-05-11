@@ -13,6 +13,7 @@ public class Map {
 
 	BufferedImage grass;
 	BufferedImage road;
+	BufferedImage MD;
 	
 	private ArrayList<Cell> map;
 	
@@ -29,9 +30,11 @@ public class Map {
 	{
 		URL url = this.getClass().getResource("grass.jpg");
 		URL url2 = this.getClass().getResource("stone.jpg");
+		URL url3 = this.getClass().getResource("vegzet_hegye.png");
 		try {
 			grass = ImageIO.read(url);
 			road = ImageIO.read(url2);
+			MD = ImageIO.read(url3);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -76,6 +79,11 @@ public class Map {
 					if((curr == State.EMPTY) || (curr == State.TOWER))
 					{
 						g2.drawImage(grass, 50 + (i*80),50 + (l*80),80,80,null);
+					}
+					else if(curr == State.MOUNTDOOM)
+					{
+						g2.drawImage(road, 50 + (i*80),50 + (l*80),80,80,null);
+						g2.drawImage(MD, 50 + (i*80),50 + (l*80),80,80,null);
 					}
 					else
 					{

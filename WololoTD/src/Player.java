@@ -51,7 +51,9 @@ public class Player {
 			}
 			
 			else {
-				puppetMaster.getCell(posY, posX).build(new Tower(puppetMaster.getCell(posY, posX)));
+				Cell outCell = puppetMaster.getCell(posY, posX);
+				int pos = getMapIndex(outCell)+1;
+				puppetMaster.getCell(posY, posX).build(new Tower(puppetMaster.getCell(posY, posX),pos));
 				mana -= TDUtils.towerCost;
 			}		
 		}		
@@ -78,7 +80,9 @@ public class Player {
 			}
 			
 			else {
-				puppetMaster.getCell(posY, posX).build(new Trap(puppetMaster.getCell(posY, posX)));
+				Cell outCell = puppetMaster.getCell(posY, posX);
+				int pos = getMapIndex(outCell)+1;
+				puppetMaster.getCell(posY, posX).build(new Trap(puppetMaster.getCell(posY, posX),pos));
 				mana -= TDUtils.trapCost;
 			}		
 		}		
