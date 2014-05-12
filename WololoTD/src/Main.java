@@ -86,15 +86,22 @@ public class Main {
 						}
 
 						
-						if(cTime/100000000 >= coolDown)
-						{
+						
 							if(!gameFinished)
 							{
-								puppetMaster.update(0.1f);
+								puppetMaster.update(0.05f);
 								testView.repaint();
+								
 								cTime = 0;
 							}
-						}
+						
+							try {
+							    Thread.sleep(50);
+							} catch(InterruptedException ex) {
+							    Thread.currentThread().interrupt();
+							}
+						
+							
 						
 						if(puppetMaster.isGameEnd())
 						{
