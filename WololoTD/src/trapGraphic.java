@@ -8,7 +8,11 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.awt.geom.*;
-
+/**
+ * A csapda kirajzolasaert felelos osztaly
+ * @author HonorDragon
+ *
+ */
 public class trapGraphic {
 
 	BufferedImage im2 = null;
@@ -16,6 +20,11 @@ public class trapGraphic {
 	int posY = 60;
 	int upgradeLvl = 0;
 	
+	/**
+	 * A csapda konstruktora
+	 * @param posX	x poz
+	 * @param posY	y poz
+	 */
 	public trapGraphic(int posX, int posY)
 	{
 		setPosX(posX-1);
@@ -32,7 +41,10 @@ public class trapGraphic {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * kirajzolja a csapdat
+	 * @param g
+	 */
 	public void paintComponent(Graphics g) {
 		if(upgradeLvl == 0)
 		{
@@ -82,7 +94,9 @@ public class trapGraphic {
 	public void setPosY(int posY) {
 		this.posY = 50 + posY*80;
 	}
-	
+	/**
+	 * upgrade-eli a csapdat
+	 */
 	public void upgrade()
 	{
 		upgradeLvl++;

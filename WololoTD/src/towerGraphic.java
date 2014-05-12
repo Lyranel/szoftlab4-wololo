@@ -9,7 +9,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.awt.geom.*;
 
-
+/**
+ * Ez felelos a torony kirajzolasaert
+ * @author HonorDragon
+ *
+ */
 public class towerGraphic {
 	
 	BufferedImage im2 = null;
@@ -19,6 +23,11 @@ public class towerGraphic {
 	int upgrade2 = 0;
 	int upgrade3 = 0;
 	
+	/**
+	 * torony konstruktor
+	 * @param posX	x poz
+	 * @param posY	y poz
+	 */
 	public towerGraphic(int posX, int posY)
 	{
 		setPosX(posX-1);
@@ -37,6 +46,10 @@ public class towerGraphic {
 		
 	}
 	
+	/**
+	 * kirajzolja a tornyot
+	 * @param g
+	 */
 	public void paintComponent(Graphics g) {
 		
 		g.drawImage(im2, posX,posY,80,80,null);
@@ -109,7 +122,10 @@ public class towerGraphic {
 	public int getPosX() {
 		return posX;
 	}
-
+	/**
+	 * Setter hogy konnyebb legyen a pozicio szamitasa
+	 * @param posX
+	 */
 	public void setPosX(int posX) {
 		this.posX = 50 + posX*80;
 	}
@@ -117,11 +133,17 @@ public class towerGraphic {
 	public int getPosY() {
 		return posY;
 	}
-
+	/**
+	 * Setter hogy konnyebb legyen a pozicio szamitasa
+	 * @param posX
+	 */
 	public void setPosY(int posY) {
 		this.posY = 50 + posY*80;
 	}
-	
+	/**
+	 * Hozza az egy upgrade-et
+	 * @param i
+	 */
 	public void addUpgrade(int i)
 	{
 		if(upgrade1 == 0)

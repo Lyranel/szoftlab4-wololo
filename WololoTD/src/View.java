@@ -8,12 +8,19 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.awt.geom.*;
-
+/**
+ * Ez az ablak amire rajzolunk
+ * @author HonorDragon
+ *
+ */
 public class View extends JFrame implements MouseListener{
 
 	DrawPane dp;
 	public MiddleEarth puppetMaster;
 	
+	/**
+	 * konstruktor ahol beallitjuk az ablak parametereit
+	 */
 	public View()
 	{
 		super("Wololo TD");
@@ -42,7 +49,9 @@ public class View extends JFrame implements MouseListener{
 	public void mouseExited(MouseEvent e) {
 		
 	}
-
+	/**
+	 * Ez eger kezeles
+	 */
 	public void mouseClicked(MouseEvent e) {
 		System.out.printf("Mouse pressed; # of clicks: "
                 + e.getClickCount() + "	" + e.getX() + "	" + e.getY() + "\n", e);
@@ -78,7 +87,9 @@ public class View extends JFrame implements MouseListener{
 		}
 	}
 	}
-	
+	/**
+	 * repaint metodus
+	 */
 	public void repaint()
 	{
 		if(puppetMaster != null)
@@ -86,27 +97,44 @@ public class View extends JFrame implements MouseListener{
 		
 		dp.repaint();
 	}
-	
+	/**
+	 * beallitja a map-et
+	 * @param map
+	 */
 	public void setMap(ArrayList<Cell> map)
 	{
 		dp.setMap(map);
 	}
-	
+	/**
+	 * vissza ad egy cellat
+	 * @param i
+	 * @return
+	 */
 	public Cell getCell(int i)
 	{
 		return dp.getCell(i);
 	}
 	
+	/**
+	 * hozza ad egy enemy-t
+	 * @param e
+	 */
 	public void addEnemyG(EnemyGraphic e)
 	{
 		dp.addEnemyG(e);
 	}
-	
+	/**
+	 * eltavolit egy enemy-t
+	 * @param e
+	 */
 	public void removeEnemyG(EnemyGraphic e)
 	{
 		dp.removeEnemyG(e);
 	}
-	
+	/**
+	 * vissza adja az upgrade-et
+	 * @return
+	 */
 	public int getUpgrade()
 	{
 		return dp.getUpgrade();

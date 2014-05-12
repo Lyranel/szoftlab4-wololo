@@ -35,7 +35,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * hozza ad egy ellenseget a cellahoz
 	 * @param enemy
 	 */
 	public void add(Enemy enemy){
@@ -43,7 +43,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * beallitja a kovetkezo cellat
 	 * @param cell
 	 */
 	public void addNext(Cell cell){
@@ -52,7 +52,7 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * Elhelyezi az epuletet es beallitja a state-et
 	 * @param building
 	 */
 	public void build(IPlaceAble building){
@@ -69,10 +69,9 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * A torony az egesz cellat sebzi, tehat a rajta talalhato osszes ellenseget
 	 * @param amount
 	 */
-	//A torony az egesz cellat sebzi, tehat a rajta talalhato osszes ellenseget
 	public void damage(int amount){
 
 		for (IDamageAble e: enemies)
@@ -97,8 +96,11 @@ public class Cell {
 		return enemies;
 	}
 
-	//Azon cella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
-	//amennyiben tobb szomszedja van, akkor random valasztas tortenik
+	/**
+	 * Azon cella kivalasztasa, hogy az ellenseg melyiken menjen tovabb
+	 * amennyiben tobb szomszedja van, akkor random valasztas tortenik
+	 * @return
+	 */
 	public Cell getNext(){
 		
 		if(TDUtils.branch == 0)
@@ -178,33 +180,48 @@ public class Cell {
 	}
 
 	/**
-	 * 
+	 * Beallitja a szomszedjait
 	 * @param n
 	 * @param index
 	 */
 	public void setNeighbour(Cell n){
 		neighbours.add(n);
 	}
-	
+	/**
+	 * vissza adja az epuletet
+	 * @return
+	 */
 	public IPlaceAble getBuilding() {
 		return this.building;
 
 	}
-	
+	/**
+	 * beallitja a vegzet hegyet
+	 */
 	public void mountDoomSetter(){
 		this.state = State.MOUNTDOOM;
 	}
-	
+	/**
+	 * beallitja a spawn pontot
+	 */
 	public void spawnPointSetter() {
 		this.state = State.SPAWNPOINT;
 		
 	}
 
+	/**
+	 * vissza adja a cella allapotat
+	 * @return
+	 */
 	public State getState(){
 		return state;
 	}
 
-
+	/**
+	 * Ez mar nem hivodik meg (kiirato metodus)
+	 * @param i Ez alapjan irja ki a cella a poziciojat
+	 * @return
+	 */
 	public String print(int i) {
 		int posX = i % TDUtils.mapSizeX;
 		int posY = (i - posX) / TDUtils.mapSizeX;
@@ -224,6 +241,10 @@ public class Cell {
 		return print;
 	}
 
+	/**
+	 * Ez adja meg mennyi update van a cellaban levo epitmenyen
+	 * @return	az upgradek szama (ha nincs epitmeny akkor -1)
+	 */
 	public int getUpdateCount()
 	{
 		if(building != null)

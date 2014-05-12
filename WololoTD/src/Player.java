@@ -190,11 +190,18 @@ public class Player {
 		}
 	}
 
+	/**
+	 * Vereseg uzenet
+	 */
 	public void lose() {
 		puppetMaster.lose();
 		
 	}
-	
+	/**
+	 * vissza adja a Cella indexet hogy ki lehessen szamolni a poziciot
+	 * @param i	a cella
+	 * @return	a cella indexe
+	 */
 	public int getMapIndex(Cell i)
 	{
 		return puppetMaster.getMapIndex(i);

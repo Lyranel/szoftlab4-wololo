@@ -8,11 +8,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.awt.geom.*;
 
-
+/**
+ * Ez az osztaly felelos a kirajzolasert
+ * @author HonorDragon
+ *
+ */
 public class DrawPane extends JPanel{
 
 	Map map;
-
 	Menu_2 menu;
 
 	//EnemyGraphic enemy;
@@ -27,9 +30,7 @@ public class DrawPane extends JPanel{
  
         menu = new Menu_2();
 
-       // enemy = new EnemyGraphic(0,0,2);
-       // enemy.setPosX(1);
-       // enemy.setPosY(2);
+       
         eList = new ArrayList<EnemyGraphic>();
         towerList = new ArrayList<towerGraphic>();
         trapList = new ArrayList<trapGraphic>();
@@ -38,6 +39,9 @@ public class DrawPane extends JPanel{
 
     }
 	
+	/**
+	 * Ez rajzolja az objektumokat
+	 */
 	@Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -45,7 +49,6 @@ public class DrawPane extends JPanel{
         map.paintComponent(g);
 
 
-//        menu.paintComponent(g, this, 120, 40);
 
         
         menu.paintComponent(g, this);
@@ -77,46 +80,73 @@ public class DrawPane extends JPanel{
         	}
         }
         
-     //   enemy.paintComponent(g, this);
+   
 
     }
 	
+	/**
+	 * beallitja a map-et
+	 * @param mapC
+	 */
 	public void setMap(ArrayList<Cell> mapC)
 	{
 		map.setMap(mapC);
 	}
-	
+	/**
+	 * hozza ad egy enemy-t
+	 * @param e
+	 */
 	public static void addEnemyG(EnemyGraphic e)
 	{
 		eList.add(e);
 	}
-	
+	/**
+	 * eltavolit egy enemy-t
+	 * @param e
+	 */
 	public static void removeEnemyG(EnemyGraphic e)
 	{
 		eList.remove(e);
 	}
-
+	/**
+	 * hozza ad egy tornyot
+	 * @param e
+	 */
 	public static void addTowerG(towerGraphic e)
 	{
 		towerList.add(e);
 	}
-	
+	/**
+	 * hozza ad egy csapdat
+	 * @param e
+	 */
 	public static void addTrapG(trapGraphic e)
 	{
 		trapList.add(e);
 	}
-	
+	/**
+	 * lekerdez egy cellat
+	 * @param i
+	 * @return
+	 */
 	public Cell getCell(int i)
 	{
 		return map.getCell(i);
 	}
-	
+	/**
+	 * frissiti a szamokat a gui-n
+	 * @param mana
+	 * @param enemyCount
+	 */
 	public void updateNumbers(int mana, int enemyCount)
 	{
 		menu.setEnemyCount(enemyCount);
 		menu.setMana(mana);
 	}
-	
+	/**
+	 * vissza adja az upgrade tipusat
+	 * @return
+	 */
 	public int getUpgrade()
 	{
 		return menu.getUpdateType();

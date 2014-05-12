@@ -7,7 +7,11 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.awt.geom.*;
-
+/**
+ * Ez az Osztaly felelos a menu kirajzolasaert
+ * @author HonorDragon
+ *
+ */
 public class Menu_2 {
 	
 	ImageIcon saruman = null;
@@ -77,7 +81,11 @@ public class Menu_2 {
             }
         });   
 	}
-
+	/**
+	 * kirajzolja a menut
+	 * @param g
+	 * @param panel
+	 */
 	public void paintComponent(Graphics g, JPanel panel) {
        
 		u_blue.setLocation(540, 415);
@@ -121,23 +129,38 @@ public class Menu_2 {
 
  
     }
-
+	/**
+	 * vissza adja a manat
+	 * @return
+	 */
 	public int getMana() {
 		return mana;
 	}
-
+	/**
+	 * beallitja a manat
+	 * @param mana
+	 */
 	public void setMana(int mana) {
 		this.mana = mana;
 	}
-
+	/**
+	 * vissza adja enemycount-ot
+	 * @return
+	 */
 	public int getEnemyCount() {
 		return enemyCount;
 	}
-
+	/**
+	 * beallitja az enemycount-ot
+	 * @param enemyCount
+	 */
 	public void setEnemyCount(int enemyCount) {
 		this.enemyCount = enemyCount;
 	}
-	
+	/**
+	 * vissza adja az kijelolt upgrade tipusat
+	 * @return
+	 */
 	public int getUpdateType()
 	{
 		return upgradeType;

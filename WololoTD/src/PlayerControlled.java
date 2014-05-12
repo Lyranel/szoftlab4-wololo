@@ -38,7 +38,10 @@ public abstract class PlayerControlled extends UpdateAble implements IPlaceAble 
 	public String print(){
 		return null;
 	}
-
+	/**
+	 * vissza adja au upgradeCount-ot
+	 * @return
+	 */
 	public int getUpdates()
 	{
 		return upgradeCount;

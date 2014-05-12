@@ -8,7 +8,11 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.awt.geom.*;
-
+/**
+ * Ez az osztaly felelos a terkep kirajzolasaert
+ * @author HonorDragon
+ *
+ */
 public class Map {
 
 	BufferedImage grass;
@@ -41,7 +45,10 @@ public class Map {
 		}
 		
 	}
-	
+	/**
+	 * kirajzolja a terkepet
+	 * @param g
+	 */
 	public void paintComponent(Graphics g) {
        
         
